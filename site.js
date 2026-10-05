@@ -1,4 +1,4 @@
-/* Count-ups, pointer depth (eased, only while visible), magnetic buttons, menu close. Everything degrades to the static page. */
+/* Count-ups, pointer depth (eased, only while visible), magnetic buttons, menu close, swipe-row access. Everything degrades to the static page. */
 (function () {
   var root = document.documentElement;
   var still = root.classList.contains('static');
@@ -58,6 +58,26 @@
       if (lenis) { if (open) lenis.stop(); else lenis.start(); }
     });
   }
+
+  /* Swipe rows on phones: named and reachable from the keyboard. Desktop never scrolls them, so no tab stop there. */
+  var rowSel = ['.zs-phone .screen', '.kor-deck', '.eco-fan', '.web-scene .b-view', '.route-list', '.proof .wrap'];
+  var rowNames = { '.route-list': 'Process, five steps', '.proof .wrap': 'Apps live on the stores' };
+  var phone = matchMedia('(max-width:700px)');
+  var markRows = function () {
+    rowSel.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el) {
+        if (phone.matches) {
+          el.setAttribute('tabindex', '0');
+          if (rowNames[sel] && !el.hasAttribute('aria-label')) el.setAttribute('aria-label', rowNames[sel]);
+          if (el.tagName !== 'OL' && !el.hasAttribute('role')) el.setAttribute('role', 'group');
+        } else {
+          el.removeAttribute('tabindex');
+        }
+      });
+    });
+  };
+  markRows();
+  if (phone.addEventListener) phone.addEventListener('change', markRows);
 
   if (still || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
 

@@ -196,7 +196,7 @@ html:not(.static) .tail .w-cb{animation-name:cap-b-tail}
 .td-head{position:absolute;z-index:3;left:var(--edge);top:calc(var(--nav) + 36px);max-width:520px}
 .td-head .h2{font-size:clamp(2rem,3.7vw,3.5rem)}
 .td-head p{margin-top:14px;color:var(--mut);max-width:34ch;font-size:1rem}
-.td-scene{position:relative;height:100%;perspective:2400px;perspective-origin:50% 42%;display:grid;place-items:center;translate:10vw 11vh}
+.td-scene{position:relative;height:100%;perspective:2400px;perspective-origin:50% 42%;display:grid;place-items:center;translate:var(--sx,10vw) var(--sy,11vh)}
 .td-fit{--s:.82;scale:var(--s);transform-style:preserve-3d}
 .stack{position:relative;width:520px;height:300px;transform-style:preserve-3d;transform:rotateX(60deg) rotateZ(-42deg) translateZ(-20px)}
 .plate{--gap:112px;--z:calc((5 - var(--i)) * var(--gap) - 2.5 * var(--gap));position:absolute;inset:0;margin:auto;width:520px;height:292px;
@@ -237,7 +237,7 @@ html:not(.static) .td-scene{animation:scene-shift cubic-bezier(.45,.05,.2,1) bot
 @keyframes tilt{0%{transform:none;animation-timing-function:cubic-bezier(.45,.05,.2,1)}24%{transform:rotateX(60deg) rotateZ(-33deg) translateZ(-20px)}}
 html:not(.static) .td-fit{animation:dolly linear both;animation-timeline:--pin;animation-range:cover calc(var(--a) * 1%) cover calc(var(--b) * 1%)}
 @keyframes dolly{from{scale:calc(var(--s) * .92)}to{scale:calc(var(--s) * 1.04)}}
-@keyframes scene-shift{from{translate:10vw 0}}
+@keyframes scene-shift{from{translate:var(--sx,10vw) 0}}
 /* plates: explode (own window), then lift + glow while their caption is active (second window) */
 html:not(.static) .plate{
   animation-name:explode,lift;animation-timeline:--pin,--pin;animation-fill-mode:both,both;animation-timing-function:cubic-bezier(.3,.7,.2,1),linear;
@@ -507,6 +507,9 @@ html:not(.static) .rt-copy{animation-name:brighten;animation-range:cover calc(17
 @keyframes travel{from{translate:0 0}to{translate:100% 0}}
 @keyframes fill-pop{from{scale:0}}
 @keyframes tile-in{from{opacity:0;translate:0 56px;scale:.95}}
+@keyframes draw-x{from{scale:0 1}}
+@keyframes node-in{from{scale:0}}
+@keyframes swipe-in{from{opacity:.5;scale:.92;translate:18px 0}}
 @keyframes lift-y{0%,100%{transform:none}14%,86%{transform:translateY(-10px)}}
 @keyframes ring{0%,100%{opacity:0}14%,86%{opacity:1}}
 @keyframes ring-tail{0%{opacity:0}14%,100%{opacity:1}}
@@ -781,8 +784,54 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .route-list > li:last-child .rt-copy::before{width:100%}
   .rt-copy::after{content:"";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:var(--sig);box-shadow:0 0 0 5px var(--bg)}
   html:not(.static) .rt-tile,html:not(.static) .rt-tile::before,html:not(.static) .rt-tile::after,html:not(.static) .rt-copy{animation:none}
+  /* swipe rows: each card eases in as it slides into view, its rail segment draws and its node pops (view timeline on the scroll axis) */
+  html:not(.static) .route-list > li .rt-tile{animation:swipe-in linear both;animation-timeline:view(inline);animation-range:entry 0% entry 100%}
+  html:not(.static) .rt-copy::before{animation:draw-x linear both;animation-timeline:view(inline);animation-range:entry 35% entry 100%}
+  html:not(.static) .rt-copy::after{animation:node-in linear both;animation-timeline:view(inline);animation-range:entry 15% entry 70%}
 }
 @media (max-width:820px){
+  .mw,.mw.flip{grid-template-columns:1fr;gap:26px}
+  .mw.flip .mw-copy{order:0}
+  .mw-vis{height:min(92vw,430px)}
+  .mw-f{height:68%}
+  .cs-steps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-inline:var(--gut);margin-inline:calc(var(--gut) * -1);scrollbar-width:none}
+  .cs-steps::-webkit-scrollbar{display:none}
+  .cs-steps li{flex:0 0 min(62vw,250px);scroll-snap-align:start}
+  html:not(.static) .cs-steps figure,html:not(.static) .cs-step-copy::before,html:not(.static) .cs-step-copy::after{animation:none}
+  html:not(.static) .cs-steps li figure{animation:swipe-in linear both;animation-timeline:view(inline);animation-range:entry 0% entry 100%}
+  html:not(.static) .cs-step-copy::before{animation:draw-x linear both;animation-timeline:view(inline);animation-range:entry 35% entry 100%}
+  html:not(.static) .cs-step-copy::after{animation:node-in linear both;animation-timeline:view(inline);animation-range:entry 15% entry 70%}
+  body{font-size:16px}
+  /* hero: copy first, phones follow in flow (never float over the buttons) */
+  .hero{display:flex;flex-direction:column;min-height:calc(100svh - 70px);padding-top:calc(var(--nav) + 30px);padding-bottom:0}
+  .hero h1{font-size:clamp(2.5rem,12.4vw,4.4rem)}
+  .hero h1 span{white-space:normal}
+  .hero-stage{position:relative;right:auto;bottom:auto;flex:none;margin-top:auto;width:100%;height:clamp(230px,38svh,400px)}
+  .hero-stage .p-main{--w:min(48vw,230px);right:4%;bottom:-34%}
+  .hero-stage .p-back{--w:min(36vw,170px);right:42%;bottom:-22%}
+  .hero-sub{max-width:28ch}
+  .hero-cta{gap:10px}
+  .hero-cta .btn{padding:0 1.15em;font-size:.92rem}
+  .proof .wrap{grid-template-columns:1fr 1fr}
+  .prod-head{grid-template-columns:1fr}
+  .shot{height:min(66svh,560px)}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats-3{grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .stats-3 .num b{font-size:min(6.6vw,2.3rem);white-space:nowrap}
+  .stats-3 .num span{font-size:.82rem}
+  .num b{font-size:3.2rem}
+  .browser{--fh:58vw}
+  .web-phone{--w:min(30vw,150px);right:2%;bottom:-9%}
+  .web-show.flip .web-phone{left:2%;right:auto}
+  .cs-phones{height:380px}
+  .cs-phones > :nth-child(1){--w:34vw;left:-4%}
+  .cs-phones > :nth-child(2){--w:46vw}
+  .cs-phones > :nth-child(3){--w:34vw;right:-4%}
+  .mail{font-size:clamp(1.15rem,6vw,2rem)}
+}
+/* Pinned scenes, compact layout: phones, tablets in portrait and narrow windows. Positioned by viewport height,
+   so it needs a tall enough screen; short landscape screens use the block below instead. */
+@media (max-width:1020px) and (min-height:601px){
   .web-scene .stage{display:flex;flex-direction:column-reverse;justify-content:center;align-items:stretch;gap:16px;padding:calc(var(--nav) + 10px) var(--gut) 18px}
   .ws-stage,.ws-left{width:100%}
   .web-scene .browser{--fh:44svh}
@@ -795,33 +844,17 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .ws-pages li b{min-width:0}
   .ws-pages{grid-auto-flow:column;gap:18px;margin-top:0}
   .ws-pages li{border-top:0;padding:4px 0}
-  .mw,.mw.flip{grid-template-columns:1fr;gap:26px}
-  .mw.flip .mw-copy{order:0}
-  .mw-vis{height:min(92vw,430px)}
-  .cs-steps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-inline:var(--gut);margin-inline:calc(var(--gut) * -1);scrollbar-width:none}
-  .cs-steps::-webkit-scrollbar{display:none}
-  .cs-steps li{flex:0 0 min(62vw,250px);scroll-snap-align:start}
-  html:not(.static) .cs-steps figure,html:not(.static) .cs-step-copy::before,html:not(.static) .cs-step-copy::after{animation:none}
-  body{font-size:16px}
-  .hero{min-height:calc(100svh - 70px);padding-top:calc(var(--nav) + 30px)}
-  .hero h1{font-size:clamp(2.5rem,12.4vw,4.4rem)}
-  .hero h1 span{white-space:normal}
-  .hero-stage{width:100%;right:0;height:36svh;bottom:0}
-  .hero-stage .p-main{--w:min(48vw,230px);right:4%;bottom:-34%}
-  .hero-stage .p-back{--w:min(36vw,170px);right:42%;bottom:-22%}
-  .hero-sub{max-width:28ch}
-  .hero-cta{gap:10px}
-  .hero-cta .btn{padding:0 1.15em;font-size:.92rem}
-  .proof .wrap{grid-template-columns:1fr 1fr}
   /* teardown: stack on top, caption under it */
   .td .stage{display:block}
   .td-head{top:calc(var(--nav) + 18px);max-width:80vw}
   .td-head p{display:none}
   .td-scene{position:absolute;inset:0;translate:none;perspective:1600px;perspective-origin:50% 30%;height:66%;top:calc(var(--nav) + 40px)}
   html:not(.static) .td-scene{animation:none}
-  .td-fit{--s:.72;translate:-15vw 0}
-  html.static .td-fit{--s:.56;translate:-13vw 0}
-  .plate{--gap:70px}
+  /* the stack is sized from the screen width and centred in a full-width column, so it clears the gutters at any phone size */
+  .td-scene{grid-template-columns:minmax(0,1fr)}
+  .td-fit{--s:clamp(.36,min(calc((tan(atan2(100vw,1px)) - 36) / 608),calc((tan(atan2(100svh,1px)) - 360) / 757)),.98);translate:calc(var(--s) * 12px) 0}
+  .plate{--gap:104px}
+  .plate .face{padding:0 16px 7px;justify-content:flex-end}
   .td-cap{position:absolute;left:0;right:0;bottom:0;padding:0 var(--gut) 30px;height:34%;align-content:end}
   .td-cap h3{font-size:1.6rem}
   .td-cap p{font-size:.95rem}
@@ -838,37 +871,105 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .zs-caps h3{font-size:1.5rem}
   .zs-count{display:none}
   .zs-word{font-size:46vw}
-  .prod-head{grid-template-columns:1fr}
+  /* keys on rent */
   .kor .stage{display:block;padding:calc(var(--nav) + 10px) 0 0}
   .kor-left{position:absolute;top:calc(var(--nav) + 14px);bottom:54px;left:var(--gut);right:var(--gut);height:auto;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;z-index:3;gap:0}
   .kor-id{gap:0}
   .kor-id img.ico,.kor-id .lede{display:none}
   .kor-id h2{font-size:2.5rem}
-  .kor-caps{min-height:0}
+  .kor-caps{min-height:0;position:relative}
+  .kor-caps::before{content:"";position:absolute;z-index:-1;inset:-48px calc(var(--gut) * -1) -56px;background:linear-gradient(rgba(29,7,11,0),rgba(29,7,11,.88) 45%);pointer-events:none}
   .kor-caps .cap{max-width:none}
   .kor-caps h3{font-size:1.5rem}
   .kor-deck{--fx:12vw;position:absolute;inset:calc(var(--nav) + 84px) 0 auto 0;height:52svh}
   .kor-note{left:var(--gut);bottom:22px}
-  .shot{height:min(66svh,560px)}
+  /* eco crew */
   .eco-head h2{font-size:3rem}
   .eco-fan{margin-top:18svh}
   .fan{--h:min(46svh,420px);--tx:calc(var(--k) * 24vw);--ty:calc(var(--k2) * 1svh);--tz:calc((2 - var(--k2)) * 50px - 40px);--ry:calc(var(--k) * -14deg)}
   .eco-links{left:var(--gut);right:auto;bottom:24px}
-  .stats{grid-template-columns:1fr 1fr}
-  .stats-3{grid-template-columns:1fr 1fr 1fr;gap:16px}
-  .stats-3 .num b{font-size:2.3rem}
-  .stats-3 .num span{font-size:.82rem}
-  .num b{font-size:3.2rem}
-  .browser{--fh:58vw}
-  .web-phone{--w:min(30vw,150px);right:2%;bottom:-9%}
-  .web-show.flip .web-phone{left:2%;right:auto}
   .plate .tag,.plate ul{display:none}
-  .plate .big{font-size:22px}
-  .cs-phones{height:380px}
-  .cs-phones > :nth-child(1){--w:34vw;left:-4%}
-  .cs-phones > :nth-child(2){--w:46vw}
-  .cs-phones > :nth-child(3){--w:34vw;right:-4%}
-  .mail{font-size:clamp(1.15rem,6vw,2rem)}
+  .plate .big{font-size:18px}
+}
+@media (max-width:400px) and (min-height:601px){
+  .td-scene{top:calc(var(--nav) + 62px)}
+}
+@media (max-width:1020px) and (min-height:601px) and (max-height:760px){
+  .td-scene{top:calc(var(--nav) + 34px)}
+  .td-cap{padding-bottom:20px}
+  .td-cap h3{font-size:1.3rem}
+  .td-cap p{font-size:.88rem}
+}
+/* Tablets and wide phone windows: same compact layout, scaled up so it does not look empty */
+@media (min-width:600px) and (max-width:1020px) and (min-height:601px){
+  .td-scene{top:calc(var(--nav) + 150px);height:60%}
+  .td-head{max-width:60vw}
+  .td-head .h2{font-size:clamp(2.4rem,6vw,3.4rem)}
+  .td-cap h3{font-size:2rem}
+  .td-cap p{font-size:1.05rem}
+  .zs-id h2{font-size:3rem}
+  .zs-caps h3{font-size:2rem}
+  .kor-id h2{font-size:3.4rem}
+  .kor-caps h3{font-size:2rem}
+  .fan{--h:min(46svh,520px);--tx:calc(var(--k) * 20vw)}
+  .eco-head h2{font-size:4rem}
+  .ws-left h3{font-size:2rem}
+  .web-scene .browser{--fh:50svh}
+}
+@media (min-width:600px) and (max-width:820px){
+  .hero-stage .p-main{--w:min(36vw,320px)}
+  .hero-stage .p-back{--w:min(27vw,240px);right:34%}
+  .hero-sub{max-width:36ch}
+}
+/* Small laptops: the side-by-side scenes need a little more room */
+@media (min-width:1021px) and (max-width:1180px){
+  .td-scene{--sx:3vw}
+  .td-fit{--s:.7}
+  .td-cap{padding-right:var(--gut)}
+  .web-scene .stage{grid-template-columns:minmax(230px,.7fr) minmax(0,1.9fr)}
+  .ws-left{gap:12px}
+  .ws-pages li em{display:none}
+  .ws-pages li b{min-width:0}
+}
+/* Short screens (landscape phones, short windows): keep the side-by-side scenes, shrink what collides */
+@media (max-height:600px){
+  :root{--nav:56px}
+  .hero{min-height:0;padding-bottom:32px}
+  .hero-copy{padding-right:max(var(--gut),42vw)}
+  .hero h1 span{white-space:normal}
+  .hero h1{font-size:clamp(2rem,5.6vw,3.4rem)}
+  .hero-sub{margin-top:16px}
+  .hero-cta{margin-top:20px}
+  .hero-stage{height:clamp(180px,48svh,260px)}
+  .td-head{top:calc(var(--nav) + 14px)}
+  .td-head .h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+  .td-head p,.td-rail{display:none}
+  .td-scene{--sx:10vw;--sy:15vh}
+  .td-fit{--s:.5}
+  .td-cap h3{font-size:clamp(1.2rem,2.6vw,1.7rem)}
+  .td-cap p{font-size:.9rem}
+  .zs-id h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+  .zs-id p,.zs-id img.ico{display:none}
+  .zs-phone .phone{--w:min(24vw,calc((100svh - 100px) * .55))}
+  .kor-id img.ico,.kor-id .lede,.kor-note{display:none}
+  .kor-id h2{font-size:clamp(1.8rem,5vw,2.8rem)}
+  .kor-left{gap:14px}
+  .kor-deck{height:min(72svh,420px)}
+  .eco-head{top:calc(var(--nav) + 10px)}
+  .eco-head h2{font-size:clamp(1.8rem,5vw,2.8rem)}
+  .eco-head p{display:none}
+  .eco-fan{height:76svh;margin-top:6svh}
+  .fan{--h:58svh;--tx:calc(var(--k) * min(14vw,160px))}
+  .eco-links .art-note{display:none}
+  .eco-links{bottom:14px}
+  .web-scene .stage{grid-template-columns:minmax(150px,.55fr) minmax(0,1.9fr);gap:20px}
+  .ws-left{gap:10px}
+  .ws-left h3{font-size:1.5rem}
+  .ws-left p,.web-scene .chips,.ws-pages li em{display:none}
+  .ws-pages li b{min-width:0}
+  .web-scene .browser{--fh:58svh}
+  .web-scene .b-url{left:calc(50% + 50px)}
+  .b-tab{display:none}
 }
 @media (max-width:560px){
   .nav .wrap{gap:10px}
@@ -884,4 +985,139 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .cs-strip .phone{--w:min(52vw,220px)}
   .cs-meta,.cs-nums,.nums{grid-template-columns:1fr 1fr}
   .nav .btn{padding:0 1em}
+}
+
+/* ==========================================================================
+   Phone home (<=700px): an app-style layout, not the desktop story shrunk.
+   Apps are swipe galleries instead of pinned scenes, the proof strip is a swipe row,
+   the Teardown and web scenes stay pinned but short. Defaults are the final state, so the
+   old pin-timeline animations are switched off here and swipe-driven ones take over.
+   Static mode (reduced motion, Firefox) keeps its own layout, hence the html:not(.static) prefix.
+   ========================================================================== */
+@keyframes carousel{0%{scale:.9}30%,78%{scale:1}100%{scale:.9}}
+@keyframes carousel-fade{0%{opacity:.5}30%,78%{opacity:1}100%{opacity:.5}}
+@keyframes pos{from{scale:.2 1}to{scale:1 1}}
+/* per-card captions and the swipe position bar only exist on phones */
+.lc,.row-pos{display:none}
+@media (max-width:700px){
+  /* store proof: swipe row of app cards */
+  html:not(.static) .proof .wrap{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-block:16px;scrollbar-width:none}
+  html:not(.static) .proof .wrap::-webkit-scrollbar{display:none}
+  html:not(.static) .proof .wrap .proof-item{flex:none;min-width:158px;padding:14px 16px;gap:8px;border:1px solid var(--line2);border-radius:14px;background:var(--bg2);scroll-snap-align:start}
+  html:not(.static) .proof .wrap .proof-item + .proof-item{border-top:1px solid var(--line2);border-left:1px solid var(--line2)}
+
+  /* shorter pinned scenes */
+  html:not(.static) .pin-4.td{height:240svh}
+  html:not(.static) .web-scene.pin{height:200svh}
+
+  /* apps: un-pinned, one block each */
+  html:not(.static) .zs.pin,html:not(.static) .kor.pin,html:not(.static) .eco.pin{height:auto}
+  html:not(.static) .zs .stage,html:not(.static) .kor .stage,html:not(.static) .eco .stage{position:relative;height:auto;display:flex;flex-direction:column;align-items:stretch;justify-items:stretch;overflow:clip;contain:none;padding:52px 0 36px;gap:0}
+  html:not(.static) .zs .w,html:not(.static) .kor .w,html:not(.static) .eco .w,html:not(.static) .zs .layer,html:not(.static) .zs .layer img,html:not(.static) .kor .kc,html:not(.static) .kor .kc::after,html:not(.static) .eco .fan{animation:none!important}
+  html:not(.static) .zs-bg,html:not(.static) .kor-bg,html:not(.static) .eco-bg{inset:0;transform:none}
+  html:not(.static) .zs-word,html:not(.static) .zs-count{display:none}
+
+  /* Zonesso */
+  html:not(.static) .zs-id{position:relative;left:auto;top:auto;padding:0 var(--gut);gap:12px;max-width:none}
+  html:not(.static) .zs-id img.ico,html:not(.static) .zs-id p,html:not(.static) .zs-links{display:flex}
+  html:not(.static) .zs-id p{display:block}
+  html:not(.static) .zs-id h2{font-size:2.8rem}
+  html:not(.static) .zs-phone{position:relative;inset:auto;height:auto;display:block;padding:26px 0 10px}
+  html:not(.static) .zs-phone .tilt{width:100%}
+  html:not(.static) .zs-phone .phone{display:contents}
+  html:not(.static) .zs-phone .phone::after,html:not(.static) .zs-phone .screen::after{display:none}
+  html:not(.static) .zs-phone .screen{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;height:auto;background:none;border-radius:0;padding:0 var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none}
+  html:not(.static) .zs-phone .screen::-webkit-scrollbar{display:none}
+  html:not(.static) .layer{position:relative;inset:auto;flex:none;width:min(66vw,270px);aspect-ratio:610/1110;border-radius:28px;scroll-snap-align:center;box-shadow:0 30px 50px -25px #000,0 0 0 1px var(--line2)}
+  html:not(.static) .layer img{position:absolute;inset:0}
+  html:not(.static) .zs-caps{position:relative;inset:auto;display:grid;padding:4px var(--gut) 0}
+  html:not(.static) .zs-caps .cap{grid-area:auto;max-width:none;padding:14px 0;border-top:1px solid var(--line2)}
+  html:not(.static) .zs-caps h3{font-size:1.2rem}
+
+  /* Keys On Rent: id, then the deck, then the captions */
+  html:not(.static) .kor-left{display:contents}
+  html:not(.static) .kor-id{order:1;padding:0 var(--gut);gap:12px;max-width:none}
+  html:not(.static) .kor-id img.ico,html:not(.static) .kor-id .lede{display:block}
+  html:not(.static) .kor-id h2{font-size:2.8rem}
+  html:not(.static) .kor-deck{order:2;position:relative;inset:auto;height:auto;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px var(--gut) 14px;perspective:none;scrollbar-width:none;scroll-padding-inline:var(--gut)}
+  html:not(.static) .kor-deck::-webkit-scrollbar{display:none}
+  html:not(.static) .kc{position:relative;translate:none;rotate:none;flex:none;height:min(60svh,450px);scroll-snap-align:center}
+  html:not(.static) .kor-caps{order:3;min-height:0;padding:0 var(--gut)}
+  html:not(.static) .kor-caps::before{display:none}
+  html:not(.static) .kor-caps .cap{grid-area:auto;max-width:none;padding:14px 0;border-top:1px solid var(--line2)}
+  html:not(.static) .kor-caps h3{font-size:1.2rem}
+  html:not(.static) .kor-note{order:4;position:relative;left:auto;bottom:auto;display:block;padding:8px var(--gut) 0}
+
+  /* Eco Crew */
+  html:not(.static) .eco-head{position:relative;left:auto;top:auto;padding:0 var(--gut);max-width:none}
+  html:not(.static) .eco-head h2{font-size:2.8rem}
+  html:not(.static) .eco-fan{height:auto;display:flex;place-items:unset;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;perspective:none;margin-top:24px;padding:0 var(--gut) 16px;scrollbar-width:none;scroll-padding-inline:var(--gut)}
+  html:not(.static) .eco-fan::-webkit-scrollbar{display:none}
+  html:not(.static) .fan{position:relative;flex:none;transform:none;--h:min(58svh,440px);scroll-snap-align:center}
+  html:not(.static) .eco-links{position:relative;left:auto;bottom:auto;padding:6px var(--gut) 0}
+
+  /* the swipe effect: the card in the middle is full size, its neighbours step back */
+  html:not(.static) .layer,html:not(.static) .kc,html:not(.static) .fan{animation:carousel linear both!important;animation-timeline:view(inline)!important;animation-range:entry 0% exit 100%!important}
+  html:not(.static) .zs .layer img,html:not(.static) .kor .kc img,html:not(.static) .eco .fan img{animation:carousel-fade linear both!important;animation-timeline:view(inline)!important;animation-range:entry 0% exit 100%!important}
+
+}
+
+/* web scenes on phones: title, a swipe row of page screenshots, then the page list */
+@media (max-width:700px){
+  html:not(.static) .web-scene.pin{height:auto}
+  html:not(.static) .web-scene .stage{position:relative;height:auto;display:flex;flex-direction:column;justify-content:flex-start;contain:none;overflow:clip;padding:30px var(--gut) 24px;gap:14px}
+  html:not(.static) .web-scene .w,html:not(.static) .web-scene .browser,html:not(.static) .web-scene .pg,html:not(.static) .web-scene .pg img,html:not(.static) .web-scene .ws-prog i::after{animation:none!important}
+  html:not(.static) .web-glow,html:not(.static) .ws-prog,html:not(.static) .b-bar{display:none}
+  html:not(.static) .ws-left{display:contents}
+  html:not(.static) .ws-left h3{order:1;font-size:1.9rem}
+  html:not(.static) .ws-left p{order:2;display:block}
+  html:not(.static) .ws-stage{order:3;width:100%}
+  html:not(.static) .ws-pages{order:4;grid-auto-flow:row;gap:0}
+  html:not(.static) .ws-pages li{border-top:1px solid var(--line2);padding:11px 0}
+  html:not(.static) .ws-pages li em{display:block}
+  html:not(.static) .web-scene .chips{order:5;display:flex}
+  html:not(.static) .ws-left .tlink{order:6;align-self:flex-start}
+  html:not(.static) .web-scene .browser{--fh:auto;background:none;box-shadow:none;overflow:visible;transform:none}
+  html:not(.static) .web-scene .b-view{display:flex;gap:12px;height:auto;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut) * -1);padding:4px var(--gut) 14px;scroll-padding-inline:var(--gut);scrollbar-width:none}
+  html:not(.static) .web-scene .b-view::-webkit-scrollbar{display:none}
+  html:not(.static) .pg{position:relative;inset:auto;flex:none;width:min(78vw,320px);height:min(54svh,430px);border-radius:14px;scroll-snap-align:center;box-shadow:0 30px 50px -25px #000,0 0 0 1px var(--line2)}
+  html:not(.static) .pg::before{content:"";display:block;height:22px;background:radial-gradient(circle at 13px 50%,#5a5c62 3px,transparent 3.5px),radial-gradient(circle at 26px 50%,#5a5c62 3px,transparent 3.5px),radial-gradient(circle at 39px 50%,#5a5c62 3px,transparent 3.5px),#1a1b1e}
+  html:not(.static) .pg,html:not(.static) .pg.enter{translate:none}
+  html:not(.static) .pg{animation:carousel linear both!important;animation-timeline:view(inline)!important;animation-range:entry 0% exit 100%!important}
+  html:not(.static) .web-scene .pg img{animation:carousel-fade linear both!important;animation-timeline:view(inline)!important;animation-range:entry 0% exit 100%!important}
+}
+
+/* phone swipe rows: captions travel with their card, a position bar tracks the swipe, text meets the size floor */
+@media (max-width:700px){
+  html:not(.static) .zs .stage{timeline-scope:--row-zs}
+  html:not(.static) .kor .stage{timeline-scope:--row-kor}
+  html:not(.static) .eco .stage{timeline-scope:--row-eco}
+  html:not(.static) .web-scene .stage{timeline-scope:--row-web}
+  html:not(.static) .zs-phone .screen{scroll-timeline:--row-zs inline}
+  html:not(.static) .kor-deck{scroll-timeline:--row-kor inline}
+  html:not(.static) .eco-fan{scroll-timeline:--row-eco inline}
+  html:not(.static) .web-scene .b-view{scroll-timeline:--row-web inline}
+  html:not(.static) .row-pos{display:block;position:relative;height:3px;border-radius:2px;background:var(--line);margin:2px var(--gut) 0;overflow:hidden}
+  html:not(.static) .kor .row-pos{order:2}
+  html:not(.static) .web-scene .row-pos{margin:0}
+  html:not(.static) .row-pos i{position:absolute;inset:0;background:var(--sig);transform-origin:left;scale:.2 1}
+  html:not(.static) .zs .row-pos i{animation:pos linear both;animation-timeline:--row-zs}
+  html:not(.static) .kor .row-pos i{animation:pos linear both;animation-timeline:--row-kor}
+  html:not(.static) .eco .row-pos i{animation:pos linear both;animation-timeline:--row-eco}
+  html:not(.static) .web-scene .row-pos i{animation:pos linear both;animation-timeline:--row-web}
+  html:not(.static) .lc{display:flex;flex-direction:column;gap:3px;padding:14px 2px 0}
+  html:not(.static) .lc b{font-size:1.05rem;font-weight:600;letter-spacing:-.03em;line-height:1.2}
+  html:not(.static) .lc em{font:normal .8125rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mut-hi)}
+  html:not(.static) .zs-caps,html:not(.static) .kor-caps{display:none}
+  html:not(.static) .layer{aspect-ratio:auto;overflow:visible;box-shadow:none;border-radius:0;display:flex;flex-direction:column}
+  html:not(.static) .layer img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:610/1110;border-radius:28px;box-shadow:0 30px 50px -25px #000,0 0 0 1px var(--line2)}
+  html:not(.static) .kc{width:min(66vw,270px);height:auto;aspect-ratio:auto;overflow:visible;box-shadow:none;border-radius:0;display:flex;flex-direction:column}
+  html:not(.static) .kc img{width:100%;height:auto;aspect-ratio:9/16;border-radius:calc(var(--r) + 14px);box-shadow:0 40px 70px -30px #000,0 0 0 1px var(--line2)}
+  html:not(.static) .proof .wrap{scroll-padding-inline:var(--gut)}
+  html:not(.static) .art-note{color:var(--mut)}
+  html:not(.static) .chips li,html:not(.static) .ws-pages li em,html:not(.static) .art-note{font-size:.78rem}
+  html:not(.static) .mono,html:not(.static) .proof-links,html:not(.static) .role-chip{font-size:.8125rem}
+  html:not(.static) .num small{font-size:.78rem}
+  html:not(.static) .brand{display:inline-flex;align-items:center;min-height:44px}
+  html:not(.static) .mail{min-height:44px}
 }
