@@ -47,3 +47,9 @@ They are not "client work": they are UK-based projects from your previous compan
 The JIFFL case page now shows five screens from its Google Play listing (job seeker side only: sign-up, bio-video apply, job matching, availability, offers). Nothing on the page shows the employer side.
 - [ ] If you have store or press screens of the JIFFL employer side, send them and I will add them so both sides of the app are visible.
 - [ ] Cone has no store listing (confirmed): the page links only getcone.io and shows Mantiqh's design art, never store badges.
+
+## CV synced (2026-10-05)
+career-ops/cv.md now matches the site: JIFFL (two-sided UK app, two-person team, stakeholder communication), Keys On Rent, Eco Crew and Cone (two-person teams; Eco Crew says "built the pickup flows", not "supported"), and QPlease added (sole mobile developer).
+- [ ] cv.md still says you "ran code reviews and mentored junior React Native developers" (Mantiqh Project Lead role). The site does not claim it. Keep it only if true for the wider company.
+- [ ] QPlease has no tech stack line in the CV because I did not want to guess. Add it (React Native?).
+- [ ] The per-job tailored PDFs in career-ops/output/ were generated from the old cv.md. Regenerate any you still send.
