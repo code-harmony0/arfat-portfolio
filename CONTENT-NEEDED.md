@@ -53,3 +53,20 @@ career-ops/cv.md now matches the site: JIFFL (two-sided UK app, two-person team,
 - [ ] cv.md still says you "ran code reviews and mentored junior React Native developers" (Mantiqh Project Lead role). The site does not claim it. Keep it only if true for the wider company.
 - [ ] QPlease has no tech stack line in the CV because I did not want to guess. Add it (React Native?).
 - [ ] The per-job tailored PDFs in career-ops/output/ were generated from the old cv.md. Regenerate any you still send.
+
+## Story pass (2026-10-13): what is verified and what needs your eyes
+Zonesso's story is built from the repos (ARCHITECTURE.md, Fastfile, bitbucket-pipelines.yml, test files, commit history): state split, optimistic UI, payment boundary, guided add-post, upgrade numbers, notification race fix, iOS 18 IAP patch, App Store rejection (ATT and IAP discoverability, May 2026), Samsung Pay ProGuard rules. No latency numbers are claimed because none are recorded in the repos.
+Written from your CV only, so the reasoning wording is a draft. Correct anything that is not how you thought about it:
+- [ ] Keys On Rent "How I read it": the shared-meaning-of-tenancy/payment/ticket framing, and "each app launched with the core of its own job".
+- [ ] Eco Crew "How I read it": location-first framing; how you actually got the 30% size cut (one concrete line would be strong).
+- [ ] JIFFL "How I led it": reviews and mentoring come from your CV. Keep only if true.
+- [ ] Cone and QPlease: the briefs and "trust chain" mapping are my wording.
+- [ ] Hero facts: "5 years in production", "5 apps on the stores", "2 apps built solo".
+- [ ] Contact "First week / First month / After that" is an offer, not a record. Edit to how you really start.
+For each project, a real story needs 3 things from you: what the client first asked for versus what they needed, one decision you made that you would defend, and one thing that went wrong and how you fixed it.
+
+## First-glance and problems pass (2026-10-13)
+Hero now states Shipped / Decides / Owns / Solves; "Problems from production" replaced the four-habits section (habits kept as one line under it).
+- [ ] 16 KB page-size story: the repo pins NDK 28.2 and target SDK 36, but has no commit naming the 16 KB work. Page says "moved the Android build to NDK 28 and target SDK 36". Tell me what you actually did (dependency upgrades, alignment checks, a rejected upload?) and when.
+- [ ] Socket-logout story is from commit 405aaf0 (June 2026). "Network drops and backgrounding" is its wording.
+- [ ] Add 2 or 3 more stories in your own words (what was asked, what went wrong, what you changed). Image upload speed-up (docs/plans, June 2026) needs a measured result before it goes on the page.

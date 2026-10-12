@@ -33,6 +33,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   <div class="wrap">
     <a class="brand" href="/">Arfat Rozewale</a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#cases">Problems</a>
       <a href="#teardown">Teardown</a>
       <a href="#mobile">Apps</a>
       <a href="#web">Web</a>
@@ -46,6 +47,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
   <nav id="menu" class="menu" data-lenis-prevent popover aria-label="Sections">
     <button class="menu-close" type="button" popovertarget="menu" popovertargetaction="hide">Close</button>
+    <a href="#cases">Problems <span>found, fixed, shipped</span></a>
     <a href="#teardown">Teardown <span>one app, taken apart</span></a>
     <a href="#mobile">Apps <span>shipped to the stores</span></a>
     <a href="#process">Process <span>plan to ship</span></a>
@@ -61,11 +63,17 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <!-- HERO: who, what, proof, one action -->
 <section class="hero" id="top">
   <div class="wrap hero-copy">
-    <h1><span>Arfat Rozewale.</span><span class="dim">I ship mobile products.</span></h1>
-    <p class="hero-sub">Senior React Native engineer. Sole mobile engineer at Zonesso. Open to relocating anywhere.</p>
+    <h1><span>Arfat Rozewale.</span><span class="dim">Senior mobile engineer.</span></h1>
+    <p class="hero-sub">Sole mobile engineer on a live Dubai marketplace: five payment methods, one checkout, every release a command. Open to relocating anywhere.</p>
+    <dl class="glance">
+      <div><dt>Shipped</dt><dd><a href="#mobile">5 products live on the stores. 2 built solo, 3 in a team of two.</a></dd></div>
+      <div><dt>Decides</dt><dd><a href="#teardown">Server state apart from app state. Five payment rails behind one checkout.</a></dd></div>
+      <div><dt>Owns</dt><dd><a href="#process">Architecture, payments, tests, CI and every store release. Led JIFFL.</a></dd></div>
+      <div><dt>Solves</dt><dd><a href="#cases">Android's 16 KB rule, logouts on network drops, an App Store rejection.</a></dd></div>
+    </dl>
     <div class="hero-cta">
-      <a class="btn btn-sig" href="#mobile" data-magnet>See the apps <span class="arrow" aria-hidden="true">&#8595;</span></a>
-      <a class="btn btn-line" href="https://www.linkedin.com/in/arfat-rozewale/" rel="noopener" data-magnet>LinkedIn <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      <a class="btn btn-sig" href="mailto:arfathrozewale8@gmail.com" data-magnet>Email me <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      <a class="btn btn-line" href="#cases" data-magnet>See the problems I solved <span class="arrow" aria-hidden="true">&#8595;</span></a>
     </div>
   </div>
   <div class="hero-stage" aria-hidden="true">
@@ -99,6 +107,25 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
       <span class="proof-name">JIFFL</span>
       <span class="proof-links"><a href="https://play.google.com/store/apps/details?id=com.the.partimer" rel="noopener" aria-label="JIFFL on Google Play">Google Play</a></span>
     </div>
+  </div>
+</section>
+
+
+<!-- PROBLEMS SOLVED: how he thinks, shown as production problems. Every row is true to the repo or to the owner. -->
+<section class="cases" id="cases" aria-labelledby="cases-title">
+  <div class="wrap">
+    <h2 class="h2 rv" id="cases-title">Problems from production, and what I did.</h2>
+    <p class="lede rv">Mostly from Zonesso. Each one is a symptom, a cause and a fix I can walk you through.</p>
+    <div class="case-list rv" role="list">
+      <div class="case-head" aria-hidden="true"><span>Problem</span><span>What broke</span><span>What I did</span></div>
+      <article class="case" role="listitem"><h3>Google Play's 16 KB page-size rule<small>Android</small></h3><p>Play started requiring apps to run on devices with 16 KB memory pages. Native code built for 4 KB pages can fail on them, and releases get blocked.</p><p>Moved the Android build to NDK 28 and target SDK 36 so the native code the app ships meets the rule.</p></article>
+      <article class="case" role="listitem"><h3>Users logged out when the network dropped<small>Chat and auth</small></h3><p>Network drops and sending the app to the background signed people out of their account.</p><p>The chat socket's disconnect handler was changing login state. A disconnect is a transport event, not an auth event, so login state now changes only through the login and clear-data flows.</p></article>
+      <article class="case" role="listitem"><h3>An App Store rejection<small>iOS</small></h3><p>Apple rejected a build over App Tracking Transparency compliance and in-app-purchase discoverability.</p><p>Fixed both.</p></article>
+      <article class="case" role="listitem"><h3>In-app purchase breaking on iOS 18<small>Payments</small></h3><p>In-app purchases broke on iOS 18.</p><p>Upgraded react-native-iap to v13, patched it for iOS 18 compatibility and fixed the account token to be a UUID.</p></article>
+      <article class="case" role="listitem"><h3>Notification taps on a cold start<small>Push</small></h3><p>Notification taps that arrived before the app was ready.</p><p>Added deep-link retry, so a tap during a cold launch still lands on the right screen.</p></article>
+      <article class="case" role="listitem"><h3>Samsung Pay missing on release builds<small>Android</small></h3><p>Samsung Pay on release builds, where code shrinking can strip what the SDK needs.</p><p>Wrote explicit ProGuard keep rules for the SDK, so it survives release shrinking.</p></article>
+    </div>
+    <p class="cases-foot rv">Four habits sit behind these: plan before code, write down why, make releases boring, leave the team stronger. <a href="/work/zonesso">Zonesso case study <span class="arrow" aria-hidden="true">&#8599;</span></a></p>
   </div>
 </section>
 
@@ -156,7 +183,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <section id="mobile">
   <div class="wrap mob-intro rv">
     <h2 class="h2">Mobile is<br><span class="dim">the work.</span></h2>
-    <p class="lede">Real apps on the App Store and Google Play.</p>
+    <p class="lede">Three products, each told the same way: the brief, how I approached it, and what shipped.</p>
   </div>
 
   <div class="pin pin-35 zs" id="zonesso">
@@ -167,7 +194,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
       <div class="zs-id">
         <img class="ico" src="/assets/shots/icon-zonesso.webp" alt="" width="64" height="64">
         <h2>Zonesso</h2>
-        <p>Buy and sell cars in Dubai. Sole mobile engineer, end-to-end mobile development.</p>
+        <p>Buy and sell cars in Dubai. Sole mobile engineer: architecture, payments, testing and every release.</p>
         <div class="zs-links">
           <a class="btn btn-sig" href="/work/zonesso" data-magnet>Case study <span class="arrow">&#8599;</span></a>
         </div>
@@ -200,6 +227,11 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 
   <div class="stats-band" style="background:#140b07">
     <div class="wrap">
+      <div class="story rv">
+        <div><span class="mono">The brief</span><p>A Dubai vehicle marketplace needed a mobile app people could browse, post and pay in. I became its only mobile engineer, so architecture, payments, testing and every release sat with me.</p></div>
+        <div><span class="mono">How I approached it</span><p>Listings, posting an ad and checkout decide a marketplace, so I put structure around those three first. <b>Server state</b> moved to TanStack Query and <b>app state</b> to Jotai. Five payment methods went behind <b>one checkout</b>.</p></div>
+        <div><span class="mono">What shipped</span><p>A live iOS and Android app, a React Native upgrade run as a cleanup, a CI-tested release pipeline, and a scope that has grown to the Next.js site and admin dashboard.</p></div>
+      </div>
       <div class="stats">
         <div class="num"><b style="--n:39"><span class="sr">39</span><em>%</em></b><span>less code after the migration</span></div>
         <div class="num"><b style="--n:57"><span class="sr">57</span></b><span>dependencies removed</span></div>
@@ -240,6 +272,11 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
   <div class="stats-band" style="background:#1d070b">
     <div class="wrap">
+      <div class="story rv">
+        <div><span class="mono">The brief</span><p>A rental business wanted tenants, landlords and building staff on their phones. Three jobs over one set of rental data, two months, two developers.</p></div>
+        <div><span class="mono">How I approached it</span><p>The product is split by role, so each app does one job. Tenants get <b>listings, viewings, rent and maintenance tickets</b>, landlords get a portfolio view, operations get the building tools.</p></div>
+        <div><span class="mono">What shipped</span><p>All three apps on the App Store and Google Play inside two months. The tenant app passed <b>1,000 installs</b>.</p></div>
+      </div>
       <div class="stats stats-3">
         <div class="num"><b style="--n:3"><span class="sr">3</span></b><span>apps, one per role</span></div>
         <div class="num"><b style="--n:2"><span class="sr">2</span></b><span>months, start to release</span></div>
@@ -254,8 +291,9 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
     <div class="stage">
       <div class="eco-bg" aria-hidden="true"></div>
       <div class="eco-head">
+        <img class="ico" src="/assets/shots/icon-eco.webp" alt="" width="72" height="72">
         <h2>Eco Crew</h2>
-        <p>Two-person team. I built the pickup flows.</p>
+        <p>Recycling pickups, on a live app with 50,000+ downloads. Two-person team. I built the pickup flows.</p>
       </div>
       <div class="eco-fan" style="--a:25.00;--b:65.00" role="group" aria-label="Eco Crew App Store screenshots">
         <div class="fan" style="--k:-2"><img src="/assets/shots/eco-1.webp" alt="Eco Crew: sell your recyclables" width="800" height="1731" loading="lazy" decoding="async"></div>
@@ -273,6 +311,11 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
   <div class="stats-band" style="background:#07140b">
     <div class="wrap">
+      <div class="story rv">
+        <div><span class="mono">The brief</span><p>Eco Crew is a live recycling-pickup app with over 50,000 downloads and a 4-star rating. My part of a two-person team was the pickup experience and the install size.</p></div>
+        <div><span class="mono">How I approached it</span><p>Pickups depend on location, so I built the <b>geolocation pickup and delivery flows</b> on React Native, Firebase and Google Maps. Then I worked the app size down.</p></div>
+        <div><span class="mono">What shipped</span><p>The pickup flows on both stores, and an app about <b>30% smaller</b>.</p></div>
+      </div>
       <div class="stats stats-3">
         <div class="num"><b class="t">50,000<em>+</em></b><span>downloads on the live app</span></div>
         <div class="num"><b class="t">4<em>-star</em></b><span>store rating</span></div>
@@ -287,7 +330,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <section class="route" id="process" aria-labelledby="route-title">
   <div class="wrap">
     <h2 class="h2 rv" id="route-title">One engineer, from requirements to maintenance.</h2>
-    <p class="lede rv">Two apps solo. Four more in a team of two.</p>
+    <p class="lede rv">Two apps solo. Four more in a team of two. The same five steps every time.</p>
     <ol class="route-list" aria-label="Process, five steps">
       <li class="rt-rail" role="presentation" aria-hidden="true"><span class="rt-line"><i class="rt-fill"></i></span><span class="rt-node" style="--i:0"></span><span class="rt-node" style="--i:1"></span><span class="rt-node" style="--i:2"></span><span class="rt-node" style="--i:3"></span><span class="rt-node" style="--i:4"></span><span class="rt-travel"><i class="rt-dot"></i></span></li>
       <li style="--i:0"><div class="rt-tile t-plan"><div class="v-fan"><img src="/assets/shots/kor-1.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/kor-2.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/kor-3.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"></div></div><div class="rt-copy"><h3>Plan</h3><p>Scoped JIFFL, a large two-sided UK app. Planned Keys On Rent with one other developer.</p></div></li>
@@ -303,7 +346,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <section class="web" id="web">
   <div class="wrap web-intro">
     <h2 class="h2 rv">I also ship the web.</h2>
-    <p class="lede rv">Next.js sites, dashboards and a full online store.</p>
+    <p class="lede rv">The website and admin dashboard beside Zonesso, and a complete online store I built end to end.</p>
   </div>
   <div class="pin pin-3 web-scene">
     <div class="stage">
@@ -364,7 +407,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
     <article class="mw" style="--glow:rgba(250,214,70,.24)">
       <div class="mw-copy">
         <div class="mw-id"><img src="/assets/shots/icon-jiffl.webp" alt="" width="64" height="64"><h3>JIFFL</h3></div>
-        <p>A large UK hiring app with two sides: employers and job seekers. Two-person team, and I led it.</p>
+        <p>A large UK hiring app with two sides: employers and job seekers. Two-person team, and I led it.</p><dl class="mw-facts"><div><dt>Problem</dt><dd>Two audiences with different flows had to live in one app, on a UK stakeholder timeline.</dd></div><div><dt>What I did</dt><dd>Owned stakeholder communication, wrote the execution plan and managed timelines. Ran code reviews and mentored junior React Native developers.</dd></div><div><dt>Result</dt><dd>On-schedule releases, job-seeker engagement up about 30%, app size down 15%.</dd></div></dl>
         <div class="cl-links"><a class="tlink" href="/work/jiffl" aria-label="JIFFL case study">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a><a class="tlink" href="https://play.google.com/store/apps/details?id=com.the.partimer" rel="noopener" aria-label="JIFFL on Google Play">Google Play <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
       </div>
       <div class="mw-vis"><div class="mw-glow" aria-hidden="true"></div>
@@ -377,7 +420,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
     <article class="mw flip" style="--glow:rgba(130,110,210,.3)">
       <div class="mw-copy">
         <div class="mw-id"><img src="/assets/shots/icon-qplease.webp" alt="" width="64" height="64"><h3>QPlease</h3></div>
-        <p>A UK queue app: scan a QR code, join a virtual queue. I built the mobile app solo.</p>
+        <p>A UK queue app: scan a QR code, join a virtual queue. I built the mobile app solo.</p><dl class="mw-facts"><div><dt>Problem</dt><dd>People stand in physical queues with no idea when their turn comes.</dd></div><div><dt>What I did</dt><dd>Built the whole iOS and Android app alone: QR scan, service choice, joining a queue, live status and notifications.</dd></div><div><dt>Result</dt><dd>Live on the App Store and Google Play, beside the QPlease web platform.</dd></div></dl>
         <div class="cl-links"><a class="tlink" href="/work/qplease" aria-label="QPlease case study">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a><a class="tlink" href="https://play.google.com/store/apps/details?id=com.concorde.qplease" rel="noopener" aria-label="QPlease on Google Play">Google Play <span class="arrow" aria-hidden="true">&#8599;</span></a><a class="tlink" href="https://apps.apple.com/us/app/qplease/id1659993355" rel="noopener" aria-label="QPlease on the App Store">App Store <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
       </div>
       <div class="mw-vis"><div class="mw-glow" aria-hidden="true"></div>
@@ -390,7 +433,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
     <article class="mw" style="--glow:rgba(110,160,255,.24)">
       <div class="mw-copy">
         <div class="mw-id"><img src="/assets/shots/icon-cone.webp" alt="" width="64" height="64"><h3>Cone</h3></div>
-        <p>The mobile app for a work-management product for accounting firms. Two of us built it: I did Auth0, e-signatures, payments and chat.</p>
+        <p>The mobile app for a work-management product for accounting firms. Two of us built it: I did Auth0, e-signatures, payments and chat.</p><dl class="mw-facts"><div><dt>Problem</dt><dd>Clients and accountants exchange tax documents, signatures and payments, and need to trust every step.</dd></div><div><dt>What I did</dt><dd>Built Auth0 sign-in, document editing and e-signatures, PDF generation, payments and client-to-accountant messaging.</dd></div><div><dt>Result</dt><dd>Delivered as a private client product, with no public store listing.</dd></div></dl>
         <div class="cl-links"><a class="tlink" href="/work/cone" aria-label="Cone case study">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a><a class="tlink" href="https://www.getcone.io/" rel="noopener" aria-label="Cone website">getcone.io <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
         <span class="art-note">Private client product. No store listing.</span>
       </div>
@@ -411,6 +454,11 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
       <a class="tlink" href="https://www.linkedin.com/in/arfat-rozewale/" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">&#8599;</span></a>
     </div>
     <p class="contact-note rv">Sole mobile engineer at Zonesso. Based in India, open to relocating anywhere.</p>
+    <div class="engage rv">
+      <div><span class="mono">First week</span><p>I read the brief, the code and the release process, then write down what I found and what I would do first.</p></div>
+      <div><span class="mono">First month</span><p>I ship one small, real change to production, so the pipeline and the way we work are proven before the big work starts.</p></div>
+      <div><span class="mono">After that</span><p>I own a product area end to end: plan, build, release and maintain, and review and mentor as I go.</p></div>
+    </div>
   </div>
 </section>
 
