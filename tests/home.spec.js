@@ -28,7 +28,7 @@ test.describe('adaptive hero', () => {
     const founderAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
 
     await page.getByRole('tab', { name: 'Engineer' }).click();
-    await expect(page.locator('#h1-line')).toContainText('stay fast');
+    await expect(page.locator('#h1-line')).toContainText('Clean state');
     await page.waitForTimeout(500);
     await expect(page.locator('.chip').nth(3)).toHaveText('Releases are one command');
     await expect(page.locator('#cta-label')).toHaveText('See the teardown');

@@ -1630,3 +1630,34 @@ html.static .pf-cap span:first-child{opacity:1}
   .hero-copy,.hstage{min-width:0;max-width:100%}
   .chips{min-width:0;max-width:100%;width:100%}
 }
+
+/* Round 7: Teardown clear of the heading, readable chips and titles */
+@media (min-width:1021px){
+  .td-scene{--sx:15vw;--sy:12vh}
+  .td-fit{--s:.54}
+  .plate{--gap:190px}
+  @keyframes dolly{from{scale:calc(var(--s) * 1.25)}to{scale:calc(var(--s) * 1)}}
+  @keyframes lift{0%,100%{translate:0 0 0}14%,86%{translate:0 0 44px}}
+  @keyframes lift-lead{0%,86%{translate:0 0 44px}100%{translate:0 0 0}}
+  @keyframes lift-tail{0%{translate:0 0 0}14%,100%{translate:0 0 44px}}
+}
+@media (min-width:1021px) and (max-width:1300px){.td-fit{--s:.46}.td-scene{--sx:12vw;--sy:10vh}}
+.plate li{font-size:15px;padding:5px 11px}
+.plate .tag{font-size:14px}
+.plate .big{font-size:32px}
+@media (min-width:1301px){.td-fit{--s:.49}.td-scene{--sx:14vw;--sy:7vh}}
+
+
+/* Round 7: equal-weight proof, product caption above the phone on phones */
+.chip:first-child{border-color:var(--line);font-weight:400;font-size:.9rem}
+@media (min-width:901px){.chip:first-child{font-size:.9rem}}
+@media (max-width:900px){
+  .pf-col{flex-direction:column-reverse;gap:12px}
+  .pf-cap::before{display:none}
+  .hero{padding-top:calc(var(--nav) + 14px)}
+  .hero-sub{margin-top:12px}
+  .hero-cta{margin-top:18px}
+  .who{margin-top:20px}
+  .hstage{gap:12px}
+}
+@media (min-width:901px){.scroll-cue{left:var(--edge);translate:0 0}}

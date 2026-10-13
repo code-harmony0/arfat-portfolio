@@ -131,3 +131,9 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 ## Final five fixes (2026-10-13)
 - Teardown: plates spaced 178px apart, stack starts zoomed in and settles, pin shortened (270svh). Each layer caption now opens with a plain-language line ("Pages load fast and stay correct when something changes", "Buyers pay however they like, in one checkout"...), the technical sentence follows. [ ] Check those six lines say what you would say.
 - Hero: your name is a small label, the role line leads; the phone caption now names "Zonesso"; the switch label reads "Tailor this for". On phones the proof facts scroll in a strip above the phone.
+
+## Round 7 fixes (2026-10-13)
+- Teardown: stack moved right and smaller so it clears the heading and every plate title reads at 1100, 1440 and 1676 px; plate chips are 15px before tilt.
+- Hero: all four proof chips have equal weight; the sub line no longer repeats "7 shipped"; the Engineer tab keeps the role ("Senior mobile engineer. Clean state. One checkout."); the Founder tab sub line now says you are a senior mobile engineer, and its last chip reads "I plan, build and release it" (CV wording). [ ] Confirm that chip.
+- Phone: the "Zonesso" caption now sits above the phone so the product is named on the first screen.
+- Not done: the hero glow still changes colour per reader (amber, vermilion, blue); a GitHub or resume link still does not exist; the Teardown still pins for about 2,430px.
