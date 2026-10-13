@@ -35,7 +35,7 @@
   --fs-lead:clamp(1.05rem,1.3vw,1.2rem);     /* scene body copy */
   --fs-h3:clamp(1.8rem,3.2vw,3rem);         /* sub-section title */
   --fs-sec:clamp(2rem,4.2vw,3.9rem);        /* section heading, every chapter */
-  --pin-h:240svh;                           /* every product scene scrolls the same distance */
+  --pin-h:190svh;                           /* every product scene scrolls the same distance */
   --nav:64px;
   --gut:clamp(20px,4.2vw,64px);
   --max:1360px;
