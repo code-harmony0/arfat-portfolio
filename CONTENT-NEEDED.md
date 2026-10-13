@@ -93,3 +93,10 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - Home page cut from 22,400px to about 12,300px desktop. Removed from the home page: the pinned Zonesso, Keys On Rent and Eco Crew scenes with the Keys On Rent and Eco Crew story bands, and both pinned web scenes. Their copy and stats still live on the case pages (work/*). The Zonesso numbers band stays after the Teardown. The unused CSS for removed scenes is still in style.css.
 - [ ] Problems table: rows 3 and 4 were expanded with plain-language lines taken from commits and the case page ("Apple's review rejected a build", "react-native-iap v13"). Confirm the wording is how you would tell it.
 - [ ] Admin panel tile is now a labelled wireframe (abstract bars, no data). Replace it with a real screenshot with fake data when you have one.
+
+## Hero wall and icon shelf (2026-10-13)
+- Hero: the 3D phones and three.js (about 790 KB) are gone. The hero is now a flat wall of real app screens drifting in three columns, plus the headline, one line and two buttons. The Shipped / Decides / Owns / Solves rows were removed from the hero.
+- Shipped: the six text-heavy cards became an icon shelf plus one big screen (auto-advances every 6 s until touched). Per-project Problem / What I did / Result rows are gone from the home page; the case pages and the Problems table carry them.
+- [ ] JIFFL and QPlease now show their store-listing screens (jiffl-3/4, qplease-3/4) instead of Mantiqh thumbnails. Only My Phone Book still uses a Mantiqh thumbnail (no other art exists). Its shelf icon is a crop of that thumbnail.
+- [ ] A short screen recording per app would let the wall and shelf play real motion instead of crossfading stills.
+- Removed the tech ticker (it repeated the Teardown and ghosted through the header).

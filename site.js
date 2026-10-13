@@ -132,4 +132,53 @@
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, legacy); else legacy();
     });
   });
+
+  /* Shelf: six app icons, one big screen. Tabs with arrow keys; auto-advances until the visitor touches it. */
+  document.querySelectorAll('.shelf').forEach(function (shelf) {
+    var tabs = [].slice.call(shelf.querySelectorAll('[role="tab"]'));
+    var panels = [].slice.call(shelf.querySelectorAll('[role="tabpanel"]'));
+    if (!tabs.length) return;
+    shelf.classList.add('js');
+    var DWELL = 6000, timer = 0, idx = 0, stopped = false, shown = false;
+    var auto = !still && 'IntersectionObserver' in window;
+    shelf.style.setProperty('--dwell', DWELL + 'ms');
+    function show(i, focus) {
+      idx = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, k) {
+        var on = k === idx;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        panels[k].hidden = !on;
+        panels[k].classList.toggle('enter', on && shown);
+      });
+      shown = true;
+      if (focus) tabs[idx].focus();
+      var row = tabs[idx].parentNode;
+      if (row.scrollWidth > row.clientWidth) row.scrollTo({ left: tabs[idx].offsetLeft - 16, behavior: still ? 'auto' : 'smooth' });
+      if (auto && !stopped) schedule();
+    }
+    function schedule() {
+      clearTimeout(timer);
+      shelf.setAttribute('data-auto', 'on');
+      timer = setTimeout(function () { show(idx + 1); }, DWELL);
+    }
+    function stop() { stopped = true; clearTimeout(timer); shelf.removeAttribute('data-auto'); }
+    tabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { stop(); show(k); });
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (e.key === 'Home') { e.preventDefault(); stop(); show(0, true); }
+        else if (e.key === 'End') { e.preventDefault(); stop(); show(tabs.length - 1, true); }
+        else if (d) { e.preventDefault(); stop(); show(idx + d, true); }
+      });
+    });
+    shelf.addEventListener('pointerenter', function () { if (auto && !stopped) { clearTimeout(timer); shelf.removeAttribute('data-auto'); } });
+    shelf.addEventListener('pointerleave', function () { if (auto && !stopped) schedule(); });
+    if (auto) {
+      new IntersectionObserver(function (es) {
+        if (stopped) return;
+        if (es[0].isIntersecting) schedule(); else { clearTimeout(timer); shelf.removeAttribute('data-auto'); }
+      }, { threshold: 0.35 }).observe(shelf);
+    }
+  });
 })();
