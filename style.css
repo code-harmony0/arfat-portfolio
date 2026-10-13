@@ -1307,3 +1307,8 @@ html:not(.static) .ship img{animation:ship-in linear both;animation-timeline:vie
 .foot a{display:inline-block;padding:10px 0}
 .cases-foot a{display:inline-block;padding:8px 0 6px}
 .contact-row{align-items:center}
+
+/* Eco Crew: keep the note and button clear of the phone fan on wide screens */
+@media (min-width:1021px){
+  html:not(.static) .eco-links{top:calc(var(--nav) + 44px);bottom:auto;left:auto;right:var(--edge);align-items:flex-end}
+}
