@@ -122,3 +122,8 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 ## Callouts and phone reel (2026-10-13, critique steps 2 and 3 in part)
 - The hero phone now cycles four clean Zonesso screens (listings, filter, favourites, post an ad). `zonesso-ui-6` (notifications) is a broken collage with a zoomed overlay stuck on top, and `zonesso-ui-5` is unreviewed, so neither is used. Re-capture the notifications screen if you want it back.
 - A caption under the phone follows the current screen ("Browse the whole market", "Filter down to the exact car", "Save cars, one tap away", "Post a car, step by step"). The proof facts are a plain list with no pointer lines.
+
+## Distill pass (2026-10-13)
+- The five-item store strip is gone; each shelf panel now has its App Store / Google Play buttons. Keys On Rent's Play button links the tenant app (com.keysonrent.tenant); the KOR Manager app (com.keysonrent.manager) is no longer linked from the home page.
+- The grey admin-panel wireframe tile was removed (the Web section is two tiles). The lede still says "with the admin panel behind it". [ ] Send a redacted or fake-data admin screenshot and I will add it back as a real tile.
+- "Sole mobile engineer" no longer appears in the contact note or the numbers band; it stays in the hero (hiring reader) and the Zonesso shelf panel.

@@ -102,6 +102,17 @@ test.describe('icon shelf', () => {
   });
 });
 
+test.describe('store links', () => {
+  test('each live product has its store links inside its shelf panel, and no separate proof strip', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('section.proof')).toHaveCount(0);
+    for (const [id, n] of [['zonesso', 2], ['kor', 2], ['eco', 2], ['qplease', 2], ['jiffl', 1]]) {
+      await expect(page.locator(`#panel-${id} .sp-stores a`)).toHaveCount(n);
+    }
+    await expect(page.locator('#panel-cone .sp-stores')).toHaveCount(0);
+  });
+});
+
 test.describe('page structure', () => {
   test('keeps the home page focused and marks the section in view', async ({ page }) => {
     await page.goto('/');

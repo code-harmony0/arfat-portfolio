@@ -84,7 +84,6 @@ body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opa
 @media (pointer:coarse){
   .nav .btn,.menu-btn,.menu .menu-close{min-height:44px}
   .tlink{min-height:44px;align-items:center}
-  .proof-links a{min-height:44px;display:inline-flex;align-items:center;padding:0}
   .brand{padding:10px 0}
   .foot a{padding:12px 0;display:inline-block}
   .mail{padding-block:8px}
@@ -149,16 +148,6 @@ html:not(.static) .hero-cta{animation:rise .9s var(--ease) .45s both}
 @keyframes line-up{from{clip-path:inset(0 0 100% 0);translate:0 55%}to{clip-path:inset(0 0 -10% 0)}}
 @keyframes rise{from{opacity:0;translate:0 24px}}
 @keyframes phone-in{from{opacity:0;translate:0 22vh}}
-
-/* ---------- Store proof strip ---------- */
-.proof{border-block:1px solid var(--line2);background:var(--bg)}
-.proof .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
-.proof-item{padding:28px 24px 28px 0;display:flex;flex-direction:column;gap:10px}
-.proof-item + .proof-item{padding-left:24px;border-left:1px solid var(--line2)}
-.proof-name{font-size:1.15rem;font-weight:600;letter-spacing:-.02em}
-.proof-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:.78rem;color:var(--mut)}
-.proof-links a{border-bottom:1px solid var(--line);padding:7px 0 5px;transition:color .2s,border-color .2s}
-.proof-links a:hover{color:var(--sig);border-color:var(--sig)}
 
 /* ==========================================================================
    Scroll scenes
@@ -337,7 +326,6 @@ html:not(.static) .zs-count i::after{animation:fill linear both;animation-timeli
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .stats-3{grid-template-columns:repeat(3,1fr)}
 .stats-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:clamp(28px,4vw,48px)}
-.role-chip{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 15px}
 .num b{display:block;font-variant-numeric:tabular-nums;font-size:clamp(2.6rem,6vw,5.6rem);font-weight:600;letter-spacing:-.06em;line-height:.9}
 .num b::before{counter-reset:num var(--n);content:counter(num) / ""}
 .num b.t::before{content:none}
@@ -631,7 +619,7 @@ html:not(.static) .pg img{animation:pg-pan linear both;animation-timeline:--pin;
 
 /* Scroll reveal (opacity + translate, compositor) */
 html:not(.static) .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 42%}
-@keyframes rv{from{opacity:0;translate:0 38px}}
+@keyframes rv{from{opacity:.82;translate:0 38px}}
 
 /* ==========================================================================
    Case study pages
@@ -744,8 +732,6 @@ html:not(.static) .glance{animation:rise var(--t-slow) var(--ease) .45s both}
 .wt-frame{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:var(--bg3);position:relative}
 .wt-frame img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform var(--t-slow) var(--ease)}
 a.wt:hover .wt-frame img{transform:scale(1.04)}
-.wt-text .wt-frame{display:grid;place-items:center}
-.wt-text .wt-frame i{font:normal .8rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
 .wt b{margin-top:6px;font-size:1.2rem;font-weight:600;letter-spacing:-.03em}
 .wt > span:last-child{color:var(--mut-hi);font-size:.97rem;text-wrap:pretty}
 @media (max-width:1020px){.ship-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.web-tiles{grid-template-columns:1fr}}
@@ -935,7 +921,6 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .hero-sub{max-width:28ch}
   .hero-cta{gap:10px}
   .hero-cta .btn{padding:0 1.15em;font-size:.92rem}
-  .proof .wrap{grid-template-columns:1fr 1fr}
   .prod-head{grid-template-columns:1fr}
   .shot{height:min(66svh,560px)}
   .stats{grid-template-columns:1fr 1fr}
@@ -1097,11 +1082,6 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .nav-end{gap:8px}
   .brand{font-size:.95rem}
   .nav .btn,.menu-btn{padding:0 .9em;font-size:.86rem}
-  .proof .wrap{grid-template-columns:1fr 1fr}
-  .proof-item{padding:16px 12px 16px 0}
-  .proof-item:nth-child(even){padding-left:14px;border-left:1px solid var(--line2)}
-  .proof-item:nth-child(odd){padding-left:0;border-left:0}
-  .proof-links{gap:2px 12px}
   .cs-strip{overflow-x:auto;justify-content:flex-start}
   .cs-strip .phone{--w:min(52vw,220px)}
   .cs-meta,.cs-nums,.nums{grid-template-columns:1fr 1fr}
@@ -1121,11 +1101,6 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
 /* per-card captions and the swipe position bar only exist on phones */
 .lc,.row-pos{display:none}
 @media (max-width:700px){
-  /* store proof: swipe row of app cards */
-  html:not(.static) .proof .wrap{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-block:16px;scrollbar-width:none}
-  html:not(.static) .proof .wrap::-webkit-scrollbar{display:none}
-  html:not(.static) .proof .wrap .proof-item{flex:none;min-width:158px;padding:14px 16px;gap:8px;border:1px solid var(--line2);border-radius:14px;background:var(--bg2);scroll-snap-align:start}
-  html:not(.static) .proof .wrap .proof-item + .proof-item{border-top:1px solid var(--line2);border-left:1px solid var(--line2)}
 
   /* shorter pinned scenes */
   html:not(.static) .pin-4.td{height:240svh}
@@ -1295,13 +1270,9 @@ html:not(.static) .ship img{animation:ship-in linear both;animation-timeline:vie
 
 /* Critique pass: proof strip icons, plain-first problem rows, wireframe tile, readable labels */
 .hero{min-height:calc(100svh - 150px)}
-.proof-head{display:flex;align-items:center;gap:12px}
-.proof-ico{width:36px;height:36px;border-radius:9px;box-shadow:0 0 0 1px var(--line);flex:none}
-.proof-by{font:.72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
 .case .tech{display:block;margin-top:6px;font-size:.88rem;color:var(--faint)}
 .case p:last-child .tech{color:var(--mut)}
 .case-head,.ship dt,.ship::before,.case h3 small{font-size:.8rem}
-.wt-text .wt-frame svg{width:100%;height:100%;display:block}
 .ad-side{fill:var(--bg2)}.ad-bar{fill:var(--line)}.ad-box{fill:var(--bg2);stroke:var(--line);stroke-width:1}.ad-row{fill:var(--line2)}
 .nav .brand{margin-right:auto}
 .zs-proof{border-top:1px solid var(--line2)}
@@ -1609,3 +1580,10 @@ html.static .pf-cap span:first-child{opacity:1}
 .scroll-cue i{flex:1;min-height:30px}
 #tab-cone img,#tab-phonebook img{opacity:.85;box-shadow:0 0 0 1px rgba(236,235,230,.34)}
 #tab-cone[aria-selected="true"] img,#tab-phonebook[aria-selected="true"] img{opacity:1;box-shadow:0 0 0 2px var(--sig)}
+
+/* store links live in each shelf panel; two web tiles */
+.sp-stores{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:20px}
+.sp-stores a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;color:var(--ink);transition:border-color var(--t-fast),color var(--t-fast)}
+.sp-stores a:hover{border-color:var(--sig);color:var(--sig)}
+.sp-stores + .sp-link{margin-top:16px}
+@media (min-width:1021px){.web-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
