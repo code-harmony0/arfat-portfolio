@@ -137,3 +137,9 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - Hero: all four proof chips have equal weight; the sub line no longer repeats "7 shipped"; the Engineer tab keeps the role ("Senior mobile engineer. Clean state. One checkout."); the Founder tab sub line now says you are a senior mobile engineer, and its last chip reads "I plan, build and release it" (CV wording). [ ] Confirm that chip.
 - Phone: the "Zonesso" caption now sits above the phone so the product is named on the first screen.
 - Not done: the hero glow still changes colour per reader (amber, vermilion, blue); a GitHub or resume link still does not exist; the Teardown still pins for about 2,430px.
+
+## Round 8: motion (2026-10-13)
+- The hero phone now cycles through all five store apps by itself (5 s each): Zonesso, Keys On Rent, Eco Crew, QPlease, JIFFL. For the four Mantiqh apps it shows their App Store listing posters inside the phone (the only screens available), not raw captures. [ ] Send raw screenshots or a short recording of each app and I will swap them in so the phone shows the real app.
+- The hero card under the phone names the app, has a "Case study" button and five app buttons; hovering pauses it, clicking an app jumps to it.
+- The "Tailor this for" reader switch auto-cycles every 9 s until someone clicks a tab (it pauses on hover). This reverses the earlier "no auto-cycle" decision at your request.
+- "What I shipped" advances every 5.5 s while in view and resumes 12 s after a click; each panel has a large "See the full case study" button and the pictures link to the case study too.

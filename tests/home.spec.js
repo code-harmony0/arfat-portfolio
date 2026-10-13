@@ -37,10 +37,23 @@ test.describe('adaptive hero', () => {
     expect(engAccent).not.toBe(founderAccent);
   });
 
-  test('does not rewrite itself: no auto-cycle', async ({ page }) => {
+  test('auto-cycles the reader until a tab is clicked', async ({ page }) => {
     await page.goto('/');
-    await page.waitForTimeout(9500);
-    await expect(page.locator('html')).toHaveAttribute('data-who', 'hiring');
+    await page.mouse.move(5, 5);
+    await expect(page.locator('html')).not.toHaveAttribute('data-who', 'hiring', { timeout: 14000 });
+    await page.getByRole('tab', { name: 'Engineer' }).click();
+    await page.waitForTimeout(10500);
+    await expect(page.locator('html')).toHaveAttribute('data-who', 'eng');
+  });
+
+  test('the hero phone cycles through every app and links to its case study', async ({ page }) => {
+    await page.goto('/');
+    await page.mouse.move(5, 5);
+    await expect(page.locator('#pn-name')).toHaveText('Zonesso');
+    await expect(page.locator('#pn-name')).not.toHaveText('Zonesso', { timeout: 9000 });
+    await page.locator('.pn-dot').nth(2).click();
+    await expect(page.locator('#pn-name')).toHaveText('Eco Crew');
+    await expect(page.locator('#pn-link')).toHaveAttribute('href', '/work/eco-crew');
   });
 
   test('keyboard arrows switch the reader', async ({ page }) => {

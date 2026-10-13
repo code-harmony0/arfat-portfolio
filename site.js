@@ -139,7 +139,7 @@
     var panels = [].slice.call(shelf.querySelectorAll('[role="tabpanel"]'));
     if (!tabs.length) return;
     shelf.classList.add('js');
-    var DWELL = 6000, timer = 0, idx = 0, stopped = false, shown = false;
+    var DWELL = 5500, timer = 0, idx = 0, stopped = false, shown = false;
     var auto = !still && 'IntersectionObserver' in window;
     shelf.style.setProperty('--dwell', DWELL + 'ms');
     function show(i, focus) {
@@ -162,7 +162,8 @@
       shelf.setAttribute('data-auto', 'on');
       timer = setTimeout(function () { show(idx + 1); }, DWELL);
     }
-    function stop() { stopped = true; clearTimeout(timer); shelf.removeAttribute('data-auto'); }
+    var resumeT = 0;
+    function stop() { clearTimeout(timer); shelf.removeAttribute('data-auto'); clearTimeout(resumeT); if (auto) resumeT = setTimeout(function () { stopped = false; schedule(); }, 12000); stopped = true; }
     tabs.forEach(function (t, k) {
       t.addEventListener('click', function () { stop(); show(k); });
       t.addEventListener('keydown', function (e) {
@@ -215,6 +216,11 @@
         setTimeout(function () { line.textContent = c.sub; line.classList.remove('swap'); writeChips(c); }, 260);
       } else { h1l.innerHTML = c.h1.split('|').join('<br>'); line.textContent = c.sub; writeChips(c); }
     }
+    function schedule() {
+      clearTimeout(timer);
+      if (userPicked || still) return;
+      timer = setTimeout(function () { set(ORDER[(ORDER.indexOf(current) + 1) % ORDER.length], true); schedule(); }, 9000);
+    }
     function set(k, animate) { if (k === current && animate) return; current = k; apply(k, animate); try { if (userPicked) localStorage.setItem('who', k); } catch (e) {} }
     tabs.forEach(function (t, i) {
       t.addEventListener('click', function () { userPicked = true; clearTimeout(timer); set(t.getAttribute('data-who'), true); });
@@ -226,7 +232,9 @@
     });
     var saved = null; try { saved = localStorage.getItem('who'); } catch (e) {}
     if (saved && COPY[saved]) { userPicked = true; current = saved; apply(saved, false); }
-    else { apply(current, false); }
+    else { apply(current, false); schedule(); }
+    hero.addEventListener('pointerenter', function () { clearTimeout(timer); });
+    hero.addEventListener('pointerleave', schedule);
     function sync() { var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0]; if (on) place(on); }
     addEventListener('resize', sync);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
@@ -277,5 +285,29 @@
       }, { passive: true });
       shelf.addEventListener('pointerleave', function () { shelf.style.setProperty('--sx', 0); });
     }
+  })();
+
+  /* Hero phone: cycles through every app by itself, card shows the app and links to its case study. */
+  (function () {
+    var col = document.querySelector('.pf-col'), now = document.getElementById('pf-now');
+    if (!col || !now) return;
+    var imgs = [].slice.call(col.querySelectorAll('.pf-img')), dots = [].slice.call(col.querySelectorAll('.pn-dot'));
+    var name = document.getElementById('pn-name'), line = document.getElementById('pn-line'), ico = document.getElementById('pn-ico'), link = document.getElementById('pn-link');
+    var DWELL = 5000, i = 0, timer = 0, hovering = false;
+    col.style.setProperty('--pn-dwell', DWELL + 'ms');
+    function show(n) {
+      i = (n + imgs.length) % imgs.length;
+      var d = now.getAttribute('data-app' + i).split('|');
+      imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); });
+      dots.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+      name.textContent = d[0]; line.textContent = d[1]; link.setAttribute('href', d[2]); ico.setAttribute('src', '/assets/shots/' + d[3] + '.webp');
+      link.setAttribute('aria-label', d[0] + ' case study');
+    }
+    function tick() { clearTimeout(timer); if (still || hovering) return; col.classList.add('auto'); timer = setTimeout(function () { show(i + 1); tick(); }, DWELL); }
+    dots.forEach(function (b) { b.addEventListener('click', function () { show(parseInt(b.getAttribute('data-i'), 10)); col.classList.remove('auto'); void col.offsetWidth; tick(); }); });
+    col.addEventListener('pointerenter', function () { hovering = true; clearTimeout(timer); col.classList.remove('auto'); });
+    col.addEventListener('pointerleave', function () { hovering = false; tick(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (es[0].isIntersecting) tick(); else { clearTimeout(timer); col.classList.remove('auto'); } }, { threshold: 0.3 }).observe(col);
+    else tick();
   })();
 })();
