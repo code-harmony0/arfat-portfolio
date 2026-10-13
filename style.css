@@ -1481,3 +1481,14 @@ a.wt:hover .wt-frame::after{opacity:1}
 .who-pill{inset:4px;left:4px;right:4px;top:4px;bottom:4px;width:auto;height:auto;transform:none;border-radius:999px;
   clip-path:inset(0 calc(100% - var(--l,0px) - var(--w,0px)) 0 var(--l,0px) round 999px);transition:clip-path .5s var(--ease)}
 @media (max-width:900px){.who-label{display:none}.who{flex-wrap:nowrap;border-radius:999px}}
+
+/* Hero layout fix: the text column always stops before the wall; screens keep their own proportions; soft left edge */
+@media (min-width:901px){
+  .hero-copy{padding-right:calc(min(38vw,540px) + 88px)}
+  .hero h1 .dim{max-width:none}
+}
+.wall-shot{aspect-ratio:610/1110}
+.wall{
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(90deg,transparent 0,#000 22%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(90deg,transparent 0,#000 22%);
+  -webkit-mask-composite:source-in;mask-composite:intersect}
