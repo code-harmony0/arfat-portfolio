@@ -189,7 +189,7 @@
     var COPY = {
       founder: { h1: 'Your idea,|live in both stores.', sub: 'I take an app from brief to App Store and Google Play, then keep it running.',
         chips: ['Live on both stores', '50,000+ downloads on one app', '3 apps in 3\u20134 months', 'Alone or in a small team'], cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
-      hiring: { h1: 'Senior mobile engineer.|Owns it end to end.', sub: 'I build React Native apps and web stores. Open to relocating anywhere.',
+      hiring: { h1: 'Senior mobile engineer.|Owns it end to end.', sub: 'I build iPhone and Android apps, and web stores. 7 shipped, 5 live on the App Store and Google Play.',
         chips: ['7 products shipped', 'Sole mobile engineer at Zonesso', 'Led a team of two on JIFFL', 'Open to relocating anywhere'], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
       eng: { h1: 'Apps that stay fast|and easy to change.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases as one command.',
         chips: ['39% less code after a rebuild', 'Server state kept apart', '5 payment methods, 1 checkout', 'Releases are one command'], cta: 'See the teardown', href: '#teardown' }
