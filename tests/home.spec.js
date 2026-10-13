@@ -39,10 +39,10 @@ test.describe('hero wall', () => {
 });
 
 test.describe('icon shelf', () => {
-  test('has six tabs and swaps the big screen on click', async ({ page }) => {
+  test('has seven tabs and swaps the big screen on click', async ({ page }) => {
     await page.goto('/');
     const tabs = page.locator('.shelf [role="tab"]');
-    await expect(tabs).toHaveCount(6);
+    await expect(tabs).toHaveCount(7);
     await tabs.nth(2).click();
     await expect(page.locator('#panel-eco')).toBeVisible();
     await expect(page.locator('#panel-zonesso')).toBeHidden();
@@ -62,10 +62,43 @@ test.describe('icon shelf', () => {
   test('every case-study link in the shelf resolves', async ({ page, request }) => {
     await page.goto('/');
     const hrefs = await page.locator('.shelf .sp-link').evaluateAll((els) => els.map((e) => e.getAttribute('href')));
-    expect(hrefs.length).toBe(5);
+    expect(hrefs.length).toBe(6);
     for (const h of hrefs) {
       const res = await request.get(h + '/');
       expect(res.status(), h).toBe(200);
     }
+  });
+});
+
+test.describe('hero persona switch', () => {
+  test('changes the line and the selected tab, keyboard included', async ({ page }) => {
+    await page.goto('/');
+    const line = page.locator('#who-line');
+    const before = await line.textContent();
+    await page.getByRole('tab', { name: 'Hiring manager' }).click();
+    await expect(line).toContainText('Senior React Native engineer');
+    expect(await line.textContent()).not.toBe(before);
+    await page.getByRole('tab', { name: 'Hiring manager' }).focus();
+    await page.keyboard.press('ArrowRight');
+    await expect(page.getByRole('tab', { name: 'Engineer' })).toHaveAttribute('aria-selected', 'true');
+    await expect(line).toContainText('Server state');
+  });
+
+  test('numbers land on their real values', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForTimeout(2200);
+    await expect(page.locator('.hero-nums b').nth(1)).toHaveText('50,000+');
+    await expect(page.locator('.hero-nums b').nth(2)).toHaveText('39%');
+  });
+});
+
+test.describe('page structure', () => {
+  test('keeps the home page focused and marks the section in view', async ({ page }) => {
+    await page.goto('/');
+    const ids = await page.locator('main > section').evaluateAll((els) => els.map((e) => e.id).filter(Boolean));
+    expect(ids).toEqual(['top', 'shipped', 'web', 'cases', 'teardown', 'mobile', 'contact']);
+    await page.locator('#web').scrollIntoViewIfNeeded();
+    await page.evaluate(() => document.querySelector('#web').scrollIntoView());
+    await expect(page.locator('.nav-links a[aria-current="true"]')).toHaveText('Web');
   });
 });

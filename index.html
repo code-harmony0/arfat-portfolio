@@ -46,12 +46,10 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
   <nav id="menu" class="menu" data-lenis-prevent popover aria-label="Sections">
     <button class="menu-close" type="button" popovertarget="menu" popovertargetaction="hide">Close</button>
-    <a href="#shipped">Shipped <span>six products people use</span></a>
+    <a href="#shipped">Shipped <span>problem, approach, result</span></a>
     <a href="#web">Web <span>sites and commerce</span></a>
     <a href="#cases">Problems <span>found, fixed, shipped</span></a>
     <a href="#teardown">Teardown <span>one app, taken apart</span></a>
-    <a href="#process">Process <span>plan to ship</span></a>
-    <a href="#client">Also built <span>Cone, a private client product</span></a>
     <a href="https://www.linkedin.com/in/arfat-rozewale/" rel="noopener">LinkedIn <span>full profile</span></a>
     <a href="mailto:arfathrozewale8@gmail.com">Email <span>arfathrozewale8@gmail.com</span></a>
   </nav>
@@ -63,7 +61,19 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <section class="hero" id="top">
   <div class="wrap hero-copy">
     <h1><span>Arfat Rozewale.</span><span class="dim">I build mobile apps and web stores.</span></h1>
-    <p class="hero-sub">Sole mobile engineer at Zonesso. Open to relocating anywhere.</p>
+    <div class="who" role="tablist" aria-label="Who is reading">
+      <span class="who-label" id="who-label">I'm a</span>
+      <button class="who-tab" role="tab" type="button" aria-selected="true" data-who="founder">Founder</button>
+      <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="hiring">Hiring manager</button>
+      <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="eng">Engineer</button>
+      <i class="who-pill" aria-hidden="true"></i>
+    </div>
+    <p class="hero-sub" id="who-line" aria-live="polite" data-founder="I take an idea from brief to both app stores, then keep it running. Alone or in a small team." data-hiring="Senior React Native engineer. Sole mobile owner at Zonesso. Open to relocating anywhere." data-eng="Server state kept apart from app state, five payment methods behind one checkout, releases that are one command.">I take an idea from brief to both app stores, then keep it running. Alone or in a small team.</p>
+    <div class="hero-nums">
+      <div><b data-count="7">7</b><span>products shipped</span></div>
+      <div><b data-count="50000" data-suffix="+">50,000+</b><span>downloads, one live app</span></div>
+      <div><b data-count="39" data-suffix="%">39%</b><span>less code after a rebuild</span></div>
+    </div>
     <div class="hero-cta">
       <a class="btn btn-sig" href="mailto:arfathrozewale8@gmail.com" data-magnet>Email me <span class="arrow" aria-hidden="true">&#8599;</span></a>
       <a class="btn btn-line" href="#shipped" data-magnet>See my work <span class="arrow" aria-hidden="true">&#8595;</span></a>
@@ -103,34 +113,108 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 </section>
 
 
-<!-- SHIPPED: icon shelf, one big screen at a time -->
+<!-- SHIPPED: the problem, the approach, the result, one product at a time -->
 <section class="shelf" id="shipped" aria-labelledby="shipped-title">
   <div class="wrap">
-    <h2 class="h2 rv" id="shipped-title">Six products people use.</h2>
-    <div class="shelf-row" role="tablist" aria-label="Products"><button class="shelf-tab" role="tab" id="tab-zonesso" aria-controls="panel-zonesso" aria-selected="true" tabindex="0" type="button"><img src="/assets/shots/icon-zonesso.webp" alt="" width="64" height="64" loading="lazy"><span>Zonesso</span></button><button class="shelf-tab" role="tab" id="tab-kor" aria-controls="panel-kor" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-kor.webp" alt="" width="64" height="64" loading="lazy"><span>Keys On Rent</span></button><button class="shelf-tab" role="tab" id="tab-eco" aria-controls="panel-eco" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-eco.webp" alt="" width="64" height="64" loading="lazy"><span>Eco Crew</span></button><button class="shelf-tab" role="tab" id="tab-qplease" aria-controls="panel-qplease" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-qplease.webp" alt="" width="64" height="64" loading="lazy"><span>QPlease</span></button><button class="shelf-tab" role="tab" id="tab-jiffl" aria-controls="panel-jiffl" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-jiffl.webp" alt="" width="64" height="64" loading="lazy"><span>JIFFL</span></button><button class="shelf-tab" role="tab" id="tab-phonebook" aria-controls="panel-phonebook" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/mq-phonebook.webp" alt="" width="64" height="64" loading="lazy"><span>My Phone Book</span></button></div>
+    <h2 class="h2 rv" id="shipped-title">What I shipped, and how.</h2>
+    <div class="shelf-row" role="tablist" aria-label="Products"><button class="shelf-tab" role="tab" id="tab-zonesso" aria-controls="panel-zonesso" aria-selected="true" tabindex="0" type="button"><img src="/assets/shots/icon-zonesso.webp" alt="" width="64" height="64" loading="lazy"><span>Zonesso</span></button><button class="shelf-tab" role="tab" id="tab-kor" aria-controls="panel-kor" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-kor.webp" alt="" width="64" height="64" loading="lazy"><span>Keys On Rent</span></button><button class="shelf-tab" role="tab" id="tab-eco" aria-controls="panel-eco" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-eco.webp" alt="" width="64" height="64" loading="lazy"><span>Eco Crew</span></button><button class="shelf-tab" role="tab" id="tab-qplease" aria-controls="panel-qplease" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-qplease.webp" alt="" width="64" height="64" loading="lazy"><span>QPlease</span></button><button class="shelf-tab" role="tab" id="tab-jiffl" aria-controls="panel-jiffl" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-jiffl.webp" alt="" width="64" height="64" loading="lazy"><span>JIFFL</span></button><button class="shelf-tab" role="tab" id="tab-cone" aria-controls="panel-cone" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/icon-cone.webp" alt="" width="64" height="64" loading="lazy"><span>Cone</span></button><button class="shelf-tab" role="tab" id="tab-phonebook" aria-controls="panel-phonebook" aria-selected="false" tabindex="-1" type="button"><img src="/assets/shots/mq-phonebook.webp" alt="" width="64" height="64" loading="lazy"><span>My Phone Book</span></button></div>
     <div class="shelf-panels">
       <div class="shelf-panel" role="tabpanel" id="panel-zonesso" aria-labelledby="tab-zonesso">
-        <div class="sp-copy"><h3 class="sp-name">Zonesso</h3><p class="sp-line">Buy and sell cars in Dubai.</p><p class="sp-by">Sole mobile engineer</p><p class="sp-result">Live on the App Store and Google Play.</p><a class="tlink sp-link" href="/work/zonesso">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">Zonesso</h3>
+          <p class="sp-line">Buy and sell cars in Dubai.</p>
+          <p class="sp-by">Sole mobile engineer</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>Buyers, sellers and five ways to pay all had to work in one app.</span></li>
+            <li><b>Approach</b><span>Server data and app state kept apart. Five payment methods behind one checkout. Every release a command.</span></li>
+            <li><b>Result</b><span>Live on both stores. 39% less code after the rebuild.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/zonesso">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
         <div class="sp-vis"><img src="/assets/shots/zonesso-ui-3.webp" alt="Zonesso listings and filters" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/zonesso-ui-4.webp" alt="Zonesso listings and filters" width="800" height="1422" loading="lazy" decoding="async"></div>
       </div>
       <div class="shelf-panel" role="tabpanel" id="panel-kor" aria-labelledby="tab-kor" hidden>
-        <div class="sp-copy"><h3 class="sp-name">Keys On Rent</h3><p class="sp-line">Rent a home from your phone.</p><p class="sp-by">Built at Mantiqh, team of two</p><p class="sp-result">Three apps, all live on both stores.</p><a class="tlink sp-link" href="/work/keys-on-rent">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">Keys On Rent</h3>
+          <p class="sp-line">Rent a home from your phone.</p>
+          <p class="sp-by">Built at Mantiqh, team of two</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>Tenants, landlords and building staff each needed their own app, on the same rental data.</span></li>
+            <li><b>Approach</b><span>Planned one app per role over a shared set of rental data, and split the build with one other developer.</span></li>
+            <li><b>Result</b><span>Three apps live on both stores in three to four months. Tenant app past 1,000 installs.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/keys-on-rent">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
         <div class="sp-vis"><img src="/assets/shots/kor-2.webp" alt="Keys On Rent tenant app" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/kor-3.webp" alt="Keys On Rent tenant app" width="800" height="1422" loading="lazy" decoding="async"></div>
       </div>
       <div class="shelf-panel" role="tabpanel" id="panel-eco" aria-labelledby="tab-eco" hidden>
-        <div class="sp-copy"><h3 class="sp-name">Eco Crew</h3><p class="sp-line">Sell your recycling, book a pickup.</p><p class="sp-by">Built at Mantiqh, team of two</p><p class="sp-result">Over 50,000 downloads. App about 30% smaller.</p><a class="tlink sp-link" href="/work/eco-crew">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">Eco Crew</h3>
+          <p class="sp-line">Sell your recycling, book a pickup.</p>
+          <p class="sp-by">Built at Mantiqh, team of two</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>A pickup only works if the app knows exactly where you are.</span></li>
+            <li><b>Approach</b><span>Built the location-based pickup and delivery flows, then trimmed the size of the app.</span></li>
+            <li><b>Result</b><span>Over 50,000 downloads. App about 30% smaller.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/eco-crew">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
         <div class="sp-vis"><img src="/assets/shots/eco-3.webp" alt="Eco Crew pickup screens" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/eco-4.webp" alt="Eco Crew pickup screens" width="800" height="1422" loading="lazy" decoding="async"></div>
       </div>
       <div class="shelf-panel" role="tabpanel" id="panel-qplease" aria-labelledby="tab-qplease" hidden>
-        <div class="sp-copy"><h3 class="sp-name">QPlease</h3><p class="sp-line">Scan a QR code, join a queue.</p><p class="sp-by">Built at Mantiqh, I built the app solo</p><p class="sp-result">Live on the App Store and Google Play.</p><a class="tlink sp-link" href="/work/qplease">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">QPlease</h3>
+          <p class="sp-line">Scan a QR code, join a queue.</p>
+          <p class="sp-by">Built at Mantiqh, the mobile app on my own</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>People stand in queues without knowing when their turn comes.</span></li>
+            <li><b>Approach</b><span>Built the whole iOS and Android app alone: scan, choose a service, join, get notified.</span></li>
+            <li><b>Result</b><span>Live on both stores, beside the QPlease web platform.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/qplease">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
         <div class="sp-vis"><img src="/assets/shots/qplease-3.webp" alt="QPlease queue screens" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/qplease-4.webp" alt="QPlease queue screens" width="800" height="1422" loading="lazy" decoding="async"></div>
       </div>
       <div class="shelf-panel" role="tabpanel" id="panel-jiffl" aria-labelledby="tab-jiffl" hidden>
-        <div class="sp-copy"><h3 class="sp-name">JIFFL</h3><p class="sp-line">A UK hiring app for employers and job seekers.</p><p class="sp-by">Built at Mantiqh, I led a team of two</p><p class="sp-result">Releases on schedule. App 15% smaller.</p><a class="tlink sp-link" href="/work/jiffl">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">JIFFL</h3>
+          <p class="sp-line">A UK hiring app for employers and job seekers.</p>
+          <p class="sp-by">Built at Mantiqh, led a team of two</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>Two audiences with different needs had to share one app, on a UK timeline.</span></li>
+            <li><b>Approach</b><span>Led the plan and the stakeholder talks, ran code reviews and mentored junior developers.</span></li>
+            <li><b>Result</b><span>Releases on schedule. App 15% smaller.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/jiffl">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
         <div class="sp-vis"><img src="/assets/shots/jiffl-3.webp" alt="JIFFL job screens" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/jiffl-4.webp" alt="JIFFL job screens" width="800" height="1422" loading="lazy" decoding="async"></div>
       </div>
+      <div class="shelf-panel" role="tabpanel" id="panel-cone" aria-labelledby="tab-cone" hidden>
+        <div class="sp-copy">
+          <h3 class="sp-name">Cone</h3>
+          <p class="sp-line">Tasks, documents and payments for accounting firms.</p>
+          <p class="sp-by">Built at Mantiqh, team of two</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>Clients and accountants swap tax documents, signatures and payments, and must trust every step.</span></li>
+            <li><b>Approach</b><span>Built sign-in with Auth0, e-signatures, PDF generation, payments and client-to-accountant chat.</span></li>
+            <li><b>Result</b><span>Delivered as a private client product.</span></li>
+          </ol>
+          <a class="tlink sp-link" href="/work/cone">Read the case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="sp-vis wide"><img src="/assets/shots/banner-cone.webp" alt="Cone app screens" width="1184" height="500" loading="lazy" decoding="async"></div>
+      </div>
       <div class="shelf-panel" role="tabpanel" id="panel-phonebook" aria-labelledby="tab-phonebook" hidden>
-        <div class="sp-copy"><h3 class="sp-name">My Phone Book</h3><p class="sp-line">Find nearby shops, services and utilities.</p><p class="sp-by">Built at Mantiqh, with the team</p><p class="sp-result">Built by the team. No public store listing.</p></div>
+        <div class="sp-copy">
+          <h3 class="sp-name">My Phone Book</h3>
+          <p class="sp-line">Find nearby shops, services and utilities.</p>
+          <p class="sp-by">Built at Mantiqh, with the team</p>
+          <ol class="sp-story">
+            <li><b>Problem</b><span>Local shops and services are hard to find online, and people need them close by.</span></li>
+            <li><b>Approach</b><span>Helped build the local search and listings app.</span></li>
+            <li><b>Result</b><span>Built by the team. No public store listing.</span></li>
+          </ol>
+          
+        </div>
         <div class="sp-vis wide"><img src="/assets/shots/mq-phonebook.webp" alt="My Phone Book" width="1420" height="684" loading="lazy" decoding="async"></div>
       </div>
     </div>
@@ -235,41 +319,6 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
       </div>
       <div class="stats-foot"><span class="role-chip">Sole mobile engineer</span><a class="tlink" href="/work/zonesso">Zonesso case study <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
     </div>
-  </div>
-</section>
-
-<!-- PROCESS: five chunks -->
-<section class="route" id="process" aria-labelledby="route-title">
-  <div class="wrap">
-    <h2 class="h2 rv" id="route-title">One engineer, from requirements to maintenance.</h2>
-    <p class="lede rv">Two apps solo. Four more in a team of two. The same five steps every time.</p>
-    <ol class="route-list" aria-label="Process, five steps">
-      <li class="rt-rail" role="presentation" aria-hidden="true"><span class="rt-line"><i class="rt-fill"></i></span><span class="rt-node" style="--i:0"></span><span class="rt-node" style="--i:1"></span><span class="rt-node" style="--i:2"></span><span class="rt-node" style="--i:3"></span><span class="rt-node" style="--i:4"></span><span class="rt-travel"><i class="rt-dot"></i></span></li>
-      <li style="--i:0"><div class="rt-tile t-plan"><div class="v-fan"><img src="/assets/shots/kor-1.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/kor-2.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"><img src="/assets/shots/kor-3.webp" alt="" width="800" height="1422" loading="lazy" decoding="async"></div></div><div class="rt-copy"><h3>Plan</h3><p>Scoped JIFFL, a large two-sided UK app. Planned Keys On Rent with one other developer.</p></div></li>
-      <li style="--i:1"><div class="rt-tile t-build"><div class="phone"><div class="screen"><img src="/assets/shots/zonesso-ui-3.webp" alt="Zonesso listings screen" width="610" height="1110" loading="lazy" decoding="async"></div></div></div><div class="rt-copy"><h3>Build</h3><p>Zonesso, solo: iOS and Android from one TypeScript codebase.</p></div></li>
-      <li style="--i:2"><div class="rt-tile t-connect"><div class="rt-list"><span>5 payment rails</span><span>Apple and Google sign-in</span><span>Real-time chat</span></div></div><div class="rt-copy"><h3>Connect</h3><p>Five payment rails, Apple and Google sign-in, real-time chat.</p></div></li>
-      <li style="--i:3"><div class="rt-tile t-prove"><div class="rt-list rt-checks"><span>Jest</span><span>Detox</span><span>Appium</span></div></div><div class="rt-copy"><h3>Prove</h3><p>Jest, Detox and Appium in Bitbucket Pipelines.</p></div></li>
-      <li style="--i:4"><div class="rt-tile t-ship"><div class="rt-icons"><img src="/assets/shots/icon-zonesso.webp" alt="Zonesso app icon" width="128" height="128" loading="lazy"><img src="/assets/shots/icon-kor.webp" alt="Keys On Rent app icon" width="128" height="128" loading="lazy"><img src="/assets/shots/icon-eco.webp" alt="Eco Crew app icon" width="128" height="128" loading="lazy"><img src="/assets/shots/icon-jiffl.webp" alt="JIFFL app icon" width="128" height="128" loading="lazy"><img src="/assets/shots/icon-qplease.webp" alt="QPlease app icon" width="128" height="128" loading="lazy"></div></div><div class="rt-copy"><h3>Ship</h3><p>Fastlane to both stores. Then 39% less code to maintain.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-<!-- MORE SHIPPED WORK: real icons and real store screens, one showcase each -->
-<section class="client" id="client">
-  <div class="wrap">
-    <h2 class="h2 rv">Also built.</h2>
-
-    <article class="mw" style="--glow:rgba(110,160,255,.24)">
-      <div class="mw-copy">
-        <div class="mw-id"><img src="/assets/shots/icon-cone.webp" alt="" width="64" height="64"><h3>Cone</h3></div>
-        <p>The mobile app for a work-management product for accounting firms. Two of us built it: I did Auth0, e-signatures, payments and chat.</p><dl class="mw-facts"><div><dt>Problem</dt><dd>Clients and accountants exchange tax documents, signatures and payments, and need to trust every step.</dd></div><div><dt>What I did</dt><dd>Built Auth0 sign-in, document editing and e-signatures, PDF generation, payments and client-to-accountant messaging.</dd></div><div><dt>Result</dt><dd>Delivered as a private client product, with no public store listing.</dd></div></dl>
-        <div class="cl-links"><a class="tlink" href="/work/cone" aria-label="Cone case study">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a><a class="tlink" href="https://www.getcone.io/" rel="noopener" aria-label="Cone website">getcone.io <span class="arrow" aria-hidden="true">&#8599;</span></a></div>
-        <span class="art-note">Private client product. No store listing.</span>
-      </div>
-      <div class="mw-vis"><div class="mw-glow" aria-hidden="true"></div>
-        <figure class="mw-banner"><img src="/assets/shots/banner-cone.webp" alt="Cone app screens: tasks, documents and payments" width="1184" height="500" loading="lazy" decoding="async"></figure>
-      </div>
-    </article>
   </div>
 </section>
 

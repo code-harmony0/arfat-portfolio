@@ -100,3 +100,9 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - [ ] JIFFL and QPlease now show their store-listing screens (jiffl-3/4, qplease-3/4) instead of Mantiqh thumbnails. Only My Phone Book still uses a Mantiqh thumbnail (no other art exists). Its shelf icon is a crop of that thumbnail.
 - [ ] A short screen recording per app would let the wall and shelf play real motion instead of crossfading stills.
 - Removed the tech ticker (it repeated the Teardown and ghosted through the header).
+
+## Founder / hiring manager / engineer pass (2026-10-13)
+- Hero now has an "I'm a Founder / Hiring manager / Engineer" switch. Each shows one honest line: Founder "idea to both app stores, then keep it running", Hiring manager "Senior React Native engineer, sole mobile owner at Zonesso, open to relocating", Engineer "server state apart from app state, five payment methods, releases that are one command". Edit if any line over-claims.
+- Hero numbers: 7 products shipped (Zonesso, Keys On Rent, Eco Crew, QPlease, JIFFL, Cone, My Phone Book; Keys On Rent counts as one), 50,000+ downloads (Eco Crew, CV figure), 39% less code (Zonesso rebuild, repo). Mantiqh's 150K+ Eco Crew figure still not used.
+- Shelf now tells Problem / Approach / Result for each of 7 products. Most lines come from the CV, repo and earlier confirmed answers; "planned one app per role" and "split the build with one other developer" for Keys On Rent, and Cone's approach line, are paraphrases of CV text: please correct anything you would not say.
+- Removed the Process and Also built sections (Cone moved into the shelf); Teardown pin shortened. Home is about 8,700px desktop.
