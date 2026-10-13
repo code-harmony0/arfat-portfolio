@@ -1587,3 +1587,14 @@ html.static .pf-cap span:first-child{opacity:1}
 .sp-stores a:hover{border-color:var(--sig);color:var(--sig)}
 .sp-stores + .sp-link{margin-top:16px}
 @media (min-width:1021px){.web-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Type pass: role line brighter than the sub line, labels 12.5px or more, readable chips */
+.hero h1 .dim{color:var(--mut-hi)}
+.hero-sub{color:var(--mut)}
+.sp-story b{font-size:.78rem}
+.sp-by{font-size:.85rem}
+.case h3 small,.case-head{font-size:.82rem}
+.plate .tag{font-size:12.5px}
+.plate li{font-size:13px}
+.cap .mono,.cap p.mono{font-size:.82rem}
+@media (max-width:900px){.chip{font-size:.875rem}}
