@@ -111,4 +111,25 @@
     });
     el.addEventListener('pointerleave', function () { el.style.transform = ''; });
   });
+
+  /* Copy email: a mailto link does nothing for visitors with no mail app set up. */
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var status = btn.parentNode.querySelector('[data-copy-status]');
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = 'Copied';
+        if (status) status.textContent = 'Email address copied';
+        setTimeout(function () { btn.textContent = label; if (status) status.textContent = ''; }, 2000);
+      };
+      var text = btn.getAttribute('data-copy');
+      var legacy = function () {
+        var t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        try { if (document.execCommand('copy')) done(); } catch (e) {}
+        document.body.removeChild(t);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, legacy); else legacy();
+    });
+  });
 })();

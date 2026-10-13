@@ -84,3 +84,7 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 
 ## Motion and 3D pass (2026-10-13)
 - [ ] Hero 3D phone loads three.js (about 190 KB gzipped, self-hosted in assets/vendor/three) after first paint, desktop mouse only. Test on a real mid-range laptop and a real phone before deploying; if scroll feels heavy, delete the `<script type="module" src="/phone3d.js">` line and the CSS phones take over.
+
+## Focused UX pass (2026-10-13)
+- [ ] "More shipped work" now shows only Cone; JIFFL and QPlease live in the "Six products" cards and their case pages. The old block's "job-seeker engagement up about 30%" claim is no longer on the home page (still on the JIFFL case page; Mantiqh publishes no such figure).
+- [ ] Contact "First week / First month / After that" is still an unconfirmed offer; edit to how you really start.

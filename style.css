@@ -1300,3 +1300,10 @@ html.static .marq-track > div:nth-child(2){display:none}
 .ship::before{content:"FIG 1." counter(fig);order:-1;font:.72rem var(--mono);letter-spacing:.08em;color:var(--faint);padding-bottom:4px}
 html:not(.static) .ship img{animation:ship-in linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
 @keyframes ship-in{from{clip-path:inset(0 0 100% 0 round 14px);scale:1.06}to{clip-path:inset(0 0 0 0 round 14px);scale:1}}
+
+/* Focused fixes: proof lines read as links, 24px minimum targets, contact row */
+.glance a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px;text-decoration-thickness:1px;transition:color var(--t-fast),text-decoration-color var(--t-fast)}
+.glance a:hover{text-decoration-color:var(--sig)}
+.foot a{display:inline-block;padding:10px 0}
+.cases-foot a{display:inline-block;padding:8px 0 6px}
+.contact-row{align-items:center}
