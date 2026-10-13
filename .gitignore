@@ -2,3 +2,13 @@
 firebase-debug.log
 .DS_Store
 .impeccable
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

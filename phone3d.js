@@ -60,7 +60,7 @@
       scene.add(g);
       return g;
     }
-    var back = phone('/assets/shots/zonesso-ui-1.webp', 0.55, -0.85, 0.2, 0.5, -0.1, -0.9);
+    var back = phone('/assets/shots/zonesso-ui-4.webp', 0.55, -0.85, 0.2, 0.5, -0.1, -0.9);
     var main = phone('/assets/shots/zonesso-ui-3.webp', 1, 0.85, -0.2, -0.42, 0.08, 0);
 
     var loaded = 0, shown = false;

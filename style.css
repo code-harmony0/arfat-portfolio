@@ -525,7 +525,7 @@ html:not(.static) .rt-copy{animation-name:brighten;animation-range:cover calc(17
 @keyframes ring{0%,100%{opacity:0}14%,86%{opacity:1}}
 @keyframes ring-tail{0%{opacity:0}14%,100%{opacity:1}}
 @keyframes unveil{from{opacity:.62}to{opacity:0}}
-@keyframes brighten{from{opacity:.3;translate:0 14px}}
+@keyframes brighten{from{opacity:.8;translate:0 14px}}
 .v-fan{position:relative}
 .v-fan img{position:absolute;top:50%;height:min(100%,500px);width:auto;aspect-ratio:9/16;border-radius:22px;box-shadow:0 40px 70px -30px #000,0 0 0 1px var(--line2);translate:0 -50%}
 .v-fan img:nth-child(1){left:0;rotate:-7deg}
@@ -1312,3 +1312,19 @@ html:not(.static) .ship img{animation:ship-in linear both;animation-timeline:vie
 @media (min-width:1021px){
   html:not(.static) .eco-links{top:calc(var(--nav) + 44px);bottom:auto;left:auto;right:var(--edge);align-items:flex-end}
 }
+
+/* Critique pass: proof strip icons, plain-first problem rows, wireframe tile, readable labels */
+.hero{min-height:calc(100svh - 150px)}
+.proof-head{display:flex;align-items:center;gap:12px}
+.proof-ico{width:36px;height:36px;border-radius:9px;box-shadow:0 0 0 1px var(--line);flex:none}
+.proof-by{font:.72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
+.case .tech{display:block;margin-top:6px;font-size:.88rem;color:var(--faint)}
+.case p:last-child .tech{color:var(--mut)}
+.case-head,.ship dt,.ship::before,.case h3 small{font-size:.8rem}
+.wt-text .wt-frame svg{width:100%;height:100%;display:block}
+.ad-side{fill:var(--bg2)}.ad-bar{fill:var(--line)}.ad-box{fill:var(--bg2);stroke:var(--line);stroke-width:1}.ad-row{fill:var(--line2)}
+.nav .brand{margin-right:auto}
+.zs-proof{border-top:1px solid var(--line2)}
+.marq{position:relative;z-index:1}
+
+.btn-line{background:transparent}

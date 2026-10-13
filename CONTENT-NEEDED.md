@@ -88,3 +88,8 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 ## Focused UX pass (2026-10-13)
 - [ ] "More shipped work" now shows only Cone; JIFFL and QPlease live in the "Six products" cards and their case pages. The old block's "job-seeker engagement up about 30%" claim is no longer on the home page (still on the JIFFL case page; Mantiqh publishes no such figure).
 - [ ] Contact "First week / First month / After that" is still an unconfirmed offer; edit to how you really start.
+
+## Critique pass (2026-10-13)
+- Home page cut from 22,400px to about 12,300px desktop. Removed from the home page: the pinned Zonesso, Keys On Rent and Eco Crew scenes with the Keys On Rent and Eco Crew story bands, and both pinned web scenes. Their copy and stats still live on the case pages (work/*). The Zonesso numbers band stays after the Teardown. The unused CSS for removed scenes is still in style.css.
+- [ ] Problems table: rows 3 and 4 were expanded with plain-language lines taken from commits and the case page ("Apple's review rejected a build", "react-native-iap v13"). Confirm the wording is how you would tell it.
+- [ ] Admin panel tile is now a labelled wireframe (abstract bars, no data). Replace it with a real screenshot with fake data when you have one.

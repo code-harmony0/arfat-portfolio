@@ -1,0 +1,18 @@
+{
+  "name": "arfat-portfolio",
+  "version": "1.0.0",
+  "description": "Hand-built static site. No framework, no build step. Deploy: `npx vercel --prod` from this folder. Content source of truth: `career-ops/cv.md`. Only facts and numbers that exist there go on the page.",
+  "main": "phone3d.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  }
+}
