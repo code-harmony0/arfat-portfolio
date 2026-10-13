@@ -127,3 +127,7 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - The five-item store strip is gone; each shelf panel now has its App Store / Google Play buttons. Keys On Rent's Play button links the tenant app (com.keysonrent.tenant); the KOR Manager app (com.keysonrent.manager) is no longer linked from the home page.
 - The grey admin-panel wireframe tile was removed (the Web section is two tiles). The lede still says "with the admin panel behind it". [ ] Send a redacted or fake-data admin screenshot and I will add it back as a real tile.
 - "Sole mobile engineer" no longer appears in the contact note or the numbers band; it stays in the hero (hiring reader) and the Zonesso shelf panel.
+
+## Final five fixes (2026-10-13)
+- Teardown: plates spaced 178px apart, stack starts zoomed in and settles, pin shortened (270svh). Each layer caption now opens with a plain-language line ("Pages load fast and stay correct when something changes", "Buyers pay however they like, in one checkout"...), the technical sentence follows. [ ] Check those six lines say what you would say.
+- Hero: your name is a small label, the role line leads; the phone caption now names "Zonesso"; the switch label reads "Tailor this for". On phones the proof facts scroll in a strip above the phone.

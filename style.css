@@ -1592,3 +1592,41 @@ html.static .pf-cap span:first-child{opacity:1}
 .plate li{font-size:13px}
 .cap .mono,.cap p.mono{font-size:.82rem}
 @media (max-width:900px){.chip{font-size:.875rem}}
+
+
+/* ===== Final five: Teardown spacing and zoom, plain glosses, hero hierarchy and phone layout ===== */
+/* Teardown: plates far enough apart that each title and its chips stay readable; the stack starts big and settles */
+@media (min-width:1021px){
+  .plate{--gap:178px}
+  .td-fit{--s:.64}
+  .pin-4.td{height:270svh}
+  @keyframes dolly{from{scale:calc(var(--s) * 1.6)}to{scale:calc(var(--s) * 1)}}
+  @keyframes lift{0%,100%{translate:0 0 0}14%,86%{translate:0 0 64px}}
+  @keyframes lift-lead{0%,86%{translate:0 0 64px}100%{translate:0 0 0}}
+  @keyframes lift-tail{0%{translate:0 0 0}14%,100%{translate:0 0 64px}}
+}
+.plain{display:block;margin-bottom:6px;color:var(--ink);font-size:1.08rem;line-height:1.35}
+.td-cap p.w-cb .plain + b,.td-cap p{color:var(--mut)}
+.pf-cap b{font-weight:600;margin-right:3px}
+
+/* Hero hierarchy: the role line leads, the name becomes a label above it */
+.hero h1 .h1-name{font-size:.5em;font-weight:500;color:var(--mut-hi);letter-spacing:-.02em;margin-bottom:.45em;padding-bottom:0}
+.hero h1 .dim{font-size:1.1em;color:var(--ink)}
+.hero-grid{gap:clamp(24px,3.4vw,64px)}
+@media (min-width:901px){.chips{width:226px;margin-left:34px}}
+
+/* Phone hero: proof facts in a scroller above the phone, so the first screen has evidence */
+@media (max-width:900px){
+  .hstage{gap:16px}
+  .chips{order:-1;display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:2px 2px 6px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;scroll-snap-align:start;max-width:none;white-space:nowrap}
+  .shelf-row{-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent)}
+}
+@media (min-width:1021px){.td-fit{--s:.58}.td-scene{--sy:8vh}}
+@media (max-width:900px){.chips{flex-wrap:nowrap}}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-copy,.hstage{min-width:0;max-width:100%}
+  .chips{min-width:0;max-width:100%;width:100%}
+}
