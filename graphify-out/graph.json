@@ -1,0 +1,1528 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "mobile_flagship_apps",
+        "label": "Flagship Production Mobile Applications",
+        "nodes": [
+          "zonesso_zonesso_app",
+          "keys_on_rent_kor_platform",
+          "eco_crew_eco_crew_app",
+          "jiffl_jiffl_app",
+          "qplease_qplease_app"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "index.html"
+      },
+      {
+        "id": "mobile_engineering_principles",
+        "label": "Senior Mobile Engineering Core Disciplines",
+        "nodes": [
+          "zonesso_mobile_architecture",
+          "zonesso_payment_boundary",
+          "zonesso_release_pipeline",
+          "zonesso_codebase_reduction"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "work/zonesso/index.html"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "id": "vercel_json",
+      "community": 7,
+      "norm_label": "vercel.json"
+    },
+    {
+      "label": "cleanUrls",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "id": "arfat_portfolio_vercel_cleanurls",
+      "community": 7,
+      "norm_label": "cleanurls"
+    },
+    {
+      "label": "trailingSlash",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L3",
+      "id": "arfat_portfolio_vercel_trailingslash",
+      "community": 7,
+      "norm_label": "trailingslash"
+    },
+    {
+      "label": "headers",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L4",
+      "id": "arfat_portfolio_vercel_headers",
+      "community": 7,
+      "norm_label": "headers"
+    },
+    {
+      "label": "site.js",
+      "file_type": "code",
+      "source_file": "site.js",
+      "source_location": "L1",
+      "id": "site_js",
+      "community": 8,
+      "norm_label": "site.js"
+    },
+    {
+      "label": "lenis.min.js",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_js",
+      "community": 0,
+      "norm_label": "lenis.min.js"
+    },
+    {
+      "label": "t()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_t",
+      "community": 1,
+      "norm_label": "t()"
+    },
+    {
+      "label": "advance()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_advance",
+      "community": 1,
+      "norm_label": "advance()"
+    },
+    {
+      "label": "stop()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_stop",
+      "community": 1,
+      "norm_label": "stop()"
+    },
+    {
+      "label": "fromTo()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_fromto",
+      "community": 1,
+      "norm_label": "fromto()"
+    },
+    {
+      "label": "constructor()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_constructor",
+      "community": 6,
+      "norm_label": "constructor()"
+    },
+    {
+      "label": "destroy()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_destroy",
+      "community": 9,
+      "norm_label": "destroy()"
+    },
+    {
+      "label": "limit()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_limit",
+      "community": 0,
+      "norm_label": "limit()"
+    },
+    {
+      "label": "emit()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_emit",
+      "community": 6,
+      "norm_label": "emit()"
+    },
+    {
+      "label": "on()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_on",
+      "community": 6,
+      "norm_label": "on()"
+    },
+    {
+      "label": "off()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_off",
+      "community": 0,
+      "norm_label": "off()"
+    },
+    {
+      "label": "setScroll()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_setscroll",
+      "community": 1,
+      "norm_label": "setscroll()"
+    },
+    {
+      "label": "i",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_i",
+      "community": 0,
+      "norm_label": "i"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_o",
+      "community": 0,
+      "norm_label": "o"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_n",
+      "community": 1,
+      "norm_label": "n"
+    },
+    {
+      "label": "h",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_h",
+      "community": 1,
+      "norm_label": "h"
+    },
+    {
+      "label": "resize()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_resize",
+      "community": 6,
+      "norm_label": "resize()"
+    },
+    {
+      "label": "reset()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_reset",
+      "community": 1,
+      "norm_label": "reset()"
+    },
+    {
+      "label": "start()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_start",
+      "community": 1,
+      "norm_label": "start()"
+    },
+    {
+      "label": "scrollTo()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_scrollto",
+      "community": 1,
+      "norm_label": "scrollto()"
+    },
+    {
+      "label": "preventNextNativeScrollEvent()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_preventnextnativescrollevent",
+      "community": 1,
+      "norm_label": "preventnextnativescrollevent()"
+    },
+    {
+      "label": "rootElement()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_rootelement",
+      "community": 0,
+      "norm_label": "rootelement()"
+    },
+    {
+      "label": "isHorizontal()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_ishorizontal",
+      "community": 0,
+      "norm_label": "ishorizontal()"
+    },
+    {
+      "label": "actualScroll()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_actualscroll",
+      "community": 0,
+      "norm_label": "actualscroll()"
+    },
+    {
+      "label": "scroll()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_scroll",
+      "community": 0,
+      "norm_label": "scroll()"
+    },
+    {
+      "label": "progress()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_progress",
+      "community": 0,
+      "norm_label": "progress()"
+    },
+    {
+      "label": "isScrolling()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_isscrolling",
+      "community": 5,
+      "norm_label": "isscrolling()"
+    },
+    {
+      "label": "isStopped()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_isstopped",
+      "community": 5,
+      "norm_label": "isstopped()"
+    },
+    {
+      "label": "isLocked()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_islocked",
+      "community": 5,
+      "norm_label": "islocked()"
+    },
+    {
+      "label": "isSmooth()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_issmooth",
+      "community": 0,
+      "norm_label": "issmooth()"
+    },
+    {
+      "label": "className()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_classname",
+      "community": 0,
+      "norm_label": "classname()"
+    },
+    {
+      "label": "updateClassName()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_updateclassname",
+      "community": 5,
+      "norm_label": "updateclassname()"
+    },
+    {
+      "label": "cleanUpClassName()",
+      "file_type": "code",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "id": "assets_lenis_min_cleanupclassname",
+      "community": 9,
+      "norm_label": "cleanupclassname()"
+    },
+    {
+      "label": "Arfat Rozewale",
+      "file_type": "concept",
+      "source_file": "PRODUCT.md",
+      "source_location": "L19",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Arfat Rozewale",
+      "contributor": null,
+      "id": "product_arfat_rozewale",
+      "community": 4,
+      "norm_label": "arfat rozewale"
+    },
+    {
+      "label": "Senior Mobile Engineer Positioning",
+      "file_type": "rationale",
+      "source_file": "PRODUCT.md",
+      "source_location": "L21-L24",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "product_positioning",
+      "community": 4,
+      "norm_label": "senior mobile engineer positioning"
+    },
+    {
+      "label": "Proof Before Claims Principle",
+      "file_type": "rationale",
+      "source_file": "PRODUCT.md",
+      "source_location": "L42",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "product_proof_before_claims",
+      "community": 4,
+      "norm_label": "proof before claims principle"
+    },
+    {
+      "label": "The Teardown Direction",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_the_teardown",
+      "community": 3,
+      "norm_label": "the teardown direction"
+    },
+    {
+      "label": "Zero-Build Static Architecture",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_static_architecture",
+      "community": 8,
+      "norm_label": "zero-build static architecture"
+    },
+    {
+      "label": "Scroll-Driven Native CSS Animations",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L11-L15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_scroll_driven_animations",
+      "community": 8,
+      "norm_label": "scroll-driven native css animations"
+    },
+    {
+      "label": "Portfolio Hero Scan Layer",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": "L60-L80",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_hero_section",
+      "community": 3,
+      "norm_label": "portfolio hero scan layer"
+    },
+    {
+      "label": "4-Stage Engineering Method (Scope, Decide, Ship, Lead)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": "L115-L130",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_engineering_method",
+      "community": 3,
+      "norm_label": "4-stage engineering method (scope, decide, ship, lead)"
+    },
+    {
+      "label": "Zonesso Automotive Marketplace",
+      "file_type": "document",
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L1",
+      "source_url": "https://apps.apple.com/us/app/zonesso/id6541539876",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "zonesso_zonesso_app",
+      "community": 2,
+      "norm_label": "zonesso automotive marketplace"
+    },
+    {
+      "label": "Zonesso Clean Architecture & State Split",
+      "file_type": "concept",
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L150-L200",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "zonesso_mobile_architecture",
+      "community": 2,
+      "norm_label": "zonesso clean architecture & state split"
+    },
+    {
+      "label": "Zonesso Unified Payment Boundary",
+      "file_type": "concept",
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L220-L260",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "zonesso_payment_boundary",
+      "community": 2,
+      "norm_label": "zonesso unified payment boundary"
+    },
+    {
+      "label": "Zonesso Fastlane CI/CD Gate",
+      "file_type": "concept",
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L280-L320",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "zonesso_release_pipeline",
+      "community": 2,
+      "norm_label": "zonesso fastlane ci/cd gate"
+    },
+    {
+      "label": "Zonesso 39% Codebase Reduction",
+      "file_type": "rationale",
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L340",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "zonesso_codebase_reduction",
+      "community": 2,
+      "norm_label": "zonesso 39% codebase reduction"
+    },
+    {
+      "label": "Keys On Rent Rental Platform",
+      "file_type": "document",
+      "source_file": "work/keys-on-rent/index.html",
+      "source_location": "L1",
+      "source_url": "https://apps.apple.com/us/app/keys-on-rent/id6740265670",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "keys_on_rent_kor_platform",
+      "community": 2,
+      "norm_label": "keys on rent rental platform"
+    },
+    {
+      "label": "Keys On Rent Multi-App Domain Architecture",
+      "file_type": "concept",
+      "source_file": "work/keys-on-rent/index.html",
+      "source_location": "L60-L100",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "keys_on_rent_shared_domain",
+      "community": 2,
+      "norm_label": "keys on rent multi-app domain architecture"
+    },
+    {
+      "label": "Eco Crew Recycling Pickup App",
+      "file_type": "document",
+      "source_file": "work/eco-crew/index.html",
+      "source_location": "L1",
+      "source_url": "https://apps.apple.com/in/app/ecocrew-ecofriendly-made-easy/id1669327969",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "eco_crew_eco_crew_app",
+      "community": 2,
+      "norm_label": "eco crew recycling pickup app"
+    },
+    {
+      "label": "Eco Crew Geolocation Pickup Dispatch",
+      "file_type": "concept",
+      "source_file": "work/eco-crew/index.html",
+      "source_location": "L80-L120",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "eco_crew_geolocation_flow",
+      "community": 2,
+      "norm_label": "eco crew geolocation pickup dispatch"
+    },
+    {
+      "label": "Eco Crew 30% App Size Reduction",
+      "file_type": "rationale",
+      "source_file": "work/eco-crew/index.html",
+      "source_location": "L130",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "eco_crew_size_optimization",
+      "community": 2,
+      "norm_label": "eco crew 30% app size reduction"
+    },
+    {
+      "label": "JIFFL Flexible Staffing Platform",
+      "file_type": "document",
+      "source_file": "work/jiffl/index.html",
+      "source_location": "L1",
+      "source_url": "https://play.google.com/store/apps/details?id=com.the.partimer",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "jiffl_jiffl_app",
+      "community": 3,
+      "norm_label": "jiffl flexible staffing platform"
+    },
+    {
+      "label": "JIFFL Technical Leadership & Mentorship",
+      "file_type": "rationale",
+      "source_file": "work/jiffl/index.html",
+      "source_location": "L50-L80",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "jiffl_leadership_and_delivery",
+      "community": 3,
+      "norm_label": "jiffl technical leadership & mentorship"
+    },
+    {
+      "label": "QPlease Queue Management App",
+      "file_type": "document",
+      "source_file": "work/qplease/index.html",
+      "source_location": "L1",
+      "source_url": "https://apps.apple.com/us/app/qplease/id1659993355",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "qplease_qplease_app",
+      "community": 4,
+      "norm_label": "qplease queue management app"
+    },
+    {
+      "label": "Cone Billing & Invoicing Platform",
+      "file_type": "document",
+      "source_file": "work/cone/index.html",
+      "source_location": "L1",
+      "source_url": "https://www.getcone.io/",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "cone_cone_platform",
+      "community": 4,
+      "norm_label": "cone billing & invoicing platform"
+    },
+    {
+      "label": "Motors Zonesso Next.js Web Experience",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": "L355",
+      "source_url": "https://motors.zonesso.com",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "web_motors_zonesso",
+      "community": 2,
+      "norm_label": "motors zonesso next.js web experience"
+    },
+    {
+      "label": "Shri Kalahasti Kalamkari E-commerce Web",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": "L379",
+      "source_url": "https://srikalahastikalamkari.in",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "web_kalamkari",
+      "community": 10,
+      "norm_label": "shri kalahasti kalamkari e-commerce web"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "vercel_json",
+      "target": "arfat_portfolio_vercel_cleanurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "vercel_json",
+      "target": "arfat_portfolio_vercel_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "vercel_json",
+      "target": "arfat_portfolio_vercel_trailingslash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "readme_scroll_driven_animations",
+      "target": "site_js"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "readme_static_architecture",
+      "target": "site_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_actualscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_advance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_classname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_cleanupclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_destroy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_emit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_fromto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_h",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_ishorizontal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_islocked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_isscrolling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_issmooth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_isstopped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_limit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_off",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_on",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_preventnextnativescrollevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_resize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_rootelement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_scroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_scrollto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_setscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_stop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_js",
+      "target": "assets_lenis_min_updateclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_advance",
+      "target": "assets_lenis_min_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_advance",
+      "target": "assets_lenis_min_stop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_reset",
+      "target": "assets_lenis_min_stop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_fromto",
+      "target": "assets_lenis_min_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_fromto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_constructor",
+      "target": "assets_lenis_min_on",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_constructor",
+      "target": "assets_lenis_min_resize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_constructor",
+      "target": "assets_lenis_min_updateclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_destroy",
+      "target": "assets_lenis_min_cleanupclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_resize",
+      "target": "assets_lenis_min_emit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_emit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_setscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_h",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_start",
+      "target": "assets_lenis_min_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_scrollto",
+      "target": "assets_lenis_min_preventnextnativescrollevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_isscrolling",
+      "target": "assets_lenis_min_updateclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_isstopped",
+      "target": "assets_lenis_min_updateclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_islocked",
+      "target": "assets_lenis_min_updateclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/lenis.min.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "assets_lenis_min_updateclassname",
+      "target": "assets_lenis_min_cleanupclassname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "product_arfat_rozewale",
+      "target": "product_positioning"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "product_arfat_rozewale",
+      "target": "product_proof_before_claims"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "product_arfat_rozewale",
+      "target": "zonesso_zonesso_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PRODUCT.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "product_positioning",
+      "target": "cone_cone_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "PRODUCT.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "product_positioning",
+      "target": "qplease_qplease_app"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "readme_the_teardown",
+      "target": "index_hero_section"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "index_hero_section",
+      "target": "index_engineering_method"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "index_engineering_method",
+      "target": "jiffl_jiffl_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "index_engineering_method",
+      "target": "zonesso_zonesso_app"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "index.html",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "web_motors_zonesso",
+      "target": "zonesso_zonesso_app"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L340",
+      "weight": 1.0,
+      "source": "zonesso_zonesso_app",
+      "target": "zonesso_codebase_reduction"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "zonesso_zonesso_app",
+      "target": "zonesso_mobile_architecture"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L220",
+      "weight": 1.0,
+      "source": "zonesso_zonesso_app",
+      "target": "zonesso_payment_boundary"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/zonesso/index.html",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "zonesso_zonesso_app",
+      "target": "zonesso_release_pipeline"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "work/zonesso/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "keys_on_rent_shared_domain",
+      "target": "zonesso_mobile_architecture"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "zonesso_codebase_reduction",
+      "target": "eco_crew_size_optimization"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/keys-on-rent/index.html",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "keys_on_rent_kor_platform",
+      "target": "keys_on_rent_shared_domain"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/eco-crew/index.html",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "eco_crew_eco_crew_app",
+      "target": "eco_crew_geolocation_flow"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/eco-crew/index.html",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "eco_crew_eco_crew_app",
+      "target": "eco_crew_size_optimization"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/jiffl/index.html",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "jiffl_jiffl_app",
+      "target": "jiffl_leadership_and_delivery"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "mobile_flagship_apps",
+      "label": "Flagship Production Mobile Applications",
+      "nodes": [
+        "zonesso_zonesso_app",
+        "keys_on_rent_kor_platform",
+        "eco_crew_eco_crew_app",
+        "jiffl_jiffl_app",
+        "qplease_qplease_app"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html"
+    },
+    {
+      "id": "mobile_engineering_principles",
+      "label": "Senior Mobile Engineering Core Disciplines",
+      "nodes": [
+        "zonesso_mobile_architecture",
+        "zonesso_payment_boundary",
+        "zonesso_release_pipeline",
+        "zonesso_codebase_reduction"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "work/zonesso/index.html"
+    }
+  ],
+  "built_at_commit": "d312bc05d8b2c4bbd786825ebad57fbdd8e9a8c7"
+}

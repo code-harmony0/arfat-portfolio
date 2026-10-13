@@ -70,3 +70,9 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - [ ] 16 KB page-size story: the repo pins NDK 28.2 and target SDK 36, but has no commit naming the 16 KB work. Page says "moved the Android build to NDK 28 and target SDK 36". Tell me what you actually did (dependency upgrades, alignment checks, a rejected upload?) and when.
 - [ ] Socket-logout story is from commit 405aaf0 (June 2026). "Network drops and backgrounding" is its wording.
 - [ ] Add 2 or 3 more stories in your own words (what was asked, what went wrong, what you changed). Image upload speed-up (docs/plans, June 2026) needs a measured result before it goes on the page.
+
+## Mantiqh assets and attribution (2026-10-13)
+- [ ] Owner chose to use Mantiqh thumbnails for JIFFL and My Phone Book. Mantiqh's Terms (Intellectual Property) bar copying or republishing their images and case studies without written consent, and the footer says (c) 2021-2026 Mantiqh. Email hello@mantiqh.com for written OK, or swap in your own captures.
+- [ ] Every Mantiqh project on the page must say "Built at Mantiqh" plus your own part. Mantiqh's site never names you.
+- [ ] My Phone Book: no store or website link found. Send the link, your exact part and any real numbers.
+- [ ] Mantiqh figures that disagree with the CV (Eco Crew 150K+ vs 50,000+, KOR 500+ Q1 downloads vs 1,000+ installs, KOR 4.8 stars vs 2.75 from 8 ratings on the India App Store). Not used on the page.

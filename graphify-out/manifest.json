@@ -1,0 +1,367 @@
+{
+  "/Users/codeaura/Projects/arfat-portfolio/vercel.json": {
+    "mtime": 1791115773.1717064,
+    "ast_hash": "de7b5160ce3a6378b3be56af4c833779",
+    "semantic_hash": "de7b5160ce3a6378b3be56af4c833779"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/site.js": {
+    "mtime": 1791214297.125723,
+    "ast_hash": "c8bceac2fae18b8979e663219aa39f58",
+    "semantic_hash": "c8bceac2fae18b8979e663219aa39f58"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/lenis.min.js": {
+    "mtime": 1791137077.780959,
+    "ast_hash": "058080518a918feb0dd5b5b6c216e330",
+    "semantic_hash": "058080518a918feb0dd5b5b6c216e330"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/PRODUCT.md": {
+    "mtime": 1791832670.6003253,
+    "ast_hash": "9d6812adf5fbc80e8a8454e90510a40c",
+    "semantic_hash": "9d6812adf5fbc80e8a8454e90510a40c"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/index.html": {
+    "mtime": 1791873151.3309195,
+    "ast_hash": "e1a75e6122a5a74df0de896531b183cf",
+    "semantic_hash": "e1a75e6122a5a74df0de896531b183cf"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/CONTENT-NEEDED.md": {
+    "mtime": 1791832730.6097777,
+    "ast_hash": "4557dc5dd16c890df4f9d6b75b94cf60",
+    "semantic_hash": "4557dc5dd16c890df4f9d6b75b94cf60"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/README.md": {
+    "mtime": 1791136731.2348685,
+    "ast_hash": "c1ddf875475f11c152407be018dab2c2",
+    "semantic_hash": "c1ddf875475f11c152407be018dab2c2"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/keys-on-rent/index.html": {
+    "mtime": 1791873151.3314788,
+    "ast_hash": "c168e10bb749c9ef28f685d9210ba567",
+    "semantic_hash": "c168e10bb749c9ef28f685d9210ba567"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/qplease/index.html": {
+    "mtime": 1791831502.475861,
+    "ast_hash": "a42722a3a21234dbe122951f5a6742c0",
+    "semantic_hash": "a42722a3a21234dbe122951f5a6742c0"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/eco-crew/index.html": {
+    "mtime": 1791831502.4752355,
+    "ast_hash": "2c1d1e53eaf27d45aaacc51c8e78c982",
+    "semantic_hash": "2c1d1e53eaf27d45aaacc51c8e78c982"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/zonesso/index.html": {
+    "mtime": 1791831502.474662,
+    "ast_hash": "bbaa246d192816f451187c8e46cc0f4d",
+    "semantic_hash": "bbaa246d192816f451187c8e46cc0f4d"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/cone/index.html": {
+    "mtime": 1791831502.4756873,
+    "ast_hash": "bbb666a8954ef188fe36e429c589bbc6",
+    "semantic_hash": "bbb666a8954ef188fe36e429c589bbc6"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/work/jiffl/index.html": {
+    "mtime": 1791831502.4754968,
+    "ast_hash": "98f0616bf333322efa434c1c185a29ac",
+    "semantic_hash": "98f0616bf333322efa434c1c185a29ac"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/og.png": {
+    "mtime": 1791116100.988817,
+    "ast_hash": "35e1e44b34169ca03102a0416a2ce1a4",
+    "semantic_hash": "35e1e44b34169ca03102a0416a2ce1a4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/eco-3.webp": {
+    "mtime": 1791115236.8821552,
+    "ast_hash": "874a9632eec8c406fbca9a93668b7672",
+    "semantic_hash": "874a9632eec8c406fbca9a93668b7672"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-5.webp": {
+    "mtime": 1791115234.4381237,
+    "ast_hash": "4e506687c228f03382f1c31dcbe5684d",
+    "semantic_hash": "4e506687c228f03382f1c31dcbe5684d"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-5.webp": {
+    "mtime": 1791115233.2153158,
+    "ast_hash": "af2be926482107bf7c5f1145c2eff0a2",
+    "semantic_hash": "af2be926482107bf7c5f1145c2eff0a2"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-jiffl.webp": {
+    "mtime": 1791204153.1612806,
+    "ast_hash": "1aee66da81c528548db1bdfc0c87bf8d",
+    "semantic_hash": "1aee66da81c528548db1bdfc0c87bf8d"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-eco.webp": {
+    "mtime": 1791117658.653254,
+    "ast_hash": "4a2e686f11a7b16981d09a06ffaee59c",
+    "semantic_hash": "4a2e686f11a7b16981d09a06ffaee59c"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/phone-zonesso.webp": {
+    "mtime": 1791139621.1668308,
+    "ast_hash": "7e4111c911e4c1690851be67bf17b418",
+    "semantic_hash": "7e4111c911e4c1690851be67bf17b418"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-5.webp": {
+    "mtime": 1791204152.9298372,
+    "ast_hash": "5afd211a123efad6726e22c8d407fd5d",
+    "semantic_hash": "5afd211a123efad6726e22c8d407fd5d"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/kor-1.webp": {
+    "mtime": 1791115235.26626,
+    "ast_hash": "81d8ffc612a29d16afb1ae3e017b0fa3",
+    "semantic_hash": "81d8ffc612a29d16afb1ae3e017b0fa3"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-4.webp": {
+    "mtime": 1791204152.7176614,
+    "ast_hash": "6ffc3039e7969b60b07eec112d6f8e23",
+    "semantic_hash": "6ffc3039e7969b60b07eec112d6f8e23"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-kor.webp": {
+    "mtime": 1791115240.0992632,
+    "ast_hash": "c2d1b18d884660b4f4b3bd68e2c96786",
+    "semantic_hash": "c2d1b18d884660b4f4b3bd68e2c96786"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-8.webp": {
+    "mtime": 1791115235.062419,
+    "ast_hash": "52f5ba7771392c039fdf7771790d9411",
+    "semantic_hash": "52f5ba7771392c039fdf7771790d9411"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-4.webp": {
+    "mtime": 1791115233.1020546,
+    "ast_hash": "5574d5a88603512c08930eeffb5e89f2",
+    "semantic_hash": "5574d5a88603512c08930eeffb5e89f2"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-4.webp": {
+    "mtime": 1791115234.2445636,
+    "ast_hash": "5a4efb7e53d0891e16cca41504109113",
+    "semantic_hash": "5a4efb7e53d0891e16cca41504109113"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/eco-2.webp": {
+    "mtime": 1791115236.6419451,
+    "ast_hash": "9780cceebfc9c0003d57ca31e4d9fbf4",
+    "semantic_hash": "9780cceebfc9c0003d57ca31e4d9fbf4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/qplease-1.webp": {
+    "mtime": 1791204961.7366898,
+    "ast_hash": "7c40607cb0c455eeb1e9100735f12ffa",
+    "semantic_hash": "7c40607cb0c455eeb1e9100735f12ffa"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-zonesso-detail.webp": {
+    "mtime": 1791206247.456997,
+    "ast_hash": "f54bc9f2f3bb5bddf12aa471e865b983",
+    "semantic_hash": "f54bc9f2f3bb5bddf12aa471e865b983"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-zonesso.webp": {
+    "mtime": 1791115239.552162,
+    "ast_hash": "58cefb03aeb87dc7d638a1339ad8d4ae",
+    "semantic_hash": "58cefb03aeb87dc7d638a1339ad8d4ae"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-cone.webp": {
+    "mtime": 1791205819.523461,
+    "ast_hash": "011dea7024cddcfd331f8b0b5ebad146",
+    "semantic_hash": "011dea7024cddcfd331f8b0b5ebad146"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-3.webp": {
+    "mtime": 1791204152.494907,
+    "ast_hash": "7832e0a36c2ae5de5243c8ff34c89ca0",
+    "semantic_hash": "7832e0a36c2ae5de5243c8ff34c89ca0"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/eco-5.webp": {
+    "mtime": 1791115237.3703158,
+    "ast_hash": "10111b8c0188801cb7ee971ba4e740f8",
+    "semantic_hash": "10111b8c0188801cb7ee971ba4e740f8"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-3.webp": {
+    "mtime": 1791115234.0294428,
+    "ast_hash": "9e26730cd51574daa0829d6240d7887f",
+    "semantic_hash": "9e26730cd51574daa0829d6240d7887f"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-3.webp": {
+    "mtime": 1791115233.030733,
+    "ast_hash": "15952e6d96bc8b5bc6b4a12316028eb2",
+    "semantic_hash": "15952e6d96bc8b5bc6b4a12316028eb2"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-kor.webp": {
+    "mtime": 1791117658.687395,
+    "ast_hash": "47c1f4657539b8a4b9abe53289b051b4",
+    "semantic_hash": "47c1f4657539b8a4b9abe53289b051b4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-qplease.webp": {
+    "mtime": 1791204962.4927695,
+    "ast_hash": "976ed7bf09331a7e281279226aacfbb7",
+    "semantic_hash": "976ed7bf09331a7e281279226aacfbb7"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-2.webp": {
+    "mtime": 1791115232.9115458,
+    "ast_hash": "e732d3c69f5f97e2c98f0c6e12dcf85b",
+    "semantic_hash": "e732d3c69f5f97e2c98f0c6e12dcf85b"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-eco.webp": {
+    "mtime": 1791115240.5945404,
+    "ast_hash": "da009c13700dad663ba156ae7c75baf5",
+    "semantic_hash": "da009c13700dad663ba156ae7c75baf5"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-2.webp": {
+    "mtime": 1791115233.8338509,
+    "ast_hash": "80da5afccf88c4fc84f8bd4b581f7ed4",
+    "semantic_hash": "80da5afccf88c4fc84f8bd4b581f7ed4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/eco-4.webp": {
+    "mtime": 1791115237.1216552,
+    "ast_hash": "6347130fb819d9ca0a83790110210ef4",
+    "semantic_hash": "6347130fb819d9ca0a83790110210ef4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-kalamkari-catalogue.webp": {
+    "mtime": 1791206248.5785985,
+    "ast_hash": "130db30b55b5ebefbd57d1763b0122b3",
+    "semantic_hash": "130db30b55b5ebefbd57d1763b0122b3"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-zonesso-home.webp": {
+    "mtime": 1791206247.0532913,
+    "ast_hash": "1a17ec1a8b940a39d65d795515ac7d6b",
+    "semantic_hash": "1a17ec1a8b940a39d65d795515ac7d6b"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-2.webp": {
+    "mtime": 1791204152.228393,
+    "ast_hash": "042fe3fb2aaedda5803f52d72e149d40",
+    "semantic_hash": "042fe3fb2aaedda5803f52d72e149d40"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-zonesso.webp": {
+    "mtime": 1791117658.6223965,
+    "ast_hash": "3717e507e9e14a04b19cdf30f77fbd6b",
+    "semantic_hash": "3717e507e9e14a04b19cdf30f77fbd6b"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-1.webp": {
+    "mtime": 1791204152.018578,
+    "ast_hash": "7b71887cc37ab5915c2b0d42a36ef398",
+    "semantic_hash": "7b71887cc37ab5915c2b0d42a36ef398"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/banner-qplease.webp": {
+    "mtime": 1791117445.585951,
+    "ast_hash": "b7a4d0d8bd2ddc166dc92412d759f523",
+    "semantic_hash": "b7a4d0d8bd2ddc166dc92412d759f523"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-cone.webp": {
+    "mtime": 1791117658.742362,
+    "ast_hash": "0b08f0a21903ffec79350c34fd03bfef",
+    "semantic_hash": "0b08f0a21903ffec79350c34fd03bfef"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/qplease-3.webp": {
+    "mtime": 1791204962.2435079,
+    "ast_hash": "a96e2a8fec54e08113b8b052e80c1fad",
+    "semantic_hash": "a96e2a8fec54e08113b8b052e80c1fad"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-qplease.webp": {
+    "mtime": 1791117658.767592,
+    "ast_hash": "a861cbc756494ebd59d56e0535437bec",
+    "semantic_hash": "a861cbc756494ebd59d56e0535437bec"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-1.webp": {
+    "mtime": 1791115232.8410423,
+    "ast_hash": "268d78250f8fa93cdee34990007c52d7",
+    "semantic_hash": "268d78250f8fa93cdee34990007c52d7"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-1.webp": {
+    "mtime": 1791115233.629604,
+    "ast_hash": "747d0c4d62f8e9a47ca9bfc1a35c1dcd",
+    "semantic_hash": "747d0c4d62f8e9a47ca9bfc1a35c1dcd"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-qplease.webp": {
+    "mtime": 1791205819.9488385,
+    "ast_hash": "aa2c002c05cd336d104d5d5cd5aa94cc",
+    "semantic_hash": "aa2c002c05cd336d104d5d5cd5aa94cc"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/phone-kalamkari.webp": {
+    "mtime": 1791139620.969614,
+    "ast_hash": "5609ef7eacbe45cd861d2ea4f55bea90",
+    "semantic_hash": "5609ef7eacbe45cd861d2ea4f55bea90"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/banner-jiffl.webp": {
+    "mtime": 1791117445.7083316,
+    "ast_hash": "0b7dcf6ee0906a8cf209f3cbe524b77e",
+    "semantic_hash": "0b7dcf6ee0906a8cf209f3cbe524b77e"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/qplease-2.webp": {
+    "mtime": 1791204961.986464,
+    "ast_hash": "563ffcd064220db7a6b58b8d7a117ac4",
+    "semantic_hash": "563ffcd064220db7a6b58b8d7a117ac4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-zonesso.webp": {
+    "mtime": 1791139620.6786861,
+    "ast_hash": "b82317437ea1be483c79a57f6dcbaefb",
+    "semantic_hash": "b82317437ea1be483c79a57f6dcbaefb"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/kor-4.webp": {
+    "mtime": 1791115236.144703,
+    "ast_hash": "1ec47cbbf8a558022175e25c80a0267f",
+    "semantic_hash": "1ec47cbbf8a558022175e25c80a0267f"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-kalamkari.webp": {
+    "mtime": 1791139620.2229996,
+    "ast_hash": "c224aeaafcc9a8bb3b44aa940c9e667e",
+    "semantic_hash": "c224aeaafcc9a8bb3b44aa940c9e667e"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/icon-cone.webp": {
+    "mtime": 1791205819.177642,
+    "ast_hash": "4dc20635b2d8b36e91f8475f4e893fc3",
+    "semantic_hash": "4dc20635b2d8b36e91f8475f4e893fc3"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-7.webp": {
+    "mtime": 1791115233.4162014,
+    "ast_hash": "53f7e5775902408a67c6464edf310af8",
+    "semantic_hash": "53f7e5775902408a67c6464edf310af8"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/bg-jiffl.webp": {
+    "mtime": 1791117658.7138927,
+    "ast_hash": "872bd38d8d2985214ada16cc3d01b8c3",
+    "semantic_hash": "872bd38d8d2985214ada16cc3d01b8c3"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/banner-cone.webp": {
+    "mtime": 1791117445.472966,
+    "ast_hash": "fd5dcccbbecef9262d1e20bd9e008c0b",
+    "semantic_hash": "fd5dcccbbecef9262d1e20bd9e008c0b"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-7.webp": {
+    "mtime": 1791115234.8520517,
+    "ast_hash": "781913e1c0de8dfe8d7192964cfaa076",
+    "semantic_hash": "781913e1c0de8dfe8d7192964cfaa076"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/eco-1.webp": {
+    "mtime": 1791115236.4104989,
+    "ast_hash": "bc28e8127d70ade7b0614e12b4e4469a",
+    "semantic_hash": "bc28e8127d70ade7b0614e12b4e4469a"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/kor-3.webp": {
+    "mtime": 1791115235.9427443,
+    "ast_hash": "2e052bd75fbb1c393cdfbd4640dc76e4",
+    "semantic_hash": "2e052bd75fbb1c393cdfbd4640dc76e4"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/web-kalamkari-home.webp": {
+    "mtime": 1791206248.0528603,
+    "ast_hash": "03f6045d8043599871e88cdde44703dd",
+    "semantic_hash": "03f6045d8043599871e88cdde44703dd"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/qplease-4.webp": {
+    "mtime": 1791204962.473749,
+    "ast_hash": "5ca04ed5ba973893bd88712aa1379eaa",
+    "semantic_hash": "5ca04ed5ba973893bd88712aa1379eaa"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/jiffl-6.webp": {
+    "mtime": 1791204153.1458616,
+    "ast_hash": "f73f879446931653d9bbe1f3845d271a",
+    "semantic_hash": "f73f879446931653d9bbe1f3845d271a"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/kor-2.webp": {
+    "mtime": 1791115235.490247,
+    "ast_hash": "db6017836e744254fd04453c27064087",
+    "semantic_hash": "db6017836e744254fd04453c27064087"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-store-6.webp": {
+    "mtime": 1791115234.6485398,
+    "ast_hash": "25157707d5e6730fedf9e3c1d1e44390",
+    "semantic_hash": "25157707d5e6730fedf9e3c1d1e44390"
+  },
+  "/Users/codeaura/Projects/arfat-portfolio/assets/shots/zonesso-ui-6.webp": {
+    "mtime": 1791115233.3009953,
+    "ast_hash": "ca13a0048ccb08efc676f3dc80d4de91",
+    "semantic_hash": "ca13a0048ccb08efc676f3dc80d4de91"
+  }
+}
