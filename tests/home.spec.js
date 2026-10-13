@@ -28,13 +28,19 @@ test.describe('adaptive hero', () => {
     const founderAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
 
     await page.getByRole('tab', { name: 'Engineer' }).click();
-    await expect(page.locator('#h1-line')).toContainText('One checkout');
+    await expect(page.locator('#h1-line')).toContainText('stay fast');
     await page.waitForTimeout(500);
     await expect(page.locator('.chip').nth(3)).toHaveText('Releases are one command');
     await expect(page.locator('#cta-label')).toHaveText('See the teardown');
     await page.waitForTimeout(900);
     const engAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
     expect(engAccent).not.toBe(founderAccent);
+  });
+
+  test('does not rewrite itself: no auto-cycle', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForTimeout(9500);
+    await expect(page.locator('html')).toHaveAttribute('data-who', 'hiring');
   });
 
   test('keyboard arrows switch the reader', async ({ page }) => {

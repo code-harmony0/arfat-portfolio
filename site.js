@@ -189,10 +189,10 @@
     var COPY = {
       founder: { h1: 'Your idea,|live in both stores.', sub: 'I take an app from brief to App Store and Google Play, then keep it running.',
         chips: ['Live on both stores', '50,000+ downloads on one app', '3 apps in 3\u20134 months', 'Alone or in a small team'], cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
-      hiring: { h1: 'Senior.|Owns it end to end.', sub: 'Senior React Native engineer, open to relocating anywhere.',
-        chips: ['Sole mobile engineer at Zonesso', 'Led a team of two on JIFFL', 'Open to relocating anywhere', '7 products shipped'], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
-      eng: { h1: 'Clean state.|One checkout.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases as one command.',
-        chips: ['Server state kept apart', '5 payment methods, 1 checkout', '39% less code after a rebuild', 'Releases are one command'], cta: 'See the teardown', href: '#teardown' }
+      hiring: { h1: 'Senior mobile engineer.|Owns it end to end.', sub: 'I build React Native apps and web stores. Open to relocating anywhere.',
+        chips: ['7 products shipped', 'Sole mobile engineer at Zonesso', 'Led a team of two on JIFFL', 'Open to relocating anywhere'], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
+      eng: { h1: 'Apps that stay fast|and easy to change.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases as one command.',
+        chips: ['39% less code after a rebuild', 'Server state kept apart', '5 payment methods, 1 checkout', 'Releases are one command'], cta: 'See the teardown', href: '#teardown' }
     };
     var ORDER = ['hiring', 'founder', 'eng'];
     var tabs = [].slice.call(hero.querySelectorAll('.who-tab'));
@@ -216,11 +216,6 @@
       } else { h1l.innerHTML = c.h1.split('|').join('<br>'); line.textContent = c.sub; writeChips(c); }
     }
     function set(k, animate) { if (k === current && animate) return; current = k; apply(k, animate); try { if (userPicked) localStorage.setItem('who', k); } catch (e) {} }
-    function schedule() {
-      clearTimeout(timer);
-      if (userPicked || still) return;
-      timer = setTimeout(function () { set(ORDER[(ORDER.indexOf(current) + 1) % ORDER.length], true); schedule(); }, 8000);
-    }
     tabs.forEach(function (t, i) {
       t.addEventListener('click', function () { userPicked = true; clearTimeout(timer); set(t.getAttribute('data-who'), true); });
       t.addEventListener('keydown', function (e) {
@@ -229,11 +224,9 @@
         var n = tabs[(i + d + tabs.length) % tabs.length]; userPicked = true; clearTimeout(timer); set(n.getAttribute('data-who'), true); n.focus();
       });
     });
-    hero.addEventListener('pointerenter', function () { clearTimeout(timer); });
-    hero.addEventListener('pointerleave', schedule);
     var saved = null; try { saved = localStorage.getItem('who'); } catch (e) {}
     if (saved && COPY[saved]) { userPicked = true; current = saved; apply(saved, false); }
-    else { apply(current, false); schedule(); }
+    else { apply(current, false); }
     function sync() { var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0]; if (on) place(on); }
     addEventListener('resize', sync);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
