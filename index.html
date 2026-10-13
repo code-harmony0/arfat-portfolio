@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-who="hiring">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -59,31 +59,45 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 
 <!-- HERO: who, what, proof, one action -->
 <section class="hero" id="top">
-  <div class="wrap hero-copy">
-    <h1><span>Arfat Rozewale.</span><span class="dim">I build mobile apps and web stores.</span></h1>
-    <div class="who" role="tablist" aria-label="Who is reading">
-      <span class="who-label" id="who-label">I'm a</span>
-      <button class="who-tab" role="tab" type="button" aria-selected="true" data-who="founder">Founder</button>
-      <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="hiring">Hiring manager</button>
-      <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="eng">Engineer</button>
-      <i class="who-pill" aria-hidden="true"></i>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1><span class="h1-name">Arfat Rozewale.</span><span class="dim" id="h1-line">Senior. Owns it end to end.</span></h1>
+      <div class="who" role="tablist" aria-label="Who is reading">
+        <span class="who-label">I'm a</span>
+        <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="founder">Founder</button>
+        <button class="who-tab" role="tab" type="button" aria-selected="true" data-who="hiring">Hiring manager</button>
+        <button class="who-tab" role="tab" type="button" aria-selected="false" tabindex="-1" data-who="eng">Engineer</button>
+        <i class="who-pill" aria-hidden="true"></i>
+      </div>
+      <p class="hero-sub" id="who-line" aria-live="polite">Senior React Native engineer. Sole mobile engineer at Zonesso. Open to relocating anywhere.</p>
+      <div class="hero-nums" id="hero-nums">
+        <div><b data-count="2">2</b><span>apps built solo</span></div>
+        <div><b data-count="1">1</b><span>team led, JIFFL</span></div>
+        <div><b>Anywhere</b><span>open to relocate</span></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-sig" id="cta-primary" href="mailto:arfathrozewale8@gmail.com" data-magnet><span id="cta-label">Email me</span> <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        <a class="btn btn-line" href="#shipped" data-magnet>See my work <span class="arrow" aria-hidden="true">&#8595;</span></a>
+      </div>
     </div>
-    <p class="hero-sub" id="who-line" aria-live="polite" data-founder="I take an idea from brief to both app stores, then keep it running. Alone or in a small team." data-hiring="Senior React Native engineer. Sole mobile owner at Zonesso. Open to relocating anywhere." data-eng="Server state kept apart from app state, five payment methods behind one checkout, releases that are one command.">I take an idea from brief to both app stores, then keep it running. Alone or in a small team.</p>
-    <div class="hero-nums">
-      <div><b data-count="7">7</b><span>products shipped</span></div>
-      <div><b data-count="50000" data-suffix="+">50,000+</b><span>downloads, one live app</span></div>
-      <div><b data-count="39" data-suffix="%">39%</b><span>less code after a rebuild</span></div>
-    </div>
-    <div class="hero-cta">
-      <a class="btn btn-sig" href="mailto:arfathrozewale8@gmail.com" data-magnet>Email me <span class="arrow" aria-hidden="true">&#8599;</span></a>
-      <a class="btn btn-line" href="#shipped" data-magnet>See my work <span class="arrow" aria-hidden="true">&#8595;</span></a>
+    <div class="scenes">
+      <div class="scene sc-hiring on" data-scene="hiring">
+        <div class="hm-card"><p class="hm-role">Senior React Native engineer</p><p class="hm-sub">Sole mobile engineer at Zonesso</p><p class="hm-open"><i class="pulse"></i>Open to relocating anywhere</p></div>
+        <p class="hm-cap">Every Zonesso release passes</p>
+        <ol class="hm-checks"><li style="--i:0"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Lint</span></li><li style="--i:1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Type checks</span></li><li style="--i:2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Unit tests</span></li><li style="--i:3"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>End-to-end tests</span></li><li style="--i:4"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Store release</span></li></ol>
+      </div>
+      <div class="scene sc-founder" data-scene="founder">
+        <ul class="fd-grid"><li class="fd-tile" style="--i:0"><a href="https://apps.apple.com/us/app/zonesso/id6541539876" rel="noopener" aria-label="Zonesso in the store"><img src="/assets/shots/icon-zonesso.webp" alt="" width="76" height="76"><b>Zonesso</b><em>iOS · Android</em><i class="live"></i></a></li><li class="fd-tile" style="--i:1"><a href="https://apps.apple.com/us/app/keys-on-rent/id6740265670" rel="noopener" aria-label="Keys On Rent in the store"><img src="/assets/shots/icon-kor.webp" alt="" width="76" height="76"><b>Keys On Rent</b><em>iOS · Android</em><i class="live"></i></a></li><li class="fd-tile" style="--i:2"><a href="https://apps.apple.com/in/app/ecocrew-ecofriendly-made-easy/id1669327969" rel="noopener" aria-label="Eco Crew in the store"><img src="/assets/shots/icon-eco.webp" alt="" width="76" height="76"><b>Eco Crew</b><em>iOS · Android</em><i class="live"></i></a></li><li class="fd-tile" style="--i:3"><a href="https://apps.apple.com/us/app/qplease/id1659993355" rel="noopener" aria-label="QPlease in the store"><img src="/assets/shots/icon-qplease.webp" alt="" width="76" height="76"><b>QPlease</b><em>iOS · Android</em><i class="live"></i></a></li><li class="fd-tile" style="--i:4"><a href="https://play.google.com/store/apps/details?id=com.the.partimer" rel="noopener" aria-label="JIFFL in the store"><img src="/assets/shots/icon-jiffl.webp" alt="" width="76" height="76"><b>JIFFL</b><em>Android</em><i class="live"></i></a></li><li class="fd-tile fd-next" style="--i:5"><a href="mailto:arfathrozewale8@gmail.com?subject=New%20project" aria-label="Start your app with Arfat"><span class="fd-plus"></span><b>Your app</b><em>next</em></a></li></ul>
+        <div class="fd-time"><span>Brief</span><i></i><span>Build</span><i></i><span>Live</span></div>
+        <p class="fd-cap">Keys On Rent: three apps, brief to both stores, in 3–4 months.</p>
+      </div>
+      <div class="scene sc-eng" data-scene="eng">
+        <p class="en-cap">Zonesso, layer by layer</p>
+        <ol class="en-stack"><li style="--i:0"><b>UI</b><span>React Native 0.81 · React 19</span></li><li style="--i:1"><b>State</b><span>TanStack Query · Jotai</span></li><li style="--i:2"><b>API</b><span>Optimistic UI · real-time chat</span></li><li style="--i:3"><b>Payments</b><span>Stripe · Apple Pay · Samsung Pay · In-App Purchase · N-Genius</span></li><li style="--i:4"><b>Native</b><span>Gradle flavors · Hermes · ProGuard</span></li><li style="--i:5"><b>Release</b><span>Fastlane · Detox · Appium</span></li></ol>
+      </div>
     </div>
   </div>
-  <div class="wall" aria-hidden="true">
-    <div class="wall-col" style="--d:58s;--o:0s"><div class="wall-track"><div class="wall-set"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-3.webp" alt="" width="610" height="1110" fetchpriority="high" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/kor-1.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-7.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-5.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div><div class="wall-set" aria-hidden="true"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/kor-1.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-7.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-5.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div></div></div>
-    <div class="wall-col wall-rev" style="--d:72s;--o:-22s"><div class="wall-track"><div class="wall-set"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-6.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/kor-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-2.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div><div class="wall-set" aria-hidden="true"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-6.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/kor-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-2.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div></div></div>
-    <div class="wall-col" style="--d:64s;--o:-9s"><div class="wall-track"><div class="wall-set"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-2.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/jiffl-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-1.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-7.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div><div class="wall-set" aria-hidden="true"><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-2.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/jiffl-4.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-3.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/eco-1.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure><figure class="wall-shot"><img src="/assets/shots/zonesso-ui-7.webp" alt="" width="610" height="1110" loading="lazy" decoding="async"></figure></div></div></div>
-  </div>
+  <a class="scroll-cue" href="#shipped" aria-label="Scroll to my work"><i></i></a>
 </section>
 
 <!-- PROOF: live on the stores -->

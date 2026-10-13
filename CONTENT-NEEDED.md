@@ -106,3 +106,10 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - Hero numbers: 7 products shipped (Zonesso, Keys On Rent, Eco Crew, QPlease, JIFFL, Cone, My Phone Book; Keys On Rent counts as one), 50,000+ downloads (Eco Crew, CV figure), 39% less code (Zonesso rebuild, repo). Mantiqh's 150K+ Eco Crew figure still not used.
 - Shelf now tells Problem / Approach / Result for each of 7 products. Most lines come from the CV, repo and earlier confirmed answers; "planned one app per role" and "split the build with one other developer" for Keys On Rent, and Cone's approach line, are paraphrases of CV text: please correct anything you would not say.
 - Removed the Process and Also built sections (Cone moved into the shelf); Teardown pin shortened. Home is about 8,700px desktop.
+
+## Adaptive hero (2026-10-13)
+- Hero is three scenes, one per reader (auto-cycles every 8 s until clicked; remembers the choice). Founder: "Your idea, live in both stores." (7 products, 3 apps in 3-4 months, 50,000+ downloads, store-linked app tiles, "Your app next" tile that opens an email). Hiring manager: "Senior. Owns it end to end." (2 apps solo, 1 team led, open to relocate; release checks lint, type checks, unit tests, end-to-end, store release). Engineer: "Clean state. One checkout." (39% less code, 57 dependencies removed, 5 payment rails; the real Zonesso layers).
+- [ ] Check every line is how you would say it, especially "Senior. Owns it end to end." and the founder line "Alone or in a small team".
+- [ ] "Start a project" opens an email with the subject "New project". If you want a booking link or a scoping call, tell me where it should go.
+- [ ] There is no CV download on the hiring scene because no public resume PDF exists yet. Add one without your phone number and I will add a "Download CV" button.
+- Colour: buttons and nav stay vermilion (research found no evidence that a different brand colour per audience helps and it hurts recognition). Only the hero glow, scene details and dot grid shift tone: gold, vermilion, blue.
