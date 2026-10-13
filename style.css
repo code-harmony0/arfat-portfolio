@@ -1661,3 +1661,8 @@ html.static .pf-cap span:first-child{opacity:1}
   .hstage{gap:12px}
 }
 @media (min-width:901px){.scroll-cue{left:var(--edge);translate:0 0}}
+
+/* last leftovers: warm stat band as a token, shorter Teardown pin */
+:root{--band-warm:#140b07}
+.stats-warm{background:var(--band-warm)}
+@media (min-width:1021px){.pin-4.td{height:230svh}}
