@@ -76,3 +76,8 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - [ ] Every Mantiqh project on the page must say "Built at Mantiqh" plus your own part. Mantiqh's site never names you.
 - [ ] My Phone Book: no store or website link found. Send the link, your exact part and any real numbers.
 - [ ] Mantiqh figures that disagree with the CV (Eco Crew 150K+ vs 50,000+, KOR 500+ Q1 downloads vs 1,000+ installs, KOR 4.8 stars vs 2.75 from 8 ratings on the India App Store). Not used on the page.
+
+## Evolve pass shipped locally (2026-10-13)
+- [ ] My Phone Book card says "Helped build the local search and listings app" and "No public store listing at the moment" (your words: "we built it", "not on the store now, I think"). Confirm your exact part and whether it is really off the stores.
+- [ ] Admin panel tile has no screenshot. Send one with fake data.
+- [ ] Consent for Mantiqh thumbnails skipped by owner's decision (JIFFL, My Phone Book).

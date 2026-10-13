@@ -33,11 +33,10 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   <div class="wrap">
     <a class="brand" href="/">Arfat Rozewale</a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#shipped">Shipped</a>
+      <a href="#web">Web</a>
       <a href="#cases">Problems</a>
       <a href="#teardown">Teardown</a>
-      <a href="#mobile">Apps</a>
-      <a href="#web">Web</a>
-      <a href="#client">More work</a>
     </nav>
     <div class="nav-end">
       <a class="nav-ext" href="https://www.linkedin.com/in/arfat-rozewale/" rel="noopener" aria-label="LinkedIn profile">LinkedIn <span class="arrow" aria-hidden="true">&#8599;</span></a>
@@ -47,6 +46,7 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
   <nav id="menu" class="menu" data-lenis-prevent popover aria-label="Sections">
     <button class="menu-close" type="button" popovertarget="menu" popovertargetaction="hide">Close</button>
+    <a href="#shipped">Shipped <span>six products people use</span></a>
     <a href="#cases">Problems <span>found, fixed, shipped</span></a>
     <a href="#teardown">Teardown <span>one app, taken apart</span></a>
     <a href="#mobile">Apps <span>shipped to the stores</span></a>
@@ -63,17 +63,17 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <!-- HERO: who, what, proof, one action -->
 <section class="hero" id="top">
   <div class="wrap hero-copy">
-    <h1><span>Arfat Rozewale.</span><span class="dim">Senior mobile engineer.</span></h1>
-    <p class="hero-sub">Sole mobile engineer on a live Dubai marketplace: five payment methods, one checkout, every release a command. Open to relocating anywhere.</p>
+    <h1><span>Arfat Rozewale.</span><span class="dim">I build mobile apps and web stores.</span></h1>
+    <p class="hero-sub">People use them every day. I plan them, build them and keep them running. Open to relocating anywhere.</p>
     <dl class="glance">
-      <div><dt>Shipped</dt><dd><a href="#mobile">5 products live on the stores. 2 built solo, 3 in a team of two.</a></dd></div>
-      <div><dt>Decides</dt><dd><a href="#teardown">Server state apart from app state. Five payment rails behind one checkout.</a></dd></div>
-      <div><dt>Owns</dt><dd><a href="#process">Architecture, payments, tests, CI and every store release. Led JIFFL.</a></dd></div>
-      <div><dt>Solves</dt><dd><a href="#cases">Android's 16 KB rule, logouts on network drops, an App Store rejection.</a></dd></div>
+      <div><dt>Shipped</dt><dd><a href="#shipped">6 products people use, on the App Store, Google Play and the web.</a></dd></div>
+      <div><dt>Decides</dt><dd><a href="#teardown">How an app is organised, so it stays fast and easy to change.</a></dd></div>
+      <div><dt>Owns</dt><dd><a href="#process">Design to store release at Zonesso, on my own.</a></dd></div>
+      <div><dt>Solves</dt><dd><a href="#cases">Real problems: users logged out, a store rejection, new Android rules.</a></dd></div>
     </dl>
     <div class="hero-cta">
       <a class="btn btn-sig" href="mailto:arfathrozewale8@gmail.com" data-magnet>Email me <span class="arrow" aria-hidden="true">&#8599;</span></a>
-      <a class="btn btn-line" href="#cases" data-magnet>See the problems I solved <span class="arrow" aria-hidden="true">&#8595;</span></a>
+      <a class="btn btn-line" href="#shipped" data-magnet>See what I shipped <span class="arrow" aria-hidden="true">&#8595;</span></a>
     </div>
   </div>
   <div class="hero-stage" aria-hidden="true">
@@ -110,6 +110,64 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
   </div>
 </section>
 
+
+<!-- EVERYTHING SHIPPED: six products, one anatomy, plain words -->
+<section class="shipped" id="shipped" aria-labelledby="shipped-title">
+  <div class="wrap">
+    <h2 class="h2 rv" id="shipped-title">Six products people use.</h2>
+    <p class="lede rv">Each one starts with a problem. Here is what it was, what I did, and how it ended.</p>
+    <div class="ship-grid rv">
+      <article class="ship">
+        <img src="/assets/shots/zonesso-ui-3.webp" alt="Zonesso listings screen" width="1184" height="500" loading="lazy" decoding="async" style="object-position:50% 14%">
+        <h3>Zonesso</h3>
+        <p class="ship-what">Buy and sell cars in Dubai.</p>
+        <p class="ship-by">Sole mobile engineer</p>
+        <dl><div><dt>Problem</dt><dd>Buyers, sellers and five ways to pay had to work in one app.</dd></div><div><dt>What I did</dt><dd>Built the whole app and put every payment method behind one checkout.</dd></div><div><dt>Result</dt><dd>Live on the App Store and Google Play.</dd></div></dl>
+        <a class="tlink" href="/work/zonesso">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      </article>
+      <article class="ship">
+        <img src="/assets/shots/kor-2.webp" alt="Keys On Rent tenant home screen" width="1184" height="500" loading="lazy" decoding="async" style="object-position:50% 20%">
+        <h3>Keys On Rent</h3>
+        <p class="ship-what">Rent a home from your phone.</p>
+        <p class="ship-by">Built at Mantiqh, in a two-person team</p>
+        <dl><div><dt>Problem</dt><dd>Tenants, landlords and building staff all needed their own app.</dd></div><div><dt>What I did</dt><dd>Built three apps, one for each role, over the same rental data.</dd></div><div><dt>Result</dt><dd>All three live on the App Store and Google Play.</dd></div></dl>
+        <a class="tlink" href="/work/keys-on-rent">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      </article>
+      <article class="ship">
+        <img src="/assets/shots/eco-3.webp" alt="Eco Crew pickup slot screen" width="1184" height="500" loading="lazy" decoding="async" style="object-position:50% 30%">
+        <h3>Eco Crew</h3>
+        <p class="ship-what">Sell your recycling and book a pickup.</p>
+        <p class="ship-by">Built at Mantiqh, in a two-person team</p>
+        <dl><div><dt>Problem</dt><dd>A pickup only works if the app knows exactly where you are.</dd></div><div><dt>What I did</dt><dd>Built the pickup and delivery flows, then made the app smaller.</dd></div><div><dt>Result</dt><dd>Live, over 50,000 downloads. App about 30% smaller.</dd></div></dl>
+        <a class="tlink" href="/work/eco-crew">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      </article>
+      <article class="ship">
+        <img src="/assets/shots/banner-qplease.webp" alt="QPlease app screens" width="1184" height="500" loading="lazy" decoding="async">
+        <h3>QPlease</h3>
+        <p class="ship-what">Scan a QR code and join a queue from your phone.</p>
+        <p class="ship-by">Built at Mantiqh. I built the mobile app on my own</p>
+        <dl><div><dt>Problem</dt><dd>People stand in queues without knowing when their turn comes.</dd></div><div><dt>What I did</dt><dd>Built the iOS and Android app: scan, choose a service, join, get notified.</dd></div><div><dt>Result</dt><dd>Live on the App Store and Google Play.</dd></div></dl>
+        <a class="tlink" href="/work/qplease">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      </article>
+      <article class="ship">
+        <img src="/assets/shots/mq-jiffl.webp" alt="JIFFL, a UK hiring app" width="1184" height="500" loading="lazy" decoding="async">
+        <h3>JIFFL</h3>
+        <p class="ship-what">A UK hiring app for employers and job seekers.</p>
+        <p class="ship-by">Built at Mantiqh. I led a two-person team</p>
+        <dl><div><dt>Problem</dt><dd>Two audiences with different needs had to share one app, on a UK timeline.</dd></div><div><dt>What I did</dt><dd>Planned the work, handled the stakeholders, reviewed code and mentored juniors.</dd></div><div><dt>Result</dt><dd>Releases on schedule. App 15% smaller.</dd></div></dl>
+        <a class="tlink" href="/work/jiffl">Case study <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      </article>
+      <article class="ship">
+        <img src="/assets/shots/mq-phonebook.webp" alt="My Phone Book, a local directory" width="1184" height="500" loading="lazy" decoding="async">
+        <h3>My Phone Book</h3>
+        <p class="ship-what">Find nearby shops, services and utilities.</p>
+        <p class="ship-by">Built at Mantiqh, with the team</p>
+        <dl><div><dt>Problem</dt><dd>Local businesses are hard to find online, and people need nearby services fast.</dd></div><div><dt>What I did</dt><dd>Helped build the local search and listings app.</dd></div><div><dt>Result</dt><dd>Built by the team. No public store listing at the moment.</dd></div></dl>
+        
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEMS SOLVED: how he thinks, shown as production problems. Every row is true to the repo or to the owner. -->
 <section class="cases" id="cases" aria-labelledby="cases-title">
@@ -345,8 +403,13 @@ try{if(!CSS.supports('animation-timeline: view()')||matchMedia('(prefers-reduced
 <!-- WEB: two short pinned scenes. The browser stays put, real pages navigate inside it. -->
 <section class="web" id="web">
   <div class="wrap web-intro">
-    <h2 class="h2 rv">I also ship the web.</h2>
-    <p class="lede rv">The website and admin dashboard beside Zonesso, and a complete online store I built end to end.</p>
+    <h2 class="h2 rv">I build for the web too.</h2>
+    <p class="lede rv">A store I built end to end, the Zonesso website, and the admin panel behind it.</p>
+    <div class="web-tiles rv">
+      <a class="wt" href="https://srikalahastikalamkari.in" rel="noopener"><span class="wt-frame"><img src="/assets/shots/web-kalamkari-home.webp" alt="Srikalahasti Kalamkari online store" width="1440" height="2400" loading="lazy" decoding="async"></span><b>An online store</b><span>Catalogue, cart, payments and order tracking. Built end to end.</span></a>
+      <a class="wt" href="https://motors.zonesso.com" rel="noopener"><span class="wt-frame"><img src="/assets/shots/web-zonesso-home.webp" alt="motors.zonesso.com marketplace website" width="1440" height="2713" loading="lazy" decoding="async"></span><b>A marketplace website</b><span>The Zonesso site: fast to load, found on search, built with Next.js.</span></a>
+      <div class="wt wt-text"><span class="wt-frame"><i>Admin panel</i></span><b>The admin panel</b><span>Where the Zonesso team manages listings and users. Screens stay private.</span></div>
+    </div>
   </div>
   <div class="pin pin-3 web-scene">
     <div class="stage">
