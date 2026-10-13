@@ -118,3 +118,7 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - The hero is now one flat, straight-on phone with six real Zonesso screens scrolling inside (20 s loop) and four proof callouts that change per reader. The three card scenes and the numbers row are gone.
 - Callouts (all from CV, repo or your confirmed answers): hiring "Sole mobile engineer at Zonesso / Led a team of two on JIFFL / Open to relocating anywhere / 7 products shipped"; founder "Live on both stores / 50,000+ downloads on one app / 3 apps in 3-4 months / Alone or in a small team"; engineer "Server state kept apart / 5 payment methods, 1 checkout / 39% less code after a rebuild / Releases are one command". Edit any that does not sound like you.
 - [ ] A short screen recording of a Zonesso flow (browse, filter, post an ad) would replace the still-screenshot reel with real motion.
+
+## Callouts and phone reel (2026-10-13, critique steps 2 and 3 in part)
+- The hero phone now cycles four clean Zonesso screens (listings, filter, favourites, post an ad). `zonesso-ui-6` (notifications) is a broken collage with a zoomed overlay stuck on top, and `zonesso-ui-5` is unreviewed, so neither is used. Re-capture the notifications screen if you want it back.
+- A caption under the phone follows the current screen ("Browse the whole market", "Filter down to the exact car", "Save cars, one tap away", "Post a car, step by step"). The proof facts are a plain list with no pointer lines.
