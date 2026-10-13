@@ -1277,3 +1277,26 @@ html.static *,html.static *::before,html.static *::after{scroll-behavior:auto!im
   .m-card:nth-child(n+3){margin-top:0}
   .mw-facts{max-width:none}
 }
+
+/* Hero WebGL phones: canvas fades in over the CSS phones after the first frame */
+.hero-stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity var(--t-slow) var(--ease)}
+.hero-stage.gl-on canvas{opacity:1}
+.hero-stage.gl-on .tilt{opacity:0;transition:opacity var(--t-base)}
+
+/* Stack ticker */
+.marq{overflow:hidden;border-bottom:1px solid var(--line2);background:var(--bg)}
+.marq-track{display:flex;width:max-content}
+.marq-track > div{display:flex;flex:none;gap:clamp(28px,4vw,56px);padding:16px clamp(14px,2vw,28px)}
+.marq-track span{font:.78rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+html:not(.static) .marq-track{animation:marq 48s linear infinite}
+html:not(.static) .marq:hover .marq-track{animation-play-state:paused}
+@keyframes marq{to{translate:-50% 0}}
+html.static .marq-track{flex-wrap:wrap;width:auto}
+html.static .marq-track > div:nth-child(2){display:none}
+
+/* Blueprint labels and reveal on the shipped cards */
+.ship-grid{counter-reset:fig}
+.ship{counter-increment:fig}
+.ship::before{content:"FIG 1." counter(fig);order:-1;font:.72rem var(--mono);letter-spacing:.08em;color:var(--faint);padding-bottom:4px}
+html:not(.static) .ship img{animation:ship-in linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
+@keyframes ship-in{from{clip-path:inset(0 0 100% 0 round 14px);scale:1.06}to{clip-path:inset(0 0 0 0 round 14px);scale:1}}

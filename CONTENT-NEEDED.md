@@ -81,3 +81,6 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - [ ] My Phone Book card says "Helped build the local search and listings app" and "No public store listing at the moment" (your words: "we built it", "not on the store now, I think"). Confirm your exact part and whether it is really off the stores.
 - [ ] Admin panel tile has no screenshot. Send one with fake data.
 - [ ] Consent for Mantiqh thumbnails skipped by owner's decision (JIFFL, My Phone Book).
+
+## Motion and 3D pass (2026-10-13)
+- [ ] Hero 3D phone loads three.js (about 190 KB gzipped, self-hosted in assets/vendor/three) after first paint, desktop mouse only. Test on a real mid-range laptop and a real phone before deploying; if scroll feels heavy, delete the `<script type="module" src="/phone3d.js">` line and the CSS phones take over.
