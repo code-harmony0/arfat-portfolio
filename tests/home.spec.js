@@ -12,7 +12,8 @@ test.describe('adaptive hero', () => {
     const errors = watch(page);
     await page.goto('/');
     await expect(page.locator('html')).toHaveAttribute('data-who', 'hiring');
-    await expect(page.locator('.sc-hiring')).toHaveClass(/on/);
+    await expect(page.locator('.phone-flat')).toBeVisible();
+    await expect(page.locator('.chip')).toHaveCount(4);
     await expect(page.locator('canvas')).toHaveCount(0);
     expect(errors).toEqual([]);
   });
@@ -21,17 +22,16 @@ test.describe('adaptive hero', () => {
     await page.goto('/');
     await page.getByRole('tab', { name: 'Founder' }).click();
     await expect(page.locator('#h1-line')).toContainText('both stores');
-    await expect(page.locator('.sc-founder')).toHaveClass(/on/);
-    await expect(page.locator('.sc-hiring')).not.toHaveClass(/on/);
+    await page.waitForTimeout(500);
+    await expect(page.locator('.chip').first()).toHaveText('Live on both stores');
     await expect(page.locator('html')).toHaveAttribute('data-who', 'founder');
     const founderAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
 
     await page.getByRole('tab', { name: 'Engineer' }).click();
     await expect(page.locator('#h1-line')).toContainText('One checkout');
-    await expect(page.locator('.sc-eng')).toHaveClass(/on/);
+    await page.waitForTimeout(500);
+    await expect(page.locator('.chip').nth(3)).toHaveText('Releases are one command');
     await expect(page.locator('#cta-label')).toHaveText('See the teardown');
-    await page.waitForTimeout(1600);
-    await expect(page.locator('.hero-nums b').first()).toHaveText('39%');
     await page.waitForTimeout(900);
     const engAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
     expect(engAccent).not.toBe(founderAccent);

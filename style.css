@@ -1631,3 +1631,60 @@ html:not(.static) .scene.on .en-stack li{animation:sc-slide .7s var(--ease) both
 .case:hover h3{translate:6px 0}
 @media (max-width:900px){.scroll-cue{display:none}}
 .hero h1 .dim .kw{display:inline-block;white-space:normal;padding-bottom:0}
+
+
+/* ===== Hero v4: one flat phone, real screens scrolling like a live app, proof callouts that change per reader ===== */
+.hero-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}
+.hstage{position:relative;justify-self:end;width:min(100%,640px);height:clamp(500px,68svh,640px);display:grid;place-items:center}
+.hstage::before{content:"";position:absolute;inset:-6% 4%;z-index:0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--tone) 24%,transparent),transparent 72%)}
+.phone-flat{position:relative;z-index:1;height:min(100%,570px);aspect-ratio:300/548;border-radius:46px;padding:6px;background:#17181b;box-shadow:0 0 0 1px rgba(236,235,230,.16),0 40px 70px -40px rgba(0,0,0,.9)}
+.pf-screen{width:100%;height:100%;border-radius:40px;overflow:hidden;background:#fff;position:relative}
+.pf-track{display:flex;flex-direction:column;width:100%;height:600%}
+.pf-track img{display:block;width:100%;height:calc(100% / 6);object-fit:cover;object-position:top}
+html:not(.static) .pf-track{animation:pf-reel 20s cubic-bezier(.65,0,.2,1) infinite}
+@keyframes pf-reel{0.000%,12.000%{translate:0 0.0000%}16.667%,28.667%{translate:0 -16.6667%}33.333%,45.333%{translate:0 -33.3333%}50.000%,62.000%{translate:0 -50.0000%}66.667%,78.667%{translate:0 -66.6667%}83.333%,95.333%{translate:0 -83.3333%}}
+.pf-island{position:absolute;top:15px;left:50%;translate:-50% 0;width:86px;height:25px;border-radius:14px;background:#0a0b0d}
+.pf-glare{position:absolute;inset:6px;border-radius:40px;background:linear-gradient(118deg,rgba(255,255,255,.12),transparent 34%);pointer-events:none}
+.chips{position:absolute;inset:0;z-index:2;pointer-events:none}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(17,18,21,.94);font-size:.92rem;line-height:1.2;white-space:nowrap;transition:opacity .25s,scale .35s var(--ease)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--tone);flex:none}
+.chip::after{content:"";position:absolute;top:50%;width:54px;height:1px;background:linear-gradient(90deg,var(--tone),transparent)}
+.c1{left:-3%;top:16%}.c2{left:-9%;top:63%}.c3{right:-4%;top:27%}.c4{right:-11%;top:74%}
+.c1::after,.c2::after{left:100%}
+.c3::after,.c4::after{right:100%;background:linear-gradient(270deg,var(--tone),transparent)}
+.chips.swap .chip{opacity:0;scale:.92}
+html:not(.static) .chip{animation:chip-in .7s var(--ease) backwards,chip-float 6.5s ease-in-out infinite;animation-delay:calc(var(--i) * 120ms + 350ms),calc(var(--i) * -1.4s)}
+@keyframes chip-in{from{opacity:0;scale:.9}}
+@keyframes chip-float{50%{translate:0 -8px}}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hstage{justify-self:stretch;width:100%;height:440px}
+  .phone-flat{height:min(100%,420px)}
+  .chip{font-size:.8rem;padding:8px 12px 8px 10px}
+  .chip::after{display:none}
+  .c1{left:0;top:6%}.c2{left:0;top:72%}.c3{right:0;top:22%}.c4{right:0;top:84%}
+}
+.hstage{display:flex;align-items:center;justify-content:center}
+.phone-flat{flex:none;height:min(100%,560px)}
+
+/* callouts sit beside the phone as compact cards */
+.chip{font-family:var(--sans);font-size:.9rem;white-space:normal;max-width:190px;border-radius:18px;text-wrap:balance;padding:10px 14px 10px 12px;align-items:flex-start}
+.chip i{margin-top:.38em}
+.chip::after{display:none}
+.c1,.c2{left:auto;right:calc(50% + 118px)}
+.c3,.c4{right:auto;left:calc(50% + 118px)}
+.c1{top:10%}.c2{top:56%}.c3{top:24%}.c4{top:72%}
+.hero h1 .dim{max-width:none}
+@media (max-width:900px){
+  .chip{font-size:.78rem;max-width:150px;padding:8px 11px 8px 10px;border-radius:14px}
+  .c1,.c2{right:auto;left:0}.c3,.c4{left:auto;right:0}
+  .c1{top:4%}.c2{top:70%}.c3{top:22%}.c4{top:86%}
+}
+.chip,.chip span{font-family:var(--sans)}
+@media (max-width:900px){
+  .hstage{flex-direction:column;height:auto;gap:18px;padding-bottom:6px}
+  .phone-flat{height:400px}
+  .chips{position:static;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .chip{position:static;max-width:none;font-size:.82rem}
+  html:not(.static) .chip{animation:chip-in .7s var(--ease) backwards;animation-delay:calc(var(--i) * 100ms + 300ms)}
+}

@@ -182,57 +182,38 @@
     }
   });
 
-  /* Hero: three scenes, one per reader. Headline, visual, proof numbers, call to action and accent colour all change. */
+  /* Hero: one phone, proof callouts that change per reader. Headline, sub, callouts, button and tone all change. */
   (function () {
     var hero = document.getElementById('top');
     if (!hero) return;
     var COPY = {
-      founder: { h1: 'Your idea, live in both stores.', sub: 'I take an app from brief to App Store and Google Play, then keep it running. Alone or in a small team.',
-        nums: [[7, '', 'products shipped'], [3, '', 'apps in 3\u20134 months'], [50000, '+', 'downloads, one live app']], cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
-      hiring: { h1: 'Senior. Owns it end to end.', sub: 'Senior React Native engineer. Sole mobile engineer at Zonesso. Open to relocating anywhere.',
-        nums: [[2, '', 'apps built solo'], [1, '', 'team led, JIFFL'], ['Anywhere', '', 'open to relocate']], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
-      eng: { h1: 'Clean state. One checkout.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases that are one command.',
-        nums: [[39, '%', 'less code after a rebuild'], [57, '', 'dependencies removed'], [5, '', 'payment rails, one checkout']], cta: 'See the teardown', href: '#teardown' }
+      founder: { h1: 'Your idea,|live in both stores.', sub: 'I take an app from brief to App Store and Google Play, then keep it running.',
+        chips: ['Live on both stores', '50,000+ downloads on one app', '3 apps in 3\u20134 months', 'Alone or in a small team'], cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
+      hiring: { h1: 'Senior.|Owns it end to end.', sub: 'Senior React Native engineer, open to relocating anywhere.',
+        chips: ['Sole mobile engineer at Zonesso', 'Led a team of two on JIFFL', 'Open to relocating anywhere', '7 products shipped'], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
+      eng: { h1: 'Clean state.|One checkout.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases as one command.',
+        chips: ['Server state kept apart', '5 payment methods, 1 checkout', '39% less code after a rebuild', 'Releases are one command'], cta: 'See the teardown', href: '#teardown' }
     };
     var ORDER = ['hiring', 'founder', 'eng'];
     var tabs = [].slice.call(hero.querySelectorAll('.who-tab'));
     var pill = hero.querySelector('.who-pill');
-    var h1l = document.getElementById('h1-line'), line = document.getElementById('who-line'), nums = document.getElementById('hero-nums');
+    var h1l = document.getElementById('h1-line'), line = document.getElementById('who-line'), chips = document.getElementById('chips');
     var cta = document.getElementById('cta-primary'), ctaLabel = document.getElementById('cta-label');
-    var scenes = [].slice.call(hero.querySelectorAll('.scene'));
-    var fmt = new Intl.NumberFormat('en-US');
     var current = 'hiring', userPicked = false, timer = 0;
 
-    function countUp(el) {
-      var end = parseInt(el.getAttribute('data-count'), 10), suf = el.getAttribute('data-suffix') || '';
-      if (still || !end) { el.textContent = fmt.format(end) + suf; return; }
-      var t0 = performance.now(), dur = 1300;
-      (function step(t) {
-        var p = Math.min(1, (t - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - p, 4)));
-        el.textContent = fmt.format(v) + (p < 1 ? '' : suf);
-        if (p < 1) requestAnimationFrame(step);
-      })(t0);
-    }
-    function setWords(el, text) { el.innerHTML = text.split(' ').map(function (w, i) { return '<span class="kw" style="--k:' + i + '">' + w + '</span>'; }).join(' '); }
+    function setWords(el, text) { var k = 0; el.innerHTML = text.split('|').map(function (part) { return part.split(' ').map(function (w) { return '<span class="kw" style="--k:' + (k++) + '">' + w + '</span>'; }).join(' '); }).join('<br>'); }
+    function plain(text) { return text.replace('|', ' '); }
     function place(t) { pill.style.setProperty('--l', (t.offsetLeft - 4) + 'px'); pill.style.setProperty('--w', t.offsetWidth + 'px'); }
-    function renderNums(c) {
-      nums.innerHTML = c.nums.map(function (n) {
-        var isNum = typeof n[0] === 'number';
-        return '<div><b' + (isNum ? ' data-count="' + n[0] + '" data-suffix="' + n[1] + '"' : '') + '>' + (isNum ? '0' : n[0]) + '</b><span>' + n[2] + '</span></div>';
-      }).join('');
-      [].forEach.call(nums.querySelectorAll('[data-count]'), countUp);
-    }
+    function writeChips(c) { [].forEach.call(chips.children, function (li, i) { li.querySelector('span').textContent = c.chips[i]; }); chips.classList.remove('swap'); }
     function apply(k, animate) {
       var c = COPY[k];
-      var write = function () {
-        line.textContent = c.sub; renderNums(c);
-        ctaLabel.textContent = c.cta; cta.setAttribute('href', c.href);
-        [line, nums].forEach(function (e) { e.classList.remove('swap'); });
-      };
       document.documentElement.setAttribute('data-who', k);
       tabs.forEach(function (x) { var on = x.getAttribute('data-who') === k; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; if (on) place(x); });
-      scenes.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-scene') === k); });
-      if (animate && !still) { setWords(h1l, c.h1); [line, nums].forEach(function (e) { e.classList.add('swap'); }); setTimeout(write, 230); } else { h1l.textContent = c.h1; write(); }
+      ctaLabel.textContent = c.cta; cta.setAttribute('href', c.href);
+      if (animate && !still) {
+        setWords(h1l, c.h1); line.classList.add('swap'); chips.classList.add('swap');
+        setTimeout(function () { line.textContent = c.sub; line.classList.remove('swap'); writeChips(c); }, 260);
+      } else { h1l.innerHTML = c.h1.split('|').join('<br>'); line.textContent = c.sub; writeChips(c); }
     }
     function set(k, animate) { if (k === current && animate) return; current = k; apply(k, animate); try { if (userPicked) localStorage.setItem('who', k); } catch (e) {} }
     function schedule() {
@@ -253,8 +234,9 @@
     var saved = null; try { saved = localStorage.getItem('who'); } catch (e) {}
     if (saved && COPY[saved]) { userPicked = true; current = saved; apply(saved, false); }
     else { apply(current, false); schedule(); }
-    addEventListener('resize', function () { var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0]; if (on) place(on); });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0]; if (on) place(on); });
+    function sync() { var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0]; if (on) place(on); }
+    addEventListener('resize', sync);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
   })();
 
   /* Web tiles: spotlight follows the cursor. */

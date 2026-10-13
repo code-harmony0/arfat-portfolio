@@ -113,3 +113,8 @@ Hero now states Shipped / Decides / Owns / Solves; "Problems from production" re
 - [ ] "Start a project" opens an email with the subject "New project". If you want a booking link or a scoping call, tell me where it should go.
 - [ ] There is no CV download on the hiring scene because no public resume PDF exists yet. Add one without your phone number and I will add a "Download CV" button.
 - Colour: buttons and nav stay vermilion (research found no evidence that a different brand colour per audience helps and it hurts recognition). Only the hero glow, scene details and dot grid shift tone: gold, vermilion, blue.
+
+## Hero v4: one flat phone (2026-10-13)
+- The hero is now one flat, straight-on phone with six real Zonesso screens scrolling inside (20 s loop) and four proof callouts that change per reader. The three card scenes and the numbers row are gone.
+- Callouts (all from CV, repo or your confirmed answers): hiring "Sole mobile engineer at Zonesso / Led a team of two on JIFFL / Open to relocating anywhere / 7 products shipped"; founder "Live on both stores / 50,000+ downloads on one app / 3 apps in 3-4 months / Alone or in a small team"; engineer "Server state kept apart / 5 payment methods, 1 checkout / 39% less code after a rebuild / Releases are one command". Edit any that does not sound like you.
+- [ ] A short screen recording of a Zonesso flow (browse, filter, post an ad) would replace the still-screenshot reel with real motion.
