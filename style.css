@@ -1703,3 +1703,108 @@ a.sp-vis:hover img{scale:1.03}
 .pf-col{position:relative;z-index:2}
 .pf-now{width:min(372px,100%)}
 .pn-text span{white-space:normal;overflow:visible;text-overflow:clip;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ==========================================================================
+   Motion for browsers without scroll-driven animation (Safari, Firefox):
+   html.lite = static layout + time-based motion. Reduced motion stays still.
+   ========================================================================== */
+html.lite .hero h1 span{animation:line-up 1.1s var(--ease) both}
+html.lite .hero h1 span:nth-child(2){animation-delay:.1s}
+html.lite .hero-sub{animation:rise .9s var(--ease) .35s both}
+html.lite .hero-cta{animation:rise .9s var(--ease) .65s both}
+html.lite .chip{animation:chip-in .7s var(--ease) backwards,chip-float 6.5s ease-in-out infinite;animation-delay:calc(var(--i) * 120ms + 350ms),calc(var(--i) * -1.4s)}
+html.lite .pf-col.auto .pn-dot.on::after{animation:pn-fill var(--pn-dwell,5s) linear both}
+html.lite .pf-img.on{animation:pf-drift 6s ease-out both}
+html.lite.rv-js .rv{opacity:0;translate:0 32px;transition:opacity .8s var(--ease),translate .8s var(--ease)}
+html.lite.rv-js .rv.in{opacity:1;translate:0 0}
+
+/* Micro-interactions: small, fast, and only where they confirm an action. */
+@media (prefers-reduced-motion:no-preference){
+  .pn-dot,.shelf-tab,.who-tab,.pn-link,.menu-btn{transition:transform .2s var(--ease),background-color .25s,border-color .25s,color .25s}
+  .pn-dot:active,.shelf-tab:active,.who-tab:active,.pn-link:active,.menu-btn:active{transform:scale(.94)}
+  @media (hover:hover){
+    .pn-dot:hover{transform:translateY(-2px);background:rgba(236,235,230,.1)}
+    .pn-dot:hover img{opacity:1}
+    .pn-link:hover .arrow{transform:translate(3px,-3px)}
+    .pn-link .arrow{display:inline-block;transition:transform .25s var(--ease)}
+    .case:active,a.wt:active{transform:scale(.99);transition:transform .15s var(--ease)}
+  }
+  .pn-ico{transition:transform .5s var(--ease)}
+  .pn-ico.pop{animation:ico-pop .45s var(--ease)}
+  @keyframes ico-pop{from{transform:scale(.7) rotate(-8deg);opacity:.4}}
+}
+@media (min-width:1101px) and (min-height:820px){.pf-col .phone-flat{height:min(calc(100% - 128px),560px)}}
+/* scroll cue: sits under the copy column, clear of the app card */
+@media (min-width:901px){.scroll-cue{left:max(var(--gut,24px),calc(50% - 620px));translate:0 0;align-items:flex-start}.scroll-cue i{margin-left:2px}}
+html.lite .scroll-cue i::after{animation:cue 2.2s var(--ease) infinite}
+html.lite .progress{transform:scaleX(0)}
+/* phones: name the app before showing its screen, and keep touch targets at 44px */
+@media (max-width:900px){.pf-col .pf-now{order:-1}}
+@media (pointer:coarse){.pn-dot{height:44px}.pn-link{min-height:44px;display:inline-flex;align-items:center}}
+
+/* ---- Hero rework: cue lives with the copy, stage scales with the screen, no ghosting between apps ---- */
+@media (min-width:901px){
+  .hero-copy .scroll-cue{position:static;translate:none;width:auto;height:auto;margin-top:34px;flex-direction:row;align-items:center;gap:14px;display:inline-flex}
+  .hero-copy .scroll-cue i{flex:none;min-height:0;width:56px;height:1px;margin:0}
+  .hero-copy .scroll-cue i::after{width:18px;height:1px}
+  html:not(.static) .hero-copy .scroll-cue i::after,html.lite .hero-copy .scroll-cue i::after{animation:cue-x 2.2s var(--ease) infinite}
+  .hero-copy .scroll-cue:hover span{color:var(--ink)}
+  .hero-copy .scroll-cue span{transition:color .25s}
+}
+@keyframes cue-x{0%{translate:-20px 0}70%,100%{translate:58px 0}}
+@media (min-width:1101px){
+  .hstage{width:min(100%,720px);height:clamp(560px,76svh,820px)}
+  .pf-col .phone-flat{height:min(calc(100% - 128px),640px)}
+}
+/* the incoming screen fades in over the old one instead of both going see-through */
+.pf-img{transition:opacity 0s linear .8s}
+.pf-img.on{z-index:1;transition:opacity .8s var(--ease)}
+@media (prefers-reduced-motion:no-preference){
+  .pf-screen::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.2) 50%,transparent 62%);translate:-120% 0}
+  .pf-screen.sweep::after{animation:pf-sweep 1s var(--ease)}
+  @keyframes pf-sweep{to{translate:120% 0}}
+}
+/* ---- Hero proof list: one tidy column beside the phone, same width every row, same in every audience ---- */
+@media (min-width:901px){
+  .chips{position:static;inset:auto;display:flex;flex-direction:column;justify-content:center;gap:10px;width:236px;margin:0 0 0 36px;pointer-events:auto}
+  .chip,.chip:first-child{position:static;width:auto;max-width:none;margin:0;white-space:normal;text-wrap:balance;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;font:400 .92rem/1.3 var(--sans);color:var(--ink);background:rgba(17,18,21,.72);border:1px solid var(--line);transition:border-color .3s,background-color .3s,opacity .25s,scale .35s var(--ease),translate .35s var(--ease)}
+  .chip::before,.chip::after,.chip:nth-child(even)::before{display:none}
+  .chip i{margin:0;flex:none}
+  html:not(.static) .chip,html.lite .chip{animation:chip-in .7s var(--ease) backwards;animation-delay:calc(var(--i) * 110ms + 350ms)}
+  .chip:hover{border-color:color-mix(in srgb,var(--tone) 55%,var(--line));background:rgba(17,18,21,.95);translate:4px 0}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .hstage{flex-direction:column;height:auto;gap:16px;align-items:center;padding:6px 0 0}
+  .pf-col{height:auto}
+  .pf-col .phone-flat{height:400px}
+  .chips{width:100%;max-width:368px;margin:0;display:grid;grid-template-columns:1fr 1fr}
+  .chip,.chip:first-child{font-size:.82rem;padding:10px 12px}
+}
+@media (min-width:901px){.chip,.chip:first-child{min-height:54px}}
+@media (min-width:901px) and (max-width:1100px){.pf-col .phone-flat{height:340px}.chip,.chip:first-child{min-height:48px}}
+@media (min-width:901px){html .chips li.chip{font:400 .92rem/1.3 var(--sans);letter-spacing:0;padding:13px 16px;min-height:54px}}
+@media (min-width:901px) and (max-width:1100px){html .chips li.chip{font-size:.82rem;padding:10px 12px;min-height:48px}}
+@media (min-width:901px){html .chips li.chip{border-radius:14px}}
+
+/* ---- Hero motion: each new app scrolls in from below, its proof rows follow one by one ---- */
+@media (prefers-reduced-motion:no-preference){
+  html:not(.static) .pf-img.on,html.lite .pf-img.on{animation:pf-wipe .75s var(--ease) both,pf-drift 6s ease-out both}
+  @keyframes pf-wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .chips .chip{transition-delay:calc(var(--i) * 55ms)}
+  .chips.swap .chip{translate:10px 0}
+  .pn-ico{transition:none}
+}
+
+/* Tools in plain sight: quiet text, no logos, no bars */
+.hero-stack{display:flex;flex-wrap:wrap;align-items:center;gap:0 22px;margin-top:20px;font:.84rem/1.4 var(--mono);letter-spacing:.02em;color:var(--faint)}
+.hero-stack span{position:relative;transition:color .25s}
+.hero-stack span + span::before{content:"";position:absolute;left:-12px;top:50%;width:3px;height:3px;margin-top:-1.5px;border-radius:50%;background:var(--tone)}
+.hero-stack:hover span{color:var(--mut)}
+html:not(.static) .hero-stack,html.lite .hero-stack{animation:rise .9s var(--ease) .55s both}
+.sp-stack{margin-top:6px;font:.8rem/1.4 var(--mono);color:var(--faint)}
+@media (max-width:900px){.hero-stack{font-size:.78rem;gap:0 20px}}
+
+/* mailto fallback message */
+.toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:min(92vw,460px);padding:13px 18px;border:1px solid var(--line);border-radius:14px;background:var(--bg3);color:var(--ink);font-size:.92rem;line-height:1.4;text-align:center;box-shadow:0 18px 40px -18px rgba(0,0,0,.8);opacity:0;translate:-50% 14px;pointer-events:none;transition:opacity .25s,translate .4s var(--ease)}
+.toast.on{opacity:1;translate:-50% 0}
+.toast:empty{display:none}

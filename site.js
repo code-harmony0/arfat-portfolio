@@ -2,9 +2,28 @@
 (function () {
   var root = document.documentElement;
   var still = root.classList.contains('static');
+  var lite = root.classList.contains('lite');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Safari/Firefox: the existing progress hairline needs JS (no scroll timeline). */
+  if (lite) {
+    var bar = document.querySelector('.progress'), ticking = false;
+    if (bar) {
+      var bump = function () { var h = root.scrollHeight - innerHeight; bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')'; ticking = false; };
+      addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(bump); } }, { passive: true });
+      bump();
+    }
+  }
+
+  /* Browsers without scroll-driven animation (Safari, Firefox) still get reveals, via IntersectionObserver. */
+  if (lite && 'IntersectionObserver' in window) {
+    root.classList.add('rv-js');
+    var rvio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rvio.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    [].forEach.call(document.querySelectorAll('.rv'), function (el) { rvio.observe(el); });
+  }
 
   /* Count-ups: play once when the number scrolls into view, always land on the real value. */
-  if (!still && 'IntersectionObserver' in window && root.animate) {
+  if (!calm && 'IntersectionObserver' in window && root.animate) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
@@ -79,7 +98,7 @@
   markRows();
   if (phone.addEventListener) phone.addEventListener('change', markRows);
 
-  if (still || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  if (calm || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
 
   /* Pointer depth: one eased value, applied only to phones currently on screen, loop stops when settled */
   var tilts = [].slice.call(document.querySelectorAll('[data-tilt]')).map(function (el) {
@@ -112,6 +131,36 @@
     el.addEventListener('pointerleave', function () { el.style.transform = ''; });
   });
 
+  /* Email links: Gmail compose on desktop; on phones mailto, and if no mail app opens, copy the address and say so. */
+  (function () {
+    var toast = document.createElement('div'); toast.className = 'toast'; toast.setAttribute('role', 'status'); toast.setAttribute('aria-live', 'polite'); document.body.appendChild(toast);
+    var hide = 0;
+    function say(msg) { toast.textContent = msg; toast.classList.add('on'); clearTimeout(hide); hide = setTimeout(function () { toast.classList.remove('on'); }, 4500); }
+    function copy(text, cb) {
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(function () { cb(true); }, function () { cb(false); }); return; }
+      var t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand('copy'); } catch (e) {} document.body.removeChild(t); cb(ok);
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="mailto:"]'); if (!a) return;
+      var parts = a.getAttribute('href').slice(7).split('?'), addr = parts[0], left = false;
+      /* Desktop: open Gmail's compose window directly. Phones keep mailto so their own mail app opens. */
+      if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+        var su = (parts[1] || '').match(/subject=([^&]*)/);
+        e.preventDefault();
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(addr) + (su ? '&su=' + su[1] : ''), '_blank', 'noopener');
+        return;
+      }
+      function gone() { left = true; }
+      addEventListener('blur', gone, { once: true }); document.addEventListener('visibilitychange', gone, { once: true });
+      setTimeout(function () {
+        removeEventListener('blur', gone); document.removeEventListener('visibilitychange', gone);
+        if (left) return;
+        copy(addr, function (ok) { say(ok ? 'No mail app opened, so I copied ' + addr : 'No mail app opened. Write to ' + addr); });
+      }, 1200);
+    });
+  })();
+
   /* Copy email: a mailto link does nothing for visitors with no mail app set up. */
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     var status = btn.parentNode.querySelector('[data-copy-status]');
@@ -140,7 +189,7 @@
     if (!tabs.length) return;
     shelf.classList.add('js');
     var DWELL = 5500, timer = 0, idx = 0, stopped = false, shown = false;
-    var auto = !still && 'IntersectionObserver' in window;
+    var auto = !calm && 'IntersectionObserver' in window;
     shelf.style.setProperty('--dwell', DWELL + 'ms');
     function show(i, focus) {
       idx = (i + tabs.length) % tabs.length;
@@ -189,36 +238,35 @@
     if (!hero) return;
     var COPY = {
       founder: { h1: 'Your idea,|live in both stores.', sub: 'I am a senior mobile engineer. I take an app from brief to App Store and Google Play, then keep it running.',
-        chips: ['Live on both stores', '50,000+ downloads on one app', '3 apps in 3\u20134 months', 'I plan, build and release it'], cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
+         cta: 'Start a project', href: 'mailto:arfathrozewale8@gmail.com?subject=New%20project' },
       hiring: { h1: 'Senior mobile engineer.|Owns it end to end.', sub: 'I build iPhone and Android apps and web stores, from the first brief to the App Store and Google Play.',
-        chips: ['7 products shipped', 'Sole mobile engineer at Zonesso', 'Led a team of two on JIFFL', 'Open to relocating anywhere'], cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
+         cta: 'Email me', href: 'mailto:arfathrozewale8@gmail.com' },
       eng: { h1: 'Senior mobile engineer.|Clean state. One checkout.', sub: 'Server state kept apart from app state, five payment methods behind one checkout, releases as one command.',
-        chips: ['39% less code after a rebuild', 'Server state kept apart', '5 payment methods, 1 checkout', 'Releases are one command'], cta: 'See the teardown', href: '#teardown' }
+         cta: 'See the teardown', href: '#teardown' }
     };
     var ORDER = ['hiring', 'founder', 'eng'];
     var tabs = [].slice.call(hero.querySelectorAll('.who-tab'));
     var pill = hero.querySelector('.who-pill');
-    var h1l = document.getElementById('h1-line'), line = document.getElementById('who-line'), chips = document.getElementById('chips');
+    var h1l = document.getElementById('h1-line'), line = document.getElementById('who-line');
     var cta = document.getElementById('cta-primary'), ctaLabel = document.getElementById('cta-label');
     var current = 'hiring', userPicked = false, timer = 0;
 
     function setWords(el, text) { var k = 0; el.innerHTML = text.split('|').map(function (part) { return part.split(' ').map(function (w) { return '<span class="kw" style="--k:' + (k++) + '">' + w + '</span>'; }).join(' '); }).join('<br>'); }
     function plain(text) { return text.replace('|', ' '); }
     function place(t) { pill.style.setProperty('--l', (t.offsetLeft - 4) + 'px'); pill.style.setProperty('--w', t.offsetWidth + 'px'); }
-    function writeChips(c) { [].forEach.call(chips.children, function (li, i) { li.querySelector('span').textContent = c.chips[i]; }); chips.classList.remove('swap'); }
     function apply(k, animate) {
       var c = COPY[k];
       document.documentElement.setAttribute('data-who', k);
       tabs.forEach(function (x) { var on = x.getAttribute('data-who') === k; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; if (on) place(x); });
       ctaLabel.textContent = c.cta; cta.setAttribute('href', c.href);
-      if (animate && !still) {
-        setWords(h1l, c.h1); line.classList.add('swap'); chips.classList.add('swap');
-        setTimeout(function () { line.textContent = c.sub; line.classList.remove('swap'); writeChips(c); }, 260);
-      } else { h1l.innerHTML = c.h1.split('|').join('<br>'); line.textContent = c.sub; writeChips(c); }
+      if (animate && !calm) {
+        setWords(h1l, c.h1); line.classList.add('swap');
+        setTimeout(function () { line.textContent = c.sub; line.classList.remove('swap'); }, 260);
+      } else { h1l.innerHTML = c.h1.split('|').join('<br>'); line.textContent = c.sub; }
     }
     function schedule() {
       clearTimeout(timer);
-      if (userPicked || still) return;
+      if (userPicked || calm) return;
       timer = setTimeout(function () { set(ORDER[(ORDER.indexOf(current) + 1) % ORDER.length], true); schedule(); }, 9000);
     }
     function set(k, animate) { if (k === current && animate) return; current = k; apply(k, animate); try { if (userPicked) localStorage.setItem('who', k); } catch (e) {} }
@@ -268,7 +316,7 @@
 
   /* Hero: the dot grid follows the cursor. Shelf: the two screens drift against each other. */
   (function () {
-    if (still || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (calm || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
     var hero = document.getElementById('top');
     if (hero) {
       var hraf = 0, hx = 0, hy = 0;
@@ -287,23 +335,39 @@
     }
   })();
 
+  /* After first paint, fetch the below-the-fold screens so pinned scenes never show empty frames. */
+  (function () {
+    function warm() { [].forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (im) { im.loading = 'eager'; }); }
+    function go() { (window.requestIdleCallback || function (f) { setTimeout(f, 1200); })(warm, { timeout: 4000 }); }
+    if (document.readyState === 'complete') go(); else window.addEventListener('load', go);
+  })();
+
   /* Hero phone: cycles through every app by itself, card shows the app and links to its case study. */
   (function () {
     var col = document.querySelector('.pf-col'), now = document.getElementById('pf-now');
     if (!col || !now) return;
     var imgs = [].slice.call(col.querySelectorAll('.pf-img')), dots = [].slice.call(col.querySelectorAll('.pn-dot'));
     var name = document.getElementById('pn-name'), line = document.getElementById('pn-line'), ico = document.getElementById('pn-ico'), link = document.getElementById('pn-link');
-    var DWELL = 5000, i = 0, timer = 0, hovering = false;
+    var chipsEl = document.getElementById('chips'), chipTimer = 0;
+    function writeChips(n) { var t = (now.getAttribute('data-chips' + n) || '').split('|'); clearTimeout(chipTimer); chipsEl.classList.add('swap'); chipTimer = setTimeout(function () { [].forEach.call(chipsEl.children, function (li, k) { li.querySelector('span').textContent = t[k] || ''; }); chipsEl.classList.remove('swap'); }, calm ? 0 : 220); }
+    var DWELL = 3200, i = 0, timer = 0, hovering = false;
     col.style.setProperty('--pn-dwell', DWELL + 'ms');
     function show(n) {
       i = (n + imgs.length) % imgs.length;
+      var target = imgs[i];
+      if (!target.complete && target.decode) target.decode().then(paint, paint); else paint();
+      function paint() {
       var d = now.getAttribute('data-app' + i).split('|');
       imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); });
       dots.forEach(function (b, k) { b.classList.toggle('on', k === i); });
       name.textContent = d[0]; line.textContent = d[1]; link.setAttribute('href', d[2]); ico.setAttribute('src', '/assets/shots/' + d[3] + '.webp');
       link.setAttribute('aria-label', d[0] + ' case study');
+      writeChips(i);
+      var scr = col.querySelector('.pf-screen'); if (scr) { scr.classList.remove('sweep'); void scr.offsetWidth; scr.classList.add('sweep'); }
+      ico.classList.remove('pop'); void ico.offsetWidth; ico.classList.add('pop');
+      }
     }
-    function tick() { clearTimeout(timer); if (still || hovering) return; col.classList.add('auto'); timer = setTimeout(function () { show(i + 1); tick(); }, DWELL); }
+    function tick() { clearTimeout(timer); if (calm || hovering) return; col.classList.add('auto'); timer = setTimeout(function () { show(i + 1); tick(); }, DWELL); }
     dots.forEach(function (b) { b.addEventListener('click', function () { show(parseInt(b.getAttribute('data-i'), 10)); col.classList.remove('auto'); void col.offsetWidth; tick(); }); });
     col.addEventListener('pointerenter', function () { hovering = true; clearTimeout(timer); col.classList.remove('auto'); });
     col.addEventListener('pointerleave', function () { hovering = false; tick(); });
