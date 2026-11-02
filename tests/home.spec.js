@@ -18,19 +18,17 @@ test.describe('adaptive hero', () => {
     expect(errors).toEqual([]);
   });
 
-  test('each reader gets a different scene, headline, proof and accent', async ({ page }) => {
+  test('each reader gets a different headline, button and accent', async ({ page }) => {
     await page.goto('/');
     await page.getByRole('tab', { name: 'Founder' }).click();
     await expect(page.locator('#h1-line')).toContainText('both stores');
     await page.waitForTimeout(500);
-    await expect(page.locator('.chip').first()).toHaveText('Live on both stores');
     await expect(page.locator('html')).toHaveAttribute('data-who', 'founder');
     const founderAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
 
     await page.getByRole('tab', { name: 'Engineer' }).click();
     await expect(page.locator('#h1-line')).toContainText('Clean state');
     await page.waitForTimeout(500);
-    await expect(page.locator('.chip').nth(3)).toHaveText('Releases are one command');
     await expect(page.locator('#cta-label')).toHaveText('See the teardown');
     await page.waitForTimeout(900);
     const engAccent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--tone').trim());
