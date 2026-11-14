@@ -1,31 +1,56 @@
-# Arfat portfolio
+# Arfat Rozewale · Senior React Native Engineer Portfolio
 
-Hand-built static site. No framework, no build step. Deploy: `npx vercel --prod` from this folder.
-Content source of truth: `career-ops/cv.md`. Only facts and numbers that exist there go on the page.
+> **Public Proof Portfolio** — Designed for recruiters to open on mobile and verify shipped production work within 30 seconds.
+> **Live Site:** [arfat-portfolio-ten.vercel.app](https://arfat-portfolio-ten.vercel.app)
 
-## Direction: "The Teardown" (scan layer on home, depth in case studies)
-Dark, one signal colour (vermilion `#ff5b2e`), Geist + Geist Mono (self-hosted). Mobile is about 60% of the scroll.
+---
 
-- `index.html` is the home page. `work/{zonesso,keys-on-rent,eco-crew,jiffl,cone,qplease}/` are the case studies (clean URLs via `vercel.json`).
-- Case pages are generated from one template; edit the template, not six files. Keep the same facts-only rule.
-- Everything animated is native CSS: scroll-driven animation (`animation-timeline`), a registered `--p` progress
-  variable per pinned scene, 3D transforms, and cross-document view transitions for page changes.
-- `html.static` (set by an inline script) is the fallback for reduced motion and browsers without scroll-driven
-  animation (Firefox today). Pinned scenes become swipeable layouts instead of animations.
-- `site.js` (about 60 lines, no libraries): one-time count-ups, pointer depth and magnetic buttons on desktop, and closing the mobile menu. The menu itself is the native `popover` attribute.
-- Backgrounds behind each product are pre-blurred 360px images (`assets/shots/bg-*.webp`), not live `filter: blur()`, which was the cause of scroll jank.
+## 📱 Shipped Production Apps Featured
 
-## Images (`assets/shots/`)
-All screens are real. They come from the public App Store listings of the apps (via the iTunes lookup API) and
-screenshots of the live sites (`motors.zonesso.com`, `srikalahastikalamkari.in`).
-- `zonesso-ui-1..7.webp`: raw in-phone screens, cropped out of the store frames (used inside CSS phones).
-- `zonesso-store-*`, `kor-*`, `eco-*`: full App Store frames (they carry each product's own colour world).
-- `web-*.webp`: full-page captures used inside the browser frames. Re-capture if those sites change.
-- `banner-{jiffl,cone,qplease}.webp`: hero art from the Mantiqh case pages. `qplease-*`: App Store frames.
-- `icon-*.webp`: app icons. `og.png`: 1200x630 share image.
+All screenshots and numbers are grounded in production work from `career-ops/cv.md`:
 
-## Rules
-No em-dashes, no invented numbers, no placeholder text on the live page. Missing content is tracked in `CONTENT-NEEDED.md`.
+| App | Scope & Role | Public Links | Key Metric |
+| :--- | :--- | :--- | :--- |
+| **Zonesso** | Dubai vehicle marketplace (Sole mobile engineer) | [App Store](https://apps.apple.com/us/app/zonesso/id6541539876) · [Google Play](https://play.google.com/store/apps/details?id=com.zonesso.app) · [motors.zonesso.com](https://motors.zonesso.com) | **39% less code** & 57 dependencies removed in RN 0.75→0.81 migration |
+| **Eco Crew** | Scrap collection & pickup platform (Team of 2) | [App Store](https://apps.apple.com/in/app/ecocrew-ecofriendly-made-easy/id1669327969) · [Google Play](https://play.google.com/store/apps/details?id=com.ecocrew.app) | **50,000+ downloads**, 4-star rating; ~30% app size reduction |
+| **Keys On Rent** | Property rental platform across 3 apps (Team of 2) | [App Store](https://apps.apple.com/us/app/keys-on-rent/id6740265670) · [Google Play](https://play.google.com/store/apps/details?id=com.keysonrent.tenant) | **3 role-specific apps in 2 months**; 1,000+ tenant installs |
 
-## Content rule: the home page is the scan layer
-A visitor decides in about ten seconds and reads roughly a quarter of any page. So the home page carries a headline, a visual and one short line per section, plus a few big numbers. Anything longer (what I owned, what was hard, how I solved it) lives in `work/*` for the people who click through. Do not add paragraphs, skill lists or role lists back to `index.html`; LinkedIn is the resume.
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Runtime:** Native HTML5, modern CSS3 with CSS variables & scroll-driven animations (`animation-timeline`), ES modules. Zero client frameworks for 100 Lighthouse performance.
+- **Typography:** Self-hosted Geist & Geist Mono fonts.
+- **Testing:** Playwright E2E test suite running across desktop Chromium and mobile viewports (iPhone 14 / Safari).
+- **Deployment:** Vercel Edge (`npx vercel --prod`), zero build step.
+
+---
+
+## 🚀 Local Development & Testing
+
+### 1. Run Local Server
+```bash
+# Serve over local HTTP (required for ES modules)
+npm start
+# Opens on http://localhost:4173
+```
+
+### 2. Run Automated Playwright Tests
+```bash
+# Run all E2E & mobile responsive tests
+npx playwright test
+```
+
+### 3. Deploy to Vercel
+```bash
+npx vercel --prod
+```
+
+---
+
+## 📬 Contact
+
+- **Email:** [arfathrozewale8@gmail.com](mailto:arfathrozewale8@gmail.com)
+- **GitHub:** [github.com/code-harmony0](https://github.com/code-harmony0)
+- **LinkedIn:** [linkedin.com/in/arfat-rozewale](https://www.linkedin.com/in/arfat-rozewale/)
+- **Phone / WhatsApp:** +91 8088990184

@@ -1580,6 +1580,12 @@ html.static .pf-cap span:first-child{opacity:1}
 .sp-stores a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;color:var(--ink);transition:border-color var(--t-fast),color var(--t-fast)}
 .sp-stores a:hover{border-color:var(--sig);color:var(--sig)}
 .sp-stores + .sp-link{margin-top:16px}
+.sp-metric{display:inline-flex;align-items:center;gap:12px;margin-top:16px;padding:8px 16px;background:rgba(255,91,46,.08);border:1px solid rgba(255,91,46,.25);border-radius:10px}
+.sp-metric-num{font-family:var(--sans);font-size:1.15rem;font-weight:700;color:var(--sig);letter-spacing:-.02em}
+.sp-metric-label{font-size:.85rem;color:var(--mut-hi);line-height:1.35}
+.sp-web{margin-top:10px}
+.sp-portal-pill{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 16px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;font-size:.85rem;color:var(--mut-hi);transition:all var(--t-fast)}
+.sp-portal-pill:hover{border-color:var(--sig);color:var(--sig)}
 @media (min-width:1021px){.web-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* Type pass: role line brighter than the sub line, labels 12.5px or more, readable chips */
